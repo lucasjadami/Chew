@@ -16,7 +16,7 @@ int main()
 		cout << "> ";
 		commands.clear();
 		
-		// pega a linha digitada
+		// gets the line typed by the user
 		string in;
 		
 		if (getline(cin, in) == NULL)
@@ -24,7 +24,7 @@ int main()
 		if (in == "exit")
 			break;
 			
-		// parseia os comandos digitados da linha
+		// parses the line typed commands
 		parser.parseLine(in, commands);
 		
 #ifdef DEBUG_PRINT

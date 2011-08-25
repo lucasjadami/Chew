@@ -21,13 +21,13 @@ void Parser::parseLine(string& line, vector<Command>& commands)
 	vector<string> params;
 	string in, out;
 	bool append = false;
-	// enquanto tiver strings na linha
+	// while there are strings on the line
 	while (1)
 	{
 		getWord(stream, str);
 		if (str.size() == 0)
 			break;
-		// se for pipe eh novo comando
+		// if it is pipe, it is a new command
 		if (str == "|")	
 			addCommand(commands, params, in, out, append);
 		else if (str == "<")
@@ -42,7 +42,7 @@ void Parser::parseLine(string& line, vector<Command>& commands)
 		else
 			params.push_back(str);
 	}
-	// ultimo comando
+	// last command
 	addCommand(commands, params, in, out, append);
 }
 
