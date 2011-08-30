@@ -68,12 +68,14 @@ void Parser::getWord(istringstream& stream, string& str)
 	if (!(stream >> aux))
 		return;
 	str = aux;
+	// checks if it is an opening "
 	if (aux[0] == '"' && aux[aux.size()-1] != '"' || aux == "\"")
 	{
 		while (stream >> aux)
 		{
 			str += " ";
 			str += aux;
+			// breaks on the closing "
 			if (aux[aux.size()-1] == '"')
 				break;
 		}
@@ -88,14 +90,17 @@ void Parser::getWord(istringstream& stream, string& str)
 	trim(str);
 }
 
-void trim2(string& str)
+void Parser::trim(string& str)
 {
-  string::size_type pos = str.find_last_not_of(' ');
-  if(pos != string::npos) {
-    str.erase(pos + 1);
-    pos = str.find_first_not_of(' ');
-    if(pos != string::npos) str.erase(0, pos);
-  }
-  else str.erase(str.begin(), str.end());
+	string::size_type pos = str.find_last_not_of(' ');
+	if(pos != string::npos) 
+	{
+		str.erase(pos + 1);
+		pos = str.find_first_not_of(' ');
+		if (pos != string::npos)
+			str.erase(0, pos);
+	}
+	else 
+		str.erase(str.begin(), str.end());
 }
 

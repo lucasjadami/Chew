@@ -23,6 +23,7 @@ private:
 
 	void addCommand(vector<Command>&, vector<string>&, string&, string&, bool&);
 	void getWord(istringstream&, string&);
+	void trim(string&);
 
 };
 
