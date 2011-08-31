@@ -1,7 +1,7 @@
 #include "command.h"
 
 #ifdef DEBUG_PRINT
-#include <iostream>
+#include <ncurses.h>
 #endif
 
 using namespace std;
@@ -23,12 +23,12 @@ Command::~Command()
 #ifdef DEBUG_PRINT
 void Command::print()
 {
-	cout << "Command name: " << cmd << endl;
-	cout << "Params:";
+	printw("Command name: %s\n", cmd.c_str());
+	printw("Params:");
 	for (int i = 0; i < params.size(); ++i)
-		cout << " [" << params[i] << "]";
-	cout << endl << "Input: " << in << endl;
-	cout << "Output: " << out << " " << (append ? "[append]" : "" ) << endl;
+		printw(" [%s]", params[i].c_str());
+	printw("\nInput: %s\n", in.c_str());
+	printw("Output: %s %s\n", out.c_str(), (append ? "[append]" : "" ));
 }
 #endif
 
