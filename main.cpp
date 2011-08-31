@@ -1,80 +1,64 @@
 #include "parser.h"
 
-#include <iostream>
 #include <vector>
 #include <string>
-#include <cstdio>
-#include <termios.h>
+#include <ncurses.h>
+
+#define KEY_RETURN 10
 
 using namespace std;
 
 vector<Command> commands;
-// history of commands
-vector<vector<Command> > lastCommands;
-int lastCommandIndex = 0;
 Parser parser;
-
-void changemode(int);
 
 int main()
 {		
-	changemode(1);
+	// init ncurses
+	initscr();
+	// ncurses -> handling special keys
+	keypad(stdscr, TRUE);
+	// ncurses -> no echo
+	noecho();
 	
 	while (1)
 	{
-		cout << "> ";
+		printw("> ");
 		commands.clear();
 		
 		// gets the line typed by the user
 		string in;
 		
 		int ch = 0;
-		// 10 is the keycode for ENTER
-		while (ch != 10)
+		while (ch != KEY_RETURN)
 		{
-			ch = getchar();
+			ch = getch();
 			
-			putchar(ch);
-			
-			if (ch == 10)
-				continue;	
-			
-			// appends the char on the string
+			if (ch == KEY_RETURN)
+				continue;
+				
+			addch(ch);
 			in += ch;
 		}
+		
+		addch('\n');
 		
 		if (in == "exit")
 			break;
 			
 		// parses the line typed commands
 		parser.parseLine(in, commands);
-
-		lastCommands.insert(lastCommands.begin(), commands);
-		lastCommandIndex = 0;
 		
 #ifdef DEBUG_PRINT
 		for (int i = 0; i < commands.size(); ++i)
 			commands[i].print();
 #endif
+		// ncurses -> updates the screen
+		refresh();
 	}
 	
-	changemode(0);
+	// end ncurses
+	endwin();
 	
 	return 0;
-}
-
-void changemode(int dir)
-{
-	static struct termios oldt, newt;
-
-	if (dir == 1)
-	{
-		tcgetattr(STDIN_FILENO, &oldt);
-		newt = oldt;
-		newt.c_lflag &= ~(ICANON | ECHO);
-		tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-	}
-	else
-		tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 }
 

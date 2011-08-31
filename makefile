@@ -1,4 +1,4 @@
-FLAGS=-g -D DEBUG_PRINT
+FLAGS=-g -D DEBUG_PRINT -lncurses
 CC=g++
 
 all: chew
