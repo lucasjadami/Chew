@@ -5,11 +5,14 @@
 #include <ncurses.h>
 
 #define KEY_RETURN 10
+#define KEY_SPACE 32
 
 using namespace std;
 
 vector<Command> commands;
 Parser parser;
+
+void insertChar(string&, int&, int);
 
 int main()
 {		
@@ -20,10 +23,14 @@ int main()
 	// ncurses -> no echo
 	noecho();
 	
+	// 0 means the end of the command line
+	int cursorPos;
+
 	while (1)
 	{
 		printw("> ");
 		commands.clear();
+		cursorPos = 0;
 		
 		// gets the line typed by the user
 		string in;
@@ -35,9 +42,8 @@ int main()
 			
 			if (ch == KEY_RETURN)
 				continue;
-				
-			addch(ch);
-			in += ch;
+			
+			insertChar(in, cursorPos, ch);
 		}
 		
 		addch('\n');
@@ -60,5 +66,40 @@ int main()
 	endwin();
 	
 	return 0;
+}
+
+void insertChar(string& in, int& cursorPos, int ch)
+{
+	int oldSize = in.size();
+	
+	if (ch == KEY_BACKSPACE)
+	{
+		if (in.size() > 0 && (int) in.size() + cursorPos > -1)
+		{
+			in.erase(in.end() + cursorPos - 1);
+		}
+	}
+	else			
+		in.insert(in.end() + cursorPos, ch);
+		
+	int x, y, xMax, yMax, xCur, yCur;
+	getyx(stdscr, y, x);
+	getmaxyx(stdscr, yMax, xMax);
+	xCur = x;
+	yCur = y;
+		
+	while (oldSize-- >= 0)
+	{
+		if (x == 0)
+		{
+			x = xMax;
+			y--;
+		}
+		
+		move(y, --x);
+		addch(KEY_SPACE);
+	}
+	
+	printw("%s", in.c_str());
 }
 
