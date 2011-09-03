@@ -10,9 +10,11 @@
 using namespace std;
 
 vector<Command> commands;
+vector<string> commandsHistory;
+int historyIndex;
 Parser parser;
 
-void insertChar(string&, int&, int);
+void handleKey(string&, int&, int&, int);
 
 int main()
 {		
@@ -30,20 +32,21 @@ int main()
 	{
 		printw("> ");
 		commands.clear();
+		historyIndex = -1;
 		cursorPos = 0;
 		
 		// gets the line typed by the user
 		string in;
 		
-		int ch = 0;
-		while (ch != KEY_RETURN)
+		int key = 0;
+		while (key != KEY_RETURN)
 		{
-			ch = getch();
+			key = getch();
 			
-			if (ch == KEY_RETURN)
+			if (key == KEY_RETURN)
 				continue;
 			
-			insertChar(in, cursorPos, ch);
+			handleKey(in, cursorPos, historyIndex, key);
 		}
 		
 		addch('\n');
@@ -53,6 +56,7 @@ int main()
 			
 		// parses the line typed commands
 		parser.parseLine(in, commands);
+		commandsHistory.insert(commandsHistory.begin(), in);
 		
 #ifdef DEBUG_PRINT
 		for (int i = 0; i < commands.size(); ++i)
@@ -68,38 +72,80 @@ int main()
 	return 0;
 }
 
-void insertChar(string& in, int& cursorPos, int ch)
+void handleKey(string& in, int& cursorPos, int& historyPos, int key)
 {
-	int oldSize = in.size();
-	
-	if (ch == KEY_BACKSPACE)
-	{
-		if (in.size() > 0 && (int) in.size() + cursorPos > -1)
-		{
-			in.erase(in.end() + cursorPos - 1);
-		}
-	}
-	else			
-		in.insert(in.end() + cursorPos, ch);
-		
-	int x, y, xMax, yMax, xCur, yCur;
+	int x, y, xMax, yMax;
 	getyx(stdscr, y, x);
 	getmaxyx(stdscr, yMax, xMax);
-	xCur = x;
-	yCur = y;
+	
+	int xEx = x - cursorPos;
+	move(y, xEx);
+	
+	int size = in.size();
 		
-	while (oldSize-- >= 0)
+	while (size-- >= 0)
 	{
-		if (x == 0)
+		if (xEx == 0)
 		{
-			x = xMax;
+			xEx = xMax;
 			y--;
 		}
 		
-		move(y, --x);
+		move(y, --xEx);
 		addch(KEY_SPACE);
 	}
 	
+	if (key == KEY_BACKSPACE)
+	{
+		if (in.size() > 0 && -cursorPos < in.size())
+		{
+			in.erase(in.end() + cursorPos - 1);
+			x--;
+		}
+	}
+	else if (key == KEY_LEFT)
+	{
+		cursorPos--;
+		if (-cursorPos > in.size())
+			cursorPos = -in.size();
+		else
+			x--;
+	}
+	else if (key == KEY_RIGHT)
+	{
+		cursorPos++;
+		if (cursorPos > 0)
+			cursorPos = 0;
+		else
+			x++;
+	}
+	else if (key == KEY_UP)
+	{
+		// TODO
+	}
+	else if (key == KEY_DOWN)
+	{
+		// TODO
+	}
+	else
+	{
+		in.insert(in.end() + cursorPos, key);
+		x++;
+	}
+	
+	if (x < 0)
+	{
+		x = xMax;
+		y--;
+	}
+	else if (x > xMax)
+	{
+		x = 0;
+		y++;
+	}
+	
 	printw("%s", in.c_str());
+	
+	move(y, x);
 }
 
