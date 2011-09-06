@@ -11,10 +11,11 @@ using namespace std;
 
 vector<Command> commands;
 vector<string> commandsHistory;
-int historyIndex;
 Parser parser;
 
-void handleKey(string&, int&, int&, int);
+vector<string> createIterationHistory();
+void mergeCommandsHistory(vector<string>&, int);
+void handleKey(vector<string>&, int&, int&, int);
 
 int main()
 {		
@@ -27,18 +28,19 @@ int main()
 	
 	// 0 means the end of the command line
 	int cursorPos;
+	int historyIndex;
+	int key;
 
 	while (1)
 	{
 		printw("> ");
 		commands.clear();
-		historyIndex = -1;
 		cursorPos = 0;
+		historyIndex = 0;
+		key = 0;
 		
-		// gets the line typed by the user
-		string in;
+		vector<string> itHistory = createIterationHistory();
 		
-		int key = 0;
 		while (key != KEY_RETURN)
 		{
 			key = getch();
@@ -46,17 +48,18 @@ int main()
 			if (key == KEY_RETURN)
 				continue;
 			
-			handleKey(in, cursorPos, historyIndex, key);
+			handleKey(itHistory, historyIndex, cursorPos, key);
 		}
 		
 		addch('\n');
 		
-		if (in == "exit")
+		if (itHistory[historyIndex] == "exit")
 			break;
 			
 		// parses the line typed commands
-		parser.parseLine(in, commands);
-		commandsHistory.insert(commandsHistory.begin(), in);
+		parser.parseLine(itHistory[historyIndex], commands);
+		
+		mergeCommandsHistory(itHistory, historyIndex);
 		
 #ifdef DEBUG_PRINT
 		for (int i = 0; i < commands.size(); ++i)
@@ -72,7 +75,30 @@ int main()
 	return 0;
 }
 
-void handleKey(string& in, int& cursorPos, int& historyPos, int key)
+vector<string> createIterationHistory()
+{
+	vector<string> itHistory = commandsHistory;
+	itHistory.insert(itHistory.begin(), string());
+	return itHistory;
+}
+
+void mergeCommandsHistory(vector<string>& itHistory, int historyIndex)
+{
+	commandsHistory.insert(commandsHistory.begin(), itHistory[historyIndex]);
+	
+	int i = historyIndex == -1 ? 0 : 1;
+	while (i != itHistory.size())
+	{
+		if (i != historyIndex)
+		{
+			commandsHistory[i] = itHistory[i];
+		}
+		
+		++i;
+	}
+}
+
+void handleKey(vector<string>& itHistory, int& historyIndex, int& cursorPos, int key)
 {
 	int x, y, xMax, yMax;
 	getyx(stdscr, y, x);
@@ -81,7 +107,10 @@ void handleKey(string& in, int& cursorPos, int& historyPos, int key)
 	int xEx = x - cursorPos;
 	move(y, xEx);
 	
-	int size = in.size();
+	int size = itHistory[historyIndex].size();
+	
+	// the move back is the movement of the cursor after the printw
+	bool disableMoveBack = false;
 		
 	while (size-- >= 0)
 	{
@@ -97,17 +126,17 @@ void handleKey(string& in, int& cursorPos, int& historyPos, int key)
 	
 	if (key == KEY_BACKSPACE)
 	{
-		if (in.size() > 0 && -cursorPos < in.size())
+		if (itHistory[historyIndex].size() > 0 && -cursorPos < itHistory[historyIndex].size())
 		{
-			in.erase(in.end() + cursorPos - 1);
+			itHistory[historyIndex].erase(itHistory[historyIndex].end() + cursorPos - 1);
 			x--;
 		}
 	}
 	else if (key == KEY_LEFT)
 	{
 		cursorPos--;
-		if (-cursorPos > in.size())
-			cursorPos = -in.size();
+		if (-cursorPos > itHistory[historyIndex].size())
+			cursorPos = -itHistory[historyIndex].size();
 		else
 			x--;
 	}
@@ -121,15 +150,19 @@ void handleKey(string& in, int& cursorPos, int& historyPos, int key)
 	}
 	else if (key == KEY_UP)
 	{
-		// TODO
+		historyIndex = historyIndex == itHistory.size() - 1 ? historyIndex : historyIndex + 1;
+		cursorPos = 0;
+		disableMoveBack = true;
 	}
 	else if (key == KEY_DOWN)
 	{
-		// TODO
+		historyIndex = historyIndex == 0 ? historyIndex : historyIndex - 1;
+		cursorPos = 0;
+		disableMoveBack = true;
 	}
 	else
 	{
-		in.insert(in.end() + cursorPos, key);
+		itHistory[historyIndex].insert(itHistory[historyIndex].end() + cursorPos, key);
 		x++;
 	}
 	
@@ -144,8 +177,10 @@ void handleKey(string& in, int& cursorPos, int& historyPos, int key)
 		y++;
 	}
 	
-	printw("%s", in.c_str());
+	printw("%s", itHistory[historyIndex].c_str());
 	
-	move(y, x);
+	// this is the move back movement
+	if (!disableMoveBack)
+		move(y, x);
 }
 
