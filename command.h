@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// the Command class contains all necessary data of a shell command
 class Command
 {
 
