@@ -47,7 +47,7 @@ int main()
 			commands[i].print();
 #endif
 		// refreshes anything to be refreshed
-		ioHandler.refresh();
+		ioHandler.refreshIt();
 	}
 	
 	// ends io
