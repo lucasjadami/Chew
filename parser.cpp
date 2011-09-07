@@ -2,8 +2,6 @@
 
 #include <sstream>
 
-using namespace std;
-
 Parser::Parser()
 {
 

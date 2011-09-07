@@ -9,6 +9,7 @@
 
 using namespace std;
 
+// the Parser class transforms raw strings into Command objects
 class Parser
 {
 
