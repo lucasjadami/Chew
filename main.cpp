@@ -1,6 +1,7 @@
 #include "parser.h"
 #include "iohandler.h"
 #include "runner.h"
+#include "dirhandler.h"
 
 #define KEY_RETURN 10
 
@@ -9,6 +10,7 @@ using namespace std;
 IOHandler ioHandler;
 Parser parser;
 Runner runner;
+DirHandler dirHandler;
 
 int main()
 {		
@@ -20,7 +22,7 @@ int main()
 	while (1)
 	{
 		// starts the command iteration, reseting everything
-		vector<string> itHistory = ioHandler.startIteration();
+		vector<string> itHistory = ioHandler.startIteration(dirHandler.getWorkingDir());
 		key = 0;
 		
 		// gets keys until the RETURN is typed

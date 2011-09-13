@@ -4,9 +4,9 @@
 
 #define KEY_SPACE 32
 
-vector<string> IOHandler::startIteration()
+vector<string> IOHandler::startIteration(string path)
 {
-	printw("> ");
+	printw("%s ", path.c_str());
 	cursorPos = 0;
 	historyIndex = 0;
 	return createIterationHistory();

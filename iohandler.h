@@ -12,7 +12,7 @@ class IOHandler
 
 public:
 
-	vector<string> startIteration();
+	vector<string> startIteration(string);
 	bool endIteration(vector<string>&);
 	int getHistoryIndex();
 	int readKey();
