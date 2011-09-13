@@ -20,6 +20,33 @@ Command::~Command()
 
 }
 
+string Command::getIn()
+{
+	return in;
+}
+
+string Command::getOut()
+{
+	return out;
+}
+
+string Command::getCmd()
+{
+	return cmd;
+}
+
+const char** Command::buildArgs()
+{
+	args = new const char*[params.size()];
+	for (int i = 0; i < params.size(); ++i)
+		args[i] = params[i].c_str();
+}
+
+void Command::destroyArgs()
+{
+	delete[] args;
+}
+
 #ifdef DEBUG_PRINT
 void Command::print()
 {

@@ -1,5 +1,6 @@
 #include "parser.h"
 #include "iohandler.h"
+#include "runner.h"
 
 #define KEY_RETURN 10
 
@@ -7,6 +8,7 @@ using namespace std;
 
 IOHandler ioHandler;
 Parser parser;
+Runner runner;
 
 int main()
 {		
@@ -41,6 +43,7 @@ int main()
 		// parses the line typed commands
 		vector<Command> commands;
 		parser.parseLine(itHistory[ioHandler.getHistoryIndex()], commands);
+		runner.run(commands[0]);
 		
 #ifdef DEBUG_PRINT
 		for (int i = 0; i < commands.size(); ++i)

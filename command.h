@@ -14,6 +14,12 @@ public:
 
 	Command(string&, vector<string>&, string&, string&, bool);
 	~Command();
+
+	string getIn();
+	string getOut();
+	string getCmd();
+	const char** buildArgs();
+	void destroyArgs();
 	
 #ifdef DEBUG_PRINT
 	void print();
@@ -26,6 +32,7 @@ private:
 	string in;
 	string out;
 	bool append;
+	const char** args;
 
 };
 
