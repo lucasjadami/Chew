@@ -4,6 +4,11 @@
 #include <cstdio>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <cerrno>
+#include <cstring>
+#include <ncurses.h>
+#include <sys/wait.h>
+#include <cstdlib>
 
 #define STDIN 0
 #define STDOUT 1
@@ -19,7 +24,7 @@ Runner::~Runner()
 }
 
 // TODO: handle errors
-int Runner::run(Command& cmd)
+int Runner::run(Command& cmd, IOHandler& ioHandler)
 {
 	int infd = STDIN;
 	int outfd = STDOUT;
@@ -35,13 +40,24 @@ int Runner::run(Command& cmd)
 		dup2(outfd, STDOUT);
 	}
 	
-	printf("%d <<<\n", execve(cmd.getCmd().c_str(), (char* const*) cmd.buildArgs(), NULL));
-	cmd.destroyArgs();
+	ioHandler.disable();
+	int pid = fork();
+	
+	if (pid == 0)
+	{
+		execvp(cmd.getCmd().c_str(), (char* const*) cmd.buildArgs());
+		cmd.destroyArgs();
+		exit(-1);
+	}
+	
+	wait(NULL);
 	
 	if (infd != STDIN)
 		close(infd);
 	if (outfd != STDOUT)
 		close(outfd);
+		
+	//ioHandler.enable();
 		
 	return 0;
 }

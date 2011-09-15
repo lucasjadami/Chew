@@ -37,9 +37,16 @@ string Command::getCmd()
 
 const char** Command::buildArgs()
 {
-	args = new const char*[params.size()];
+	args = new const char*[params.size()+2];
+	args[0] = cmd.c_str();
 	for (int i = 0; i < params.size(); ++i)
-		args[i] = params[i].c_str();
+		args[i+1] = params[i].c_str();
+	args[params.size()+1] = 0;
+	
+#ifdef DEBUG_PRINT
+	for (int i = 0; i < params.size()+2; ++i)
+		printw("argv[%d] = %s\n", i, args[i]);
+#endif
 }
 
 void Command::destroyArgs()

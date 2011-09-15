@@ -45,7 +45,7 @@ int main()
 		// parses the line typed commands
 		vector<Command> commands;
 		parser.parseLine(itHistory[ioHandler.getHistoryIndex()], commands);
-		runner.run(commands[0]);
+		runner.run(commands[0], ioHandler);
 		
 #ifdef DEBUG_PRINT
 		for (int i = 0; i < commands.size(); ++i)

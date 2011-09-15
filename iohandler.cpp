@@ -170,3 +170,16 @@ vector<string> IOHandler::createIterationHistory()
 	itHistory.insert(itHistory.begin(), string());
 	return itHistory;
 }
+
+void IOHandler::disable()
+{
+	//def_prog_mode();
+	//endwin();
+	setupterm(0, 1, 0);
+}
+
+void IOHandler::enable()
+{
+	refresh();
+}
+
