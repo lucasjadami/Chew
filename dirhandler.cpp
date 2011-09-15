@@ -3,16 +3,31 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <pwd.h>
+#include <errno.h>
+#include <cstring>
 
-// TODO: make this dynamic
 #define MAX_SIZE 1024
 
+// returns a string starting with * on error
 string DirHandler::getWorkingDir()
 {
 	string dir = getCurrentPath();
+	if (dir.size() == 0)
+	{
+		dir = "*";
+		dir += strerror(errno);
+		return dir;
+	}
+	
 	dir += "$";
 	
 	string homeDir = getHomeDir();
+	if (homeDir.size() == 0)
+	{
+		dir = "*";
+		dir += strerror(errno);
+		return dir;
+	}
 	
 	// TODO: test on other computers, with different home dirs
 	if (dir.find_first_of(homeDir) == 0)
@@ -23,16 +38,36 @@ string DirHandler::getWorkingDir()
 	return dir;	
 }
 
+// returns the error string on error
+string DirHandler::setDir(string path)
+{
+	// result of the set dir; empty on success
+	string s;
+	
+	int result;
+	if (path.size() == 0)
+		result = chdir(getHomeDir().c_str());
+	else if (path[0] != '/')
+		result = chdir(getCurrentPath().append(path).c_str());
+	else
+		result = chdir(path.c_str());
+	
+	if (result == -1)
+		s = strerror(errno);
+		
+	return s;
+}
+
+// returns empty string on error
 string DirHandler::getCurrentPath()
 {
 	char s[MAX_SIZE];
 	string path;
 	
-	// TODO: handle better this error
 	if (getcwd(s, MAX_SIZE) != NULL)
 		path = s;
 	else
-		path = "PATH ERROR";
+		path = "";
 		
 	return path;
 }
@@ -41,20 +76,30 @@ string DirHandler::getUserString()
 {
 	char s[MAX_SIZE];
 	string user;
-	user = getlogin();
+	int result;
+	const char* login;
+	
+	login = getlogin();
+	user = login == NULL ? "-" : login;
 	user += "@";
-	// TODO: handle error
-	gethostname(s, MAX_SIZE);
-	user += s;
+	result = gethostname(s, MAX_SIZE);
+	user += result == 0 ? s : "-";	
 	user += ":";
+	
 	return user;
 }
 
+// returns empty string on error
 string DirHandler::getHomeDir()
 {
 	string home;
-	struct passwd *pw = getpwuid(getuid());
-	const char *homeDir = pw->pw_dir;
-	home = homeDir;
+	struct passwd* pw = getpwuid(getuid());
+	
+	if (pw != NULL)
+	{
+		const char* homeDir = pw->pw_dir;
+		home = homeDir;
+	}
+	
 	return home;
 }

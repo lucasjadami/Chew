@@ -11,6 +11,7 @@ class DirHandler
 public:
 
 	string getWorkingDir();
+	string setDir(string path);
 
 private:
 
