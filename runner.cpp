@@ -42,13 +42,13 @@ int Runner::run(Command& cmd, IOHandler& ioHandler)
 	
 	int tmpfd = -1;
 	if (outfd == STDOUT)
-		tmpfd = open("/tmp/chew", O_RDWR | O_CREAT);
+		tmpfd = open(".tmp", O_RDWR | O_CREAT);
 	int pid = fork();
 	
 	if (pid == 0)
 	{
-		if (tmpfd != -1)
-			dup2(tmpfd, STDOUT);
+		//if (tmpfd != -1)
+			//dup2(tmpfd, STDOUT);
 		char* const* args = (char* const*) cmd.buildArgs();
 		execvp(cmd.getCmd().c_str(), args);
 		cmd.destroyArgs();
@@ -61,11 +61,13 @@ int Runner::run(Command& cmd, IOHandler& ioHandler)
 	{
 		char buffer[1001];
 		int ret;
-		while (ret = read(tmpfd, buffer, 1000) != EOF)
+		while (ret = read(tmpfd, buffer, 1000) != -1)
 		{
 			buffer[ret] = 0;
-			printw("%s", buffer);
+			// printw("%d\n", ret);
+			// printw("%s", buffer);
 			refresh();
+			fsync(tmpfd);
 		}
 		exit(-1);
 	}

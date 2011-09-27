@@ -42,10 +42,10 @@ const char** Command::buildArgs()
 	for (int i = 0; i < params.size(); ++i)
 		args[i+1] = params[i].c_str();
 	args[params.size()+1] = 0;
-	
 //#ifdef DEBUG_PRINT
 	for (int i = 0; i < params.size()+2; ++i)
 		printw("argv[%d] = %s\n", i, args[i]);
+	// updates the screen imediately
 	refresh();
 //#endif
 
