@@ -43,10 +43,13 @@ const char** Command::buildArgs()
 		args[i+1] = params[i].c_str();
 	args[params.size()+1] = 0;
 	
-#ifdef DEBUG_PRINT
+//#ifdef DEBUG_PRINT
 	for (int i = 0; i < params.size()+2; ++i)
 		printw("argv[%d] = %s\n", i, args[i]);
-#endif
+	refresh();
+//#endif
+
+	return args;
 }
 
 void Command::destroyArgs()

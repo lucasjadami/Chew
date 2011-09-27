@@ -6,7 +6,7 @@
 
 vector<string> IOHandler::startIteration(string path)
 {
-	printw("%s ", path.c_str());
+	printw("***** %s ", path.c_str());
 	cursorPos = 0;
 	historyIndex = 0;
 	return createIterationHistory();
@@ -169,17 +169,5 @@ vector<string> IOHandler::createIterationHistory()
 	vector<string> itHistory = commandsHistory;
 	itHistory.insert(itHistory.begin(), string());
 	return itHistory;
-}
-
-void IOHandler::disable()
-{
-	//def_prog_mode();
-	//endwin();
-	setupterm(0, 1, 0);
-}
-
-void IOHandler::enable()
-{
-	refresh();
 }
 

@@ -20,8 +20,6 @@ public:
 	void start();
 	void refreshIt();
 	void end();
-	void disable();
-	void enable();
 
 private:
 
