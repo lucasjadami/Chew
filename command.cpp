@@ -1,7 +1,7 @@
 #include "command.h"
 
 #ifdef DEBUG_PRINT
-#include <ncurses.h>
+#include "iohandler.h"
 #endif
 
 using namespace std;
@@ -35,37 +35,40 @@ string Command::getCmd()
 	return cmd;
 }
 
-const char** Command::buildArgs()
+string Command::toString()
 {
-	args = new const char*[params.size()+2];
-	args[0] = cmd.c_str();
+	string s = cmd;
 	for (int i = 0; i < params.size(); ++i)
-		args[i+1] = params[i].c_str();
-	args[params.size()+1] = 0;
-//#ifdef DEBUG_PRINT
-	for (int i = 0; i < params.size()+2; ++i)
-		printw("argv[%d] = %s\n", i, args[i]);
-	// updates the screen imediately
-	refresh();
-//#endif
-
-	return args;
-}
-
-void Command::destroyArgs()
-{
-	delete[] args;
+	{
+		s += " " + params[i];
+	}
+	return s;
 }
 
 #ifdef DEBUG_PRINT
 void Command::print()
 {
-	printw("Command name: %s\n", cmd.c_str());
-	printw("Params:");
+	string s;
+	s += "Command name: ";
+	s += cmd.c_str();
+	s += "\n";
+	s += "Params:";
 	for (int i = 0; i < params.size(); ++i)
-		printw(" [%s]", params[i].c_str());
-	printw("\nInput: %s\n", in.c_str());
-	printw("Output: %s %s\n", out.c_str(), (append ? "[append]" : "" ));
+	{
+		s += " [";
+		s += params[i].c_str();
+		s += "]"; 
+	}
+	s += "\nInput: ";
+	s += in.c_str();
+	s += "\n";
+	s += "Output: ";
+	s += out.c_str();
+	s += " ";
+	s += append ? "[append]" : "";
+	s += "\n";
+	
+	IOHandler::debugPrint(s.c_str());
 }
 #endif
 

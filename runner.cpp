@@ -1,14 +1,9 @@
 #include "runner.h"
 
 #include <unistd.h>
-#include <cstdio>
-#include <sys/stat.h>
 #include <fcntl.h>
-#include <cerrno>
+#include <cstdio>
 #include <cstring>
-#include <ncurses.h>
-#include <sys/wait.h>
-#include <cstdlib>
 
 #define STDIN 0
 #define STDOUT 1
@@ -27,7 +22,8 @@ Runner::~Runner()
 int Runner::run(Command& cmd, IOHandler& ioHandler)
 {
 	int infd = STDIN;
-	int outfd = STDOUT;
+	FILE* outputBuffer;
+	FILE* output = NULL;
 	
 	if (cmd.getIn().size() > 0)
 	{
@@ -36,57 +32,41 @@ int Runner::run(Command& cmd, IOHandler& ioHandler)
 	}
 	if (cmd.getOut().size() > 0)
 	{
-		outfd = open(cmd.getOut().c_str(), O_WRONLY | O_CREAT);
-		dup2(outfd, STDOUT);
+		output = fopen(cmd.getOut().c_str(), "w+");
 	}
 	
-	int tmpfd = -1;
-	if (outfd == STDOUT)
-		tmpfd = open(".tmp", O_RDWR | O_CREAT);
-	int pid = fork();
+	outputBuffer = popen(cmd.toString().c_str(), "r");
+	int obd = fileno(outputBuffer);
+	fcntl(obd, F_SETFL, O_NONBLOCK);
 	
-	if (pid == 0)
+	char buff[512];
+	while (true)
 	{
-		//if (tmpfd != -1)
-			//dup2(tmpfd, STDOUT);
-		char* const* args = (char* const*) cmd.buildArgs();
-		execvp(cmd.getCmd().c_str(), args);
-		cmd.destroyArgs();
-		exit(-1);
+		ssize_t r = read(obd, buff, 512);
+		if (r == -1)
+	    		continue;
+		else if (r > 0)
+	    	{
+	    		ioHandler.print(buff);
+	    	}
+		else
+	    		break;
 	}
 	
-	int secondPid = fork();
-	
-	if (secondPid == 0)
+	/*while (fgets(buff, 512, outputBuffer) != NULL) 
 	{
-		char buffer[1001];
-		int ret;
-		while (ret = read(tmpfd, buffer, 1000) != -1)
-		{
-			buffer[ret] = 0;
-			// printw("%d\n", ret);
-			// printw("%s", buffer);
-			refresh();
-			fsync(tmpfd);
-		}
-		exit(-1);
-	}
-	else
-	{
-		waitpid(pid, NULL, 0);
-		kill(secondPid, SIGKILL);
-	}
+		if (output == NULL)
+    			ioHandler.print(buff);
+    		else
+    			fwrite(buff, sizeof(char), strlen(buff), output);
+  	}*/
 	
-	wait(NULL);
-	
-	if (tmpfd != -1)
-		close(tmpfd);
 	if (infd != STDIN)
 		close(infd);
-	if (outfd != STDOUT)
-		close(outfd);
-
-	//ioHandler.enable();
+	if (output != NULL)
+		fclose(output);
+	
+	pclose(outputBuffer);
 		
 	return 0;
 }

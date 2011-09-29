@@ -12,6 +12,10 @@ class IOHandler
 
 public:
 
+#ifdef DEBUG_PRINT
+	static void debugPrint(const char* s);
+#endif
+
 	vector<string> startIteration(string);
 	bool endIteration(vector<string>&);
 	int getHistoryIndex();
@@ -20,6 +24,7 @@ public:
 	void start();
 	void refreshIt();
 	void end();
+	void print(const char* s);
 
 private:
 

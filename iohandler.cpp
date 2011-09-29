@@ -4,9 +4,16 @@
 
 #define KEY_SPACE 32
 
+#ifdef DEBUG_PRINT
+void IOHandler::debugPrint(const char* s)
+{
+	printw("\n%s\n", s);
+}
+#endif
+
 vector<string> IOHandler::startIteration(string path)
 {
-	printw("***** %s ", path.c_str());
+	printw("[CHEW] %s ", path.c_str());
 	cursorPos = 0;
 	historyIndex = 0;
 	return createIterationHistory();
@@ -162,6 +169,11 @@ void IOHandler::end()
 {
 	// end ncurses
 	endwin();
+}
+
+void IOHandler::print(const char* s)
+{
+	printw("%s", s);
 }
 
 vector<string> IOHandler::createIterationHistory()
