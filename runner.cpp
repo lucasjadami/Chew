@@ -3,7 +3,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <cstdio>
-#include <cstring>
+#include <sys/wait.h>
+#include <stdlib.h>
 
 #define STDIN 0
 #define STDOUT 1
@@ -22,9 +23,8 @@ Runner::~Runner()
 int Runner::run(Command& cmd, IOHandler& ioHandler)
 {
 	int infd = STDIN;
-	FILE* outputBuffer;
-	FILE* output = NULL;
-	
+	int outfd = STDOUT;
+
 	if (cmd.getIn().size() > 0)
 	{
 		infd = open(cmd.getIn().c_str(), O_RDONLY);
@@ -32,42 +32,26 @@ int Runner::run(Command& cmd, IOHandler& ioHandler)
 	}
 	if (cmd.getOut().size() > 0)
 	{
-		output = fopen(cmd.getOut().c_str(), "w+");
+		outfd = open(cmd.getOut().c_str(), O_WRONLY | O_CREAT);
+		dup2(outfd, STDOUT);
 	}
-	
-	outputBuffer = popen(cmd.toString().c_str(), "r");
-	int obd = fileno(outputBuffer);
-	fcntl(obd, F_SETFL, O_NONBLOCK);
-	
-	char buff[512];
-	while (true)
+
+	int pid = fork();
+
+	if (pid == 0)
 	{
-		ssize_t r = read(obd, buff, 512);
-		if (r == -1)
-	    		continue;
-		else if (r > 0)
-	    	{
-	    		ioHandler.print(buff);
-	    	}
-		else
-	    		break;
+		execvp(cmd.getCmd().c_str(), (char* const*) cmd.buildArgs());
+		cmd.destroyArgs();
+		exit(-1);
 	}
-	
-	/*while (fgets(buff, 512, outputBuffer) != NULL) 
-	{
-		if (output == NULL)
-    			ioHandler.print(buff);
-    		else
-    			fwrite(buff, sizeof(char), strlen(buff), output);
-  	}*/
-	
+
+	wait(NULL);
+
 	if (infd != STDIN)
 		close(infd);
-	if (output != NULL)
-		fclose(output);
-	
-	pclose(outputBuffer);
-		
+	if (outfd != STDOUT)
+		close(outfd);
+
 	return 0;
 }
 

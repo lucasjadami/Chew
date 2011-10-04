@@ -51,8 +51,6 @@ int main()
 		for (int i = 0; i < commands.size(); ++i)
 			commands[i].print();
 #endif
-		// refreshes anything to be refreshed
-		ioHandler.refreshIt();
 	}
 	
 	// ends io

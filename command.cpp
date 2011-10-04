@@ -2,6 +2,8 @@
 
 #ifdef DEBUG_PRINT
 #include "iohandler.h"
+
+#include <sstream>
 #endif
 
 using namespace std;
@@ -35,14 +37,35 @@ string Command::getCmd()
 	return cmd;
 }
 
-string Command::toString()
+// TODO: fix pointer bug
+const char** Command::buildArgs()
 {
-	string s = cmd;
+	args = new const char*[params.size()+1];
+	args[0] = cmd.c_str();
 	for (int i = 0; i < params.size(); ++i)
+		args[i+1] = params[i].c_str();
+		args[params.size()+1] = 0;
+#ifdef DEBUG_PRINT
+	string s;
+	for (int i = 0; i < params.size()+1; ++i)
 	{
-		s += " " + params[i];
+		stringstream ss;
+		ss << "argv[";
+		ss << i;
+		ss << "] = ";
+		ss << args[i];
+		s += ss.str();
+		s += "\n";
 	}
-	return s;
+	IOHandler::debugPrint(s.c_str());
+#endif
+
+	return args;
+}
+
+void Command::destroyArgs()
+{
+	delete[] args;
 }
 
 #ifdef DEBUG_PRINT

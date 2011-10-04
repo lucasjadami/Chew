@@ -22,7 +22,6 @@ public:
 	int readKey();
 	void handleKey(vector<string>&, int);
 	void start();
-	void refreshIt();
 	void end();
 	void print(const char* s);
 

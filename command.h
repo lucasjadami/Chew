@@ -18,7 +18,8 @@ public:
 	string getIn();
 	string getOut();
 	string getCmd();
-	string toString();
+	const char** buildArgs();
+	void destroyArgs();
 	
 #ifdef DEBUG_PRINT
 	void print();
@@ -31,6 +32,7 @@ private:
 	string in;
 	string out;
 	bool append;
+	const char** args;
 
 };
 

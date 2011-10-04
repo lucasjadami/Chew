@@ -1,19 +1,26 @@
 #include "iohandler.h"
 
-#include <ncurses.h>
+#include <cstdio>
+#include <termios.h>
+#include <unistd.h>
 
 #define KEY_SPACE 32
+#define KEY_BACKSPACE 127
+#define KEY_UP 65
+#define KEY_DOWN 66
+#define KEY_RIGHT 67
+#define KEY_LEFT 68
 
 #ifdef DEBUG_PRINT
 void IOHandler::debugPrint(const char* s)
 {
-	printw("\n%s\n", s);
+	printf("\n%s\n", s);
 }
 #endif
 
 vector<string> IOHandler::startIteration(string path)
 {
-	printw("[CHEW] %s ", path.c_str());
+	printf("[CHEW] %s ", path.c_str());
 	cursorPos = 0;
 	historyIndex = 0;
 	return createIterationHistory();
@@ -21,7 +28,7 @@ vector<string> IOHandler::startIteration(string path)
 
 bool IOHandler::endIteration(vector<string>& itHistory)
 {
-	addch('\n');
+	printf("%c", '\n');
 	
 	if (itHistory[historyIndex] == "exit")
 		return true;
@@ -56,35 +63,39 @@ int IOHandler::getHistoryIndex()
 
 int IOHandler::readKey()
 {
-	return getch();
+	struct termios oldT, newT;
+	int ch;
+	tcgetattr(STDIN_FILENO, &oldT);
+	newT = oldT;
+	newT.c_lflag &= ~(ICANON | ECHO);
+	tcsetattr(STDIN_FILENO, TCSANOW, &newT);
+	ch = getchar();
+	
+	if (ch == 27)
+	{
+		ch = getchar();
+		if (ch == 91)
+			ch = getchar();
+	}
+	
+	tcsetattr(STDIN_FILENO, TCSANOW, &oldT);
+	return ch;
 }
 
 void IOHandler::handleKey(vector<string>& itHistory, int key)
 {
-	int x, y, xMax, yMax;
-	getyx(stdscr, y, x);
-	getmaxyx(stdscr, yMax, xMax);
-	
-	// moves to the end of the command line
-	int xEx = x - cursorPos;
-	move(y, xEx);
+	// move towards the end of the command, putting blanks
+	for (int i = cursorPos; i < 0; ++i)
+	{
+		printf(" ");
+	}
 	
 	int size = itHistory[historyIndex].size();
 	
-	// the move back is the movement of the cursor after the printw
-	bool disableMoveBack = false;
-		
-	// backforwards adding empty spaces until the command beggining is reached
-	while (size-- >= 0)
+	// going backwards trough the beginning of the command, putting blanks
+	for (int i = 0; i < size; ++i)
 	{
-		if (xEx == 0)
-		{
-			xEx = xMax;
-			y--;
-		}
-		
-		move(y, --xEx);
-		addch(KEY_SPACE);
+		printf("\b \b");
 	}
 	
 	if (key == KEY_BACKSPACE)
@@ -92,7 +103,6 @@ void IOHandler::handleKey(vector<string>& itHistory, int key)
 		if (itHistory[historyIndex].size() > 0 && -cursorPos < itHistory[historyIndex].size())
 		{
 			itHistory[historyIndex].erase(itHistory[historyIndex].end() + cursorPos - 1);
-			x--;
 		}
 	}
 	else if (key == KEY_LEFT)
@@ -100,80 +110,50 @@ void IOHandler::handleKey(vector<string>& itHistory, int key)
 		cursorPos--;
 		if (-cursorPos > itHistory[historyIndex].size())
 			cursorPos = -itHistory[historyIndex].size();
-		else
-			x--;
 	}
 	else if (key == KEY_RIGHT)
 	{
 		cursorPos++;
 		if (cursorPos > 0)
 			cursorPos = 0;
-		else
-			x++;
 	}
 	else if (key == KEY_UP)
 	{
 		historyIndex = historyIndex == itHistory.size() - 1 ? historyIndex : historyIndex + 1;
 		cursorPos = 0;
-		disableMoveBack = true;
 	}
 	else if (key == KEY_DOWN)
 	{
 		historyIndex = historyIndex == 0 ? historyIndex : historyIndex - 1;
 		cursorPos = 0;
-		disableMoveBack = true;
 	}
 	else
 	{
 		itHistory[historyIndex].insert(itHistory[historyIndex].end() + cursorPos, key);
-		x++;
 	}
 	
-	if (x < 0)
+	printf("%s", itHistory[historyIndex].c_str());
+	
+	// moves the cursor to the right pos
+	for (int i = cursorPos; i < 0; ++i)
 	{
-		x = xMax;
-		y--;
+		printf("\b");
 	}
-	else if (x > xMax)
-	{
-		x = 0;
-		y++;
-	}
-	
-	printw("%s", itHistory[historyIndex].c_str());
-	
-	// does the move back movement
-	if (!disableMoveBack)
-		move(y, x);
 }
 
 void IOHandler::start()
 {
-	// init ncurses
-	initscr();
-	// ncurses -> handling special keys
-	keypad(stdscr, TRUE);
-	// ncurses -> no echo
-	noecho();
-	// ncurses -> set to true so the window will scroll
-	scrollok(stdscr, TRUE);
-}
-
-void IOHandler::refreshIt()
-{
-	// ncurses -> updates the screen
-	refresh();
+	
 }
 
 void IOHandler::end()
 {
-	// end ncurses
-	endwin();
+	
 }
 
 void IOHandler::print(const char* s)
 {
-	printw("%s", s);
+	printf("%s", s);
 }
 
 vector<string> IOHandler::createIterationHistory()
