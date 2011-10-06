@@ -19,8 +19,8 @@ public:
 	vector<string> startIteration(string);
 	bool endIteration(vector<string>&);
 	int getHistoryIndex();
-	int readKey();
-	void handleKey(vector<string>&, int);
+	int readKey(bool&);
+	void handleKey(vector<string>&, int, bool);
 	void start();
 	void end();
 	void print(const char* s);

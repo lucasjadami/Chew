@@ -18,6 +18,7 @@ public:
 	string getIn();
 	string getOut();
 	string getCmd();
+	string getFirstParam();
 	const char** buildArgs();
 	void destroyArgs();
 	

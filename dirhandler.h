@@ -15,7 +15,7 @@ public:
 
 private:
 
-	string getCurrentPath();
+	void getCurrentPath(string&);
 	string getUserString();
 	string getHomeDir();
 

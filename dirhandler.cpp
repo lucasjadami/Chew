@@ -11,7 +11,9 @@
 // returns a string starting with * on error
 string DirHandler::getWorkingDir()
 {
-	string dir = getCurrentPath();
+	string dir;
+	getCurrentPath(dir);
+	
 	if (dir.size() == 0)
 	{
 		dir = "*";
@@ -20,18 +22,6 @@ string DirHandler::getWorkingDir()
 	}
 	
 	dir += "$";
-	
-	string homeDir = getHomeDir();
-	if (homeDir.size() == 0)
-	{
-		dir = "*";
-		dir += strerror(errno);
-		return dir;
-	}
-	
-	// TODO: test on other computers, with different home dirs
-	if (dir.find_first_of(homeDir) == 0)
-		dir = dir.substr(homeDir.size() + 2);
 	
 	dir = getUserString() + dir;
 		
@@ -43,14 +33,13 @@ string DirHandler::setDir(string path)
 {
 	// result of the set dir; empty on success
 	string s;
+	string home = getHomeDir();
 	
 	int result;
-	if (path.size() == 0)
-		result = chdir(getHomeDir().c_str());
-	else if (path[0] != '/')
-		result = chdir(getCurrentPath().append(path).c_str());
-	else
+	if (path.size() > 0)
 		result = chdir(path.c_str());
+	else
+		result = chdir(home.c_str());
 	
 	if (result == -1)
 		s = strerror(errno);
@@ -59,17 +48,13 @@ string DirHandler::setDir(string path)
 }
 
 // returns empty string on error
-string DirHandler::getCurrentPath()
+void DirHandler::getCurrentPath(string& path)
 {
-	char s[MAX_SIZE];
-	string path;
+	path = "";
+	char s[MAX_SIZE + 1];
 	
 	if (getcwd(s, MAX_SIZE) != NULL)
 		path = s;
-	else
-		path = "";
-		
-	return path;
 }
 
 string DirHandler::getUserString()

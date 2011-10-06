@@ -37,6 +37,14 @@ string Command::getCmd()
 	return cmd;
 }
 
+string Command::getFirstParam()
+{
+	string param = "";
+	if (params.size() > 0)
+		param = params[0];
+	return param;
+}
+
 // TODO: fix pointer bug
 const char** Command::buildArgs()
 {

@@ -10,6 +10,7 @@
 #define KEY_DOWN 66
 #define KEY_RIGHT 67
 #define KEY_LEFT 68
+#define KEY_TAB 9
 
 #ifdef DEBUG_PRINT
 void IOHandler::debugPrint(const char* s)
@@ -61,7 +62,7 @@ int IOHandler::getHistoryIndex()
 	return historyIndex;
 }
 
-int IOHandler::readKey()
+int IOHandler::readKey(bool& specialChar)
 {
 	struct termios oldT, newT;
 	int ch;
@@ -70,7 +71,9 @@ int IOHandler::readKey()
 	newT.c_lflag &= ~(ICANON | ECHO);
 	tcsetattr(STDIN_FILENO, TCSANOW, &newT);
 	ch = getchar();
-	
+	// if the key is the 27, a special char will be read (arrow keys)
+	specialChar = ch == 27;
+	printf("%d\n", ch);
 	if (ch == 27)
 	{
 		ch = getchar();
@@ -82,7 +85,7 @@ int IOHandler::readKey()
 	return ch;
 }
 
-void IOHandler::handleKey(vector<string>& itHistory, int key)
+void IOHandler::handleKey(vector<string>& itHistory, int key, bool specialChar)
 {
 	// move towards the end of the command, putting blanks
 	for (int i = cursorPos; i < 0; ++i)
@@ -105,24 +108,28 @@ void IOHandler::handleKey(vector<string>& itHistory, int key)
 			itHistory[historyIndex].erase(itHistory[historyIndex].end() + cursorPos - 1);
 		}
 	}
-	else if (key == KEY_LEFT)
+	else if (key == KEY_TAB)
+	{
+		// TODO: auto-complete
+	}
+	else if (key == KEY_LEFT && specialChar)
 	{
 		cursorPos--;
 		if (-cursorPos > (int) itHistory[historyIndex].size())
 			cursorPos = -itHistory[historyIndex].size();
 	}
-	else if (key == KEY_RIGHT)
+	else if (key == KEY_RIGHT && specialChar)
 	{
 		cursorPos++;
 		if (cursorPos > 0)
 			cursorPos = 0;
 	}
-	else if (key == KEY_UP)
+	else if (key == KEY_UP && specialChar)
 	{
 		historyIndex = historyIndex == (int) itHistory.size() - 1 ? historyIndex : historyIndex + 1;
 		cursorPos = 0;
 	}
-	else if (key == KEY_DOWN)
+	else if (key == KEY_DOWN && specialChar)
 	{
 		historyIndex = historyIndex == 0 ? historyIndex : historyIndex - 1;
 		cursorPos = 0;
