@@ -48,7 +48,7 @@ int main()
 		runner.run(commands[0], ioHandler);
 		
 #ifdef DEBUG_PRINT
-		for (int i = 0; i < commands.size(); ++i)
+		for (int i = 0; i < (int) commands.size(); ++i)
 			commands[i].print();
 #endif
 	}

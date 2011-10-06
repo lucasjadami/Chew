@@ -38,7 +38,7 @@ bool IOHandler::endIteration(vector<string>& itHistory)
 	
 	int i = historyIndex == -1 ? 0 : 1;
 	// merges the itHistory on the commandsHistory
-	while (i != itHistory.size())
+	while (i != (int) itHistory.size())
 	{
 		// do not merges the command on the position of the most recent command (LINUX behavior)
 		if (i != historyIndex)
@@ -100,7 +100,7 @@ void IOHandler::handleKey(vector<string>& itHistory, int key)
 	
 	if (key == KEY_BACKSPACE)
 	{
-		if (itHistory[historyIndex].size() > 0 && -cursorPos < itHistory[historyIndex].size())
+		if (itHistory[historyIndex].size() > 0 && -cursorPos < (int) itHistory[historyIndex].size())
 		{
 			itHistory[historyIndex].erase(itHistory[historyIndex].end() + cursorPos - 1);
 		}
@@ -108,7 +108,7 @@ void IOHandler::handleKey(vector<string>& itHistory, int key)
 	else if (key == KEY_LEFT)
 	{
 		cursorPos--;
-		if (-cursorPos > itHistory[historyIndex].size())
+		if (-cursorPos > (int) itHistory[historyIndex].size())
 			cursorPos = -itHistory[historyIndex].size();
 	}
 	else if (key == KEY_RIGHT)
@@ -119,7 +119,7 @@ void IOHandler::handleKey(vector<string>& itHistory, int key)
 	}
 	else if (key == KEY_UP)
 	{
-		historyIndex = historyIndex == itHistory.size() - 1 ? historyIndex : historyIndex + 1;
+		historyIndex = historyIndex == (int) itHistory.size() - 1 ? historyIndex : historyIndex + 1;
 		cursorPos = 0;
 	}
 	else if (key == KEY_DOWN)

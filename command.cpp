@@ -40,14 +40,15 @@ string Command::getCmd()
 // TODO: fix pointer bug
 const char** Command::buildArgs()
 {
-	args = new const char*[params.size()+1];
+	args = new const char*[params.size()+2];
 	args[0] = cmd.c_str();
-	for (int i = 0; i < params.size(); ++i)
+	for (int i = 0; i < (int) params.size(); ++i)
 		args[i+1] = params[i].c_str();
 		args[params.size()+1] = 0;
+	args[params.size()+1] = 0;
 #ifdef DEBUG_PRINT
 	string s;
-	for (int i = 0; i < params.size()+1; ++i)
+	for (int i = 0; i < (int) params.size()+1; ++i)
 	{
 		stringstream ss;
 		ss << "argv[";
@@ -76,7 +77,7 @@ void Command::print()
 	s += cmd.c_str();
 	s += "\n";
 	s += "Params:";
-	for (int i = 0; i < params.size(); ++i)
+	for (int i = 0; i < (int) params.size(); ++i)
 	{
 		s += " [";
 		s += params[i].c_str();

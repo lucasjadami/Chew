@@ -1,4 +1,4 @@
-FLAGS=-g -D DEBUG_PRINT
+FLAGS=-g -Wall -D DEBUG_PRINT
 CC=g++
 
 all: chew

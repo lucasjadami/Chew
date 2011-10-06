@@ -67,7 +67,7 @@ void Parser::getWord(istringstream& stream, string& str)
 		return;
 	str = aux;
 	// checks if it is an opening "
-	if (aux[0] == '"' && aux[aux.size()-1] != '"' || aux == "\"")
+	if ((aux[0] == '"' && aux[aux.size()-1] != '"') || aux == "\"")
 	{
 		while (stream >> aux)
 		{
