@@ -10,14 +10,14 @@ class DirHandler
 
 public:
 
-	string getWorkingDir();
-	string setDir(string path);
+	bool getWorkingPath(string&);
+	bool setDir(string);
 
 private:
 
-	void getCurrentPath(string&);
-	string getUserString();
-	string getHomeDir();
+	bool getCurrentPath(string&);
+	bool getUserString(string&);
+	bool getHomeDir(string&);
 
 };
 

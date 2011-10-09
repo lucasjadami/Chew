@@ -3,81 +3,78 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <pwd.h>
-#include <errno.h>
-#include <cstring>
 
 #define MAX_SIZE 1024
 
-// returns a string starting with * on error
-string DirHandler::getWorkingDir()
+// returns true on success, the string var must be passed as param
+bool DirHandler::getWorkingPath(string& path)
 {
-	string dir;
-	getCurrentPath(dir);
+	string user;
+	if (!getCurrentPath(path) || !getUserString(user))
+		return false;
 	
-	if (dir.size() == 0)
-	{
-		dir = "*";
-		dir += strerror(errno);
-		return dir;
-	}
-	
-	dir += "$";
-	
-	dir = getUserString() + dir;
+	path += "$";
+	path = user + path;
 		
-	return dir;	
+	return true;	
 }
 
-// returns the error string on error
-string DirHandler::setDir(string path)
+// returns false on error
+bool DirHandler::setDir(string path)
 {
-	// result of the set dir; empty on success
-	string s;
-	string home = getHomeDir();
+	string home;
+	
+	if (!getHomeDir(home))
+		return false;
 	
 	int result;
 	if (path.size() > 0)
 		result = chdir(path.c_str());
 	else
+	// empty 'cd', goes to home
 		result = chdir(home.c_str());
 	
-	if (result == -1)
-		s = strerror(errno);
-		
-	return s;
+	return result != -1;
 }
 
-// returns empty string on error
-void DirHandler::getCurrentPath(string& path)
+// returns false on error
+bool DirHandler::getCurrentPath(string& path)
 {
 	path = "";
 	char s[MAX_SIZE + 1];
 	
 	if (getcwd(s, MAX_SIZE) != NULL)
 		path = s;
+		
+	return path.size() > 0;
 }
 
-string DirHandler::getUserString()
+// returns false on error
+bool DirHandler::getUserString(string& user)
 {
 	char s[MAX_SIZE];
-	string user;
-	int result;
 	const char* login;
 	
 	login = getlogin();
-	user = login == NULL ? "-" : login;
+	
+	if (login == NULL)
+		return false;
+		
+	user = login;
 	user += "@";
-	result = gethostname(s, MAX_SIZE);
-	user += result == 0 ? s : "-";	
+	
+	if (gethostname(s, MAX_SIZE) == -1)
+		return false;
+		
+	user += s;	
 	user += ":";
 	
-	return user;
+	return true;
 }
 
-// returns empty string on error
-string DirHandler::getHomeDir()
+// returns false on error
+bool DirHandler::getHomeDir(string& home)
 {
-	string home;
 	struct passwd* pw = getpwuid(getuid());
 	
 	if (pw != NULL)
@@ -86,5 +83,5 @@ string DirHandler::getHomeDir()
 		home = homeDir;
 	}
 	
-	return home;
+	return pw != NULL;
 }

@@ -73,7 +73,6 @@ int IOHandler::readKey(bool& specialChar)
 	ch = getchar();
 	// if the key is the 27, a special char will be read (arrow keys)
 	specialChar = ch == 27;
-	printf("%d\n", ch);
 	if (ch == 27)
 	{
 		ch = getchar();

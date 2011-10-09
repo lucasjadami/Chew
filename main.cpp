@@ -22,19 +22,23 @@ int main()
 	while (1)
 	{
 		// starts the command iteration, reseting everything
-		vector<string> itHistory = ioHandler.startIteration(dirHandler.getWorkingDir());
+		string path;
+		if (!dirHandler.getWorkingPath(path))
+			path = "ERROR$";
+		vector<string> itHistory = ioHandler.startIteration(path);
 		key = 0;
 		
 		// gets keys until the RETURN is typed
 		while (key != KEY_RETURN)
 		{
-			key = ioHandler.readKey();
+			bool specialChar;
+			key = ioHandler.readKey(specialChar);
 			
 			if (key == KEY_RETURN)
 				continue;
 			
 			// handles the keys properly
-			ioHandler.handleKey(itHistory, key);
+			ioHandler.handleKey(itHistory, key, specialChar);
 		}
 		
 		// ends the iteration, saving everything done
@@ -45,6 +49,7 @@ int main()
 		// parses the line typed commands
 		vector<Command> commands;
 		parser.parseLine(itHistory[ioHandler.getHistoryIndex()], commands);
+		// TODO 'cd' handling + all commands parsing
 		runner.run(commands[0], ioHandler);
 		
 #ifdef DEBUG_PRINT
