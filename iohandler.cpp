@@ -79,6 +79,11 @@ int IOHandler::readKey(bool& specialChar)
 		if (ch == 91)
 			ch = getchar();
 	}
+	else if (ch == 195)
+	{
+		// note: does not support accents
+		ch = getchar();
+	}
 	
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldT);
 	return ch;
