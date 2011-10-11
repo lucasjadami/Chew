@@ -2,6 +2,7 @@
 #include "iohandler.h"
 #include "runner.h"
 #include "dirhandler.h"
+#include <cstdio>
 
 #define KEY_RETURN 10
 
@@ -50,7 +51,8 @@ int main()
 		vector<Command> commands;
 		parser.parseLine(itHistory[ioHandler.getHistoryIndex()], commands);
 		// TODO 'cd' handling + all commands parsing
-		runner.run(commands[0], ioHandler);
+		for (int i = 0; i < (int) commands.size(); ++i)
+			runner.run(commands[i], ioHandler, i == 0, i == (int) commands.size()-1);
 		
 #ifdef DEBUG_PRINT
 		for (int i = 0; i < (int) commands.size(); ++i)

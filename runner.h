@@ -13,9 +13,12 @@ public:
 	Runner();
 	~Runner();
 	
-	int run(Command&, IOHandler&);
+	int run(Command&, IOHandler&, bool, bool);
 	
 private:
+
+	char* one;
+	char* two;
 
 };
 
