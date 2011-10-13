@@ -2,7 +2,11 @@
 #include "iohandler.h"
 #include "runner.h"
 #include "dirhandler.h"
-#include <cstdio>
+#include "jobshandler.h"
+
+#include <signal.h>
+#include <cstdlib>
+#include <unistd.h>
 
 #define KEY_RETURN 10
 
@@ -12,9 +16,29 @@ IOHandler ioHandler;
 Parser parser;
 Runner runner;
 DirHandler dirHandler;
+JobsHandler jobsHandler;
+
+void sigHandler(int signum)
+{
+    if (signum == SIGINT)
+    {
+    	if (!jobsHandler.handleInterrupt())
+    		exit(0);
+    }
+    else if (signum == SIGTSTP)
+    {
+    	if (!jobsHandler.handleStop())
+    	{
+    		// TODO stop it
+    	}
+    }
+}
 
 int main()
-{		
+{	
+	signal(SIGINT, sigHandler);
+	signal(SIGTSTP, sigHandler);
+		
 	// starts io
 	ioHandler.start();
 	
@@ -50,7 +74,7 @@ int main()
 		// parses the line typed commands
 		vector<Command> commands;
 		parser.parseLine(itHistory[ioHandler.getHistoryIndex()], commands);
-		// TODO 'cd' handling + all commands parsing
+		// TODO 'cd' handling, 'jobs' 'fg' & 'bg' handling
 		for (int i = 0; i < (int) commands.size(); ++i)
 			runner.run(commands[i], ioHandler, i == 0, i == (int) commands.size()-1);
 		

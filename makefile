@@ -3,8 +3,8 @@ CC=g++
 
 all: chew
 
-chew: main.o parser.o command.o iohandler.o runner.o dirhandler.o
-	$(CC) $(FLAGS) main.o parser.o command.o iohandler.o runner.o dirhandler.o -o chew
+chew: main.o parser.o command.o iohandler.o runner.o dirhandler.o jobshandler.o
+	$(CC) $(FLAGS) main.o parser.o command.o iohandler.o runner.o dirhandler.o jobshandler.o -o chew
 
 main.o: main.cpp
 	$(CC) -c $(FLAGS) main.cpp
@@ -23,6 +23,9 @@ runner.o: runner.cpp
 	
 dirhandler.o: dirhandler.cpp
 	$(CC) -c $(FLAGS) dirhandler.cpp
+	
+jobshandler.o: jobshandler.cpp
+	$(CC) -c $(FLAGS) jobshandler.cpp
 	
 clean:
 	rm -rf *o chew
