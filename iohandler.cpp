@@ -1,8 +1,6 @@
 #include "iohandler.h"
 
 #include <cstdio>
-#include <termios.h>
-#include <unistd.h>
 
 #define KEY_SPACE 32
 #define KEY_BACKSPACE 127
@@ -59,7 +57,7 @@ int IOHandler::getHistoryIndex()
 
 int IOHandler::readKey(bool& specialChar)
 {
-	struct termios oldT, newT;
+	struct termios newT;
 	int ch;
 	tcgetattr(STDIN_FILENO, &oldT);
 	newT = oldT;
@@ -81,6 +79,7 @@ int IOHandler::readKey(bool& specialChar)
 	}
 	
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldT);
+	
 	return ch;
 }
 
@@ -154,7 +153,7 @@ void IOHandler::start()
 
 void IOHandler::end()
 {
-	
+	tcsetattr(STDIN_FILENO, TCSANOW, &oldT);
 }
 
 void IOHandler::print(const char* s)

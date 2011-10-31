@@ -73,10 +73,9 @@ int Runner::run(Command& cmd, IOHandler& ioHandler, DirHandler& dirHandler, bool
 	}
 	else if (cmd.getCmd() == "kill")
 	{
+		int process = -1, signal = -1;
 		if (cmd.getParams().size() >= 2)
 		{
-			// TODO: better error handling?
-			int process, signal;
 			stringstream ss;
 			ss << cmd.getParams()[0];
 			ss << " ";

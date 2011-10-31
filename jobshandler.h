@@ -3,8 +3,8 @@
 
 #include "iohandler.h"
 
-#include <vector>
-#include <string>
+#include <unistd.h>
+#include <signal.h>
 
 using namespace std;
 
@@ -16,6 +16,7 @@ public:
 	bool handleStop();
 	bool handleInterrupt();
 	void showJobs(IOHandler&);
+	bool init(void (*)(int, siginfo_t*, void*));
 
 private:
 

@@ -50,7 +50,6 @@ string Command::getFirstParam()
 	return param;
 }
 
-// TODO: fix pointer bug
 const char** Command::buildArgs()
 {
 	args = new const char*[params.size()+2];

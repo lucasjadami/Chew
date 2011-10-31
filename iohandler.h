@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <string>
+#include <termios.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -29,6 +31,7 @@ private:
 
 	vector<string> createIterationHistory();
 	
+	struct termios oldT;
 	int cursorPos;
 	int historyIndex;
 	vector<string> commandsHistory;

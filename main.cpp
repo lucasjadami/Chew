@@ -19,29 +19,41 @@ Runner runner;
 DirHandler dirHandler;
 JobsHandler jobsHandler;
 
-void sigHandler(int signum)
+void sigHandler(int sigNum, siginfo_t* sigInfo, void* context)
 {
-    if (signum == SIGINT)
-    {
-    	if (!jobsHandler.handleInterrupt())
-    		exit(0);
-    }
-    else if (signum == SIGTSTP)
-    {
-    	if (!jobsHandler.handleStop())
-    	{
-    		// TODO stop it
-    	}
-    }
+	//printf ("Sending PID: %ld, UID: %ld\n", (long)siginfo->si_pid, (long)siginfo->si_uid);
+	
+	if (sigNum == SIGINT)
+	{
+		if (!jobsHandler.handleInterrupt())
+		{
+			ioHandler.end();
+			exit(0);
+		}
+	}
+	else if (sigNum == SIGCHLD)
+	{
+		// TODO
+	}
+	else if (sigNum == SIGTSTP)
+	{
+		if (!jobsHandler.handleStop())
+		{
+			// TODO stop it
+		}
+	}
 }
 
 int main()
-{	
-	signal(SIGINT, sigHandler);
-	signal(SIGTSTP, sigHandler);
-		
+{		
 	// starts io
 	ioHandler.start();
+	
+	if (!jobsHandler.init(sigHandler))
+	{
+		ioHandler.print("Could not start Chew, error on jobs initialization.\n");
+		return -1;
+	}
 	
 	int key;
 
