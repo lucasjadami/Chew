@@ -17,7 +17,7 @@ public:
 #endif
 
 	vector<string> startIteration(string);
-	bool endIteration(vector<string>&);
+	void endIteration(vector<string>&);
 	int getHistoryIndex();
 	int readKey(bool&);
 	void handleKey(vector<string>&, int, bool);

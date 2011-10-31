@@ -18,6 +18,7 @@ public:
 	string getIn();
 	string getOut();
 	string getCmd();
+	vector<string> getParams();
 	string getFirstParam();
 	const char** buildArgs();
 	void destroyArgs();

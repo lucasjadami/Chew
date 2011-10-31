@@ -3,6 +3,7 @@
 
 #include "command.h"
 #include "iohandler.h"
+#include "dirhandler.h"
 
 // the Runner class executes a command
 class Runner
@@ -13,12 +14,12 @@ public:
 	Runner();
 	~Runner();
 	
-	int run(Command&, IOHandler&, bool, bool);
+	int run(Command&, IOHandler&, DirHandler&, bool, bool);
 	
 private:
 
-	char* one;
-	char* two;
+	const char* one;
+	const char* two;
 
 };
 

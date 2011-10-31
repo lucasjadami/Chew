@@ -27,12 +27,9 @@ vector<string> IOHandler::startIteration(string path)
 	return createIterationHistory();
 }
 
-bool IOHandler::endIteration(vector<string>& itHistory)
+void IOHandler::endIteration(vector<string>& itHistory)
 {
 	printf("%c", '\n');
-	
-	if (itHistory[historyIndex] == "exit")
-		return true;
 		
 	// adds the current itHistory command to the beginning, because it is the most recent command
 	commandsHistory.insert(commandsHistory.begin(), itHistory[historyIndex]);
@@ -53,8 +50,6 @@ bool IOHandler::endIteration(vector<string>& itHistory)
 	// checks if the command is an empty one, to remove it
 	if (commandsHistory[0].size() == 0)
 		commandsHistory.erase(commandsHistory.begin());
-	
-	return false;
 }
 
 int IOHandler::getHistoryIndex()

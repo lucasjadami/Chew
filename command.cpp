@@ -37,6 +37,11 @@ string Command::getCmd()
 	return cmd;
 }
 
+vector<string> Command::getParams()
+{
+	return params;
+}
+
 string Command::getFirstParam()
 {
 	string param = "";

@@ -12,10 +12,10 @@ public:
 
 	bool getWorkingPath(string&);
 	bool setDir(string);
+	bool getCurrentPath(string&);
 
 private:
 
-	bool getCurrentPath(string&);
 	bool getUserString(string&);
 	bool getHomeDir(string&);
 

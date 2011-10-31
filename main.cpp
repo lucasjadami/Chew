@@ -7,6 +7,7 @@
 #include <signal.h>
 #include <cstdlib>
 #include <unistd.h>
+#include <string>
 
 #define KEY_RETURN 10
 
@@ -66,17 +67,16 @@ int main()
 			ioHandler.handleKey(itHistory, key, specialChar);
 		}
 		
-		// ends the iteration, saving everything done
-		// if it returns true, it means the "exit" was typed on the iteration
-		if (ioHandler.endIteration(itHistory))
-			break;
+		// ends the iteration, saving everything done.
+		ioHandler.endIteration(itHistory);
 			
 		// parses the line typed commands
 		vector<Command> commands;
 		parser.parseLine(itHistory[ioHandler.getHistoryIndex()], commands);
-		// TODO 'cd' handling, 'jobs' 'fg' & 'bg' handling
+		
+		// TODO 'jobs' 'fg' & 'bg' handling
 		for (int i = 0; i < (int) commands.size(); ++i)
-			runner.run(commands[i], ioHandler, i == 0, i == (int) commands.size()-1);
+			runner.run(commands[i], ioHandler, dirHandler, i == 0, i == (int) commands.size()-1);
 		
 #ifdef DEBUG_PRINT
 		for (int i = 0; i < (int) commands.size(); ++i)
