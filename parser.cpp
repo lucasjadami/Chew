@@ -12,7 +12,7 @@ Parser::~Parser()
 
 }
 
-void Parser::parseLine(string& line, vector<Command>& commands)
+bool Parser::parseLine(string& line, vector<Command>& commands)
 {
 	string str;
 	istringstream stream(line);
@@ -42,6 +42,15 @@ void Parser::parseLine(string& line, vector<Command>& commands)
 	}
 	// last command
 	addCommand(commands, params, in, out, append);
+	
+	if (commands.size() > 0 && commands[commands.size() - 1].getParams().size() > 0 && commands[commands.size() - 1].getParams()[
+		commands[commands.size() - 1].getParams().size() - 1] == "&")
+	{
+		commands[commands.size() - 1].getParams().pop_back();
+		return true;
+	}
+	else
+		return false;
 }
 
 void Parser::addCommand(vector<Command>& commands, vector<string>& params, string& in, string& out, bool& append)

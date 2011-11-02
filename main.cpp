@@ -21,8 +21,6 @@ JobsHandler jobsHandler;
 
 void sigHandler(int sigNum, siginfo_t* sigInfo, void* context)
 {
-	//printf ("Sending PID: %ld, UID: %ld\n", (long)siginfo->si_pid, (long)siginfo->si_uid);
-	
 	if (sigNum == SIGINT)
 	{
 		if (!jobsHandler.handleInterrupt())
@@ -33,7 +31,7 @@ void sigHandler(int sigNum, siginfo_t* sigInfo, void* context)
 	}
 	else if (sigNum == SIGCHLD)
 	{
-		// TODO
+		// TODO ?
 	}
 	else if (sigNum == SIGTSTP)
 	{
@@ -84,11 +82,10 @@ int main()
 			
 		// parses the line typed commands
 		vector<Command> commands;
-		parser.parseLine(itHistory[ioHandler.getHistoryIndex()], commands);
+		bool background = parser.parseLine(itHistory[ioHandler.getHistoryIndex()], commands);
 		
-		// TODO 'jobs' 'fg' & 'bg' handling
-		for (int i = 0; i < (int) commands.size(); ++i)
-			runner.run(commands[i], ioHandler, dirHandler, i == 0, i == (int) commands.size()-1);
+		if (commands.size() > 0)
+			runner.runChain(commands, ioHandler, dirHandler, jobsHandler, background);
 		
 #ifdef DEBUG_PRINT
 		for (int i = 0; i < (int) commands.size(); ++i)

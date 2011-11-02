@@ -23,14 +23,77 @@ Runner::~Runner()
 
 }
 
-// TODO: handle errors
-int Runner::run(Command& cmd, IOHandler& ioHandler, DirHandler& dirHandler, bool first, bool last)
+void Runner::runChain(vector<Command>& commands, IOHandler& ioHandler, DirHandler& dirHandler, JobsHandler& jobsHandler, bool background)
 {
-	if (cmd.getCmd() == "exit")
+	Command first = commands[0];
+	if (first.getCmd() == "exit")
 	{
 		exit(0);
 	}
-	
+	else if (first.getCmd() == "pwd")
+	{
+		string dir;
+		if (dirHandler.getCurrentPath(dir))
+			ioHandler.print(dir.c_str());
+		else
+			ioHandler.print("ERROR");
+	}
+	else if (first.getCmd() == "cd")
+	{
+		dirHandler.setDir(first.getFirstParam());
+	}
+	else if (first.getCmd() == "jobs")
+	{
+		jobsHandler.showJobs(ioHandler);
+	}
+	else if (first.getCmd() == "kill")
+	{
+		unsigned int process = 0;
+		if (first.getParams().size() >= 1)
+		{
+			stringstream ss;
+			ss << first.getParams()[0];
+			ss >> process;
+
+			jobsHandler.removeJob(process); 
+		}
+	}
+	else
+	{
+		int pid = fork();
+		if (pid != 0)
+		{
+			string chainString;
+			for (unsigned int i = 0; i < commands.size(); ++i)
+				chainString += commands[0].getCmd();
+			
+			if (background)
+			{
+				jobsHandler.addJob(chainString, pid, JOB_BACKGROUND);
+				return;
+			}
+			else
+			{
+				jobsHandler.addJob(chainString, pid, JOB_FOREGROUND);
+				int status;
+				waitpid(pid, &status, WUNTRACED);
+				if (!WIFSIGNALED(status) || WTERMSIG(status) == SIGKILL)
+					jobsHandler.removeJobAsPid(pid); 
+			}
+		}
+		else
+		{
+			for (int i = 0; i < (int) commands.size(); ++i)
+				run(commands[i], ioHandler, dirHandler, jobsHandler, i == 0, i == (int) commands.size()-1);
+		
+			exit(0);
+		}
+	}
+}
+
+// TODO: handle errors
+int Runner::run(Command& cmd, IOHandler& ioHandler, DirHandler& dirHandler, JobsHandler& jobsHandler, bool first, bool last)
+{
 	int infd = STDIN;
 	int outfd = STDOUT;
 	int stdinbak = dup(STDIN);
@@ -59,44 +122,14 @@ int Runner::run(Command& cmd, IOHandler& ioHandler, DirHandler& dirHandler, bool
 		dup2(outfd, STDOUT);
 	}
 
-	if (cmd.getCmd() == "pwd")
+	int pid = fork();
+	if (pid == 0)
 	{
-		string dir;
-		if (dirHandler.getCurrentPath(dir))
-			ioHandler.print(dir.c_str());
-		else
-			ioHandler.print("ERROR");
+		execvp(cmd.getCmd().c_str(), (char* const*) cmd.buildArgs());
+		cmd.destroyArgs();
+		exit(-1);
 	}
-	else if (cmd.getCmd() == "cd")
-	{
-		dirHandler.setDir(cmd.getFirstParam());
-	}
-	else if (cmd.getCmd() == "kill")
-	{
-		int process = -1, signal = -1;
-		if (cmd.getParams().size() >= 2)
-		{
-			stringstream ss;
-			ss << cmd.getParams()[0];
-			ss << " ";
-			ss << cmd.getParams()[1];
-			ss >> process;
-			ss >> signal;
-
-			kill(process, signal);
-		}
-	}
-	else
-	{
-		int pid = fork();
-		if (pid == 0)
-		{
-			execvp(cmd.getCmd().c_str(), (char* const*) cmd.buildArgs());
-			cmd.destroyArgs();
-			exit(-1);
-		}
-		wait(NULL);
-	}
+	wait(NULL);
 
 	if (infd != STDIN)
 		close(infd);

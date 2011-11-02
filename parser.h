@@ -18,7 +18,7 @@ public:
 	Parser();
 	~Parser();
 	
-	void parseLine(string&, vector<Command>&);
+	bool parseLine(string&, vector<Command>&);
 
 private:
 
