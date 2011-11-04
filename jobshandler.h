@@ -9,6 +9,7 @@
 
 #define JOB_BACKGROUND 0
 #define JOB_FOREGROUND 1
+#define JOB_STOPPED 2
 
 using namespace std;
 
@@ -42,18 +43,27 @@ class JobsHandler
 
 public:
 
-	bool handleStop();
-	bool handleInterrupt();
-	bool init(void (*)(int, siginfo_t*, void*));
+	int getMainPid();
+	int getJobPid(unsigned int);
+	bool isMainForeground();
+	bool setupJob();
 	bool removeJob(unsigned int);
-	bool removeJobAsPid(int);
+	bool removeJobByPid(int);
+	bool addJob(string, int, int);
+	bool setJobState(unsigned int, int);
+	bool setJobStateByPid(int, int);
+	bool setMainForeground();
+	bool init();
 	void showJobs(IOHandler&);
-	void addJob(string, int, int);
 
 private:
 
 	vector<Job> jobs;
-
+	int mainPid;
+	int terminalFd;
+	int jobState;
 };
+
+extern JobsHandler jobsHandler;
 
 #endif

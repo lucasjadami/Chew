@@ -2,10 +2,10 @@
 
 #include <unistd.h>
 #include <fcntl.h>
-#include <cstdio>
 #include <sys/wait.h>
 #include <stdlib.h>
 #include <sstream>
+#include <cstdio> /// TODO remove
 
 #define STDIN 0
 #define STDOUT 1
@@ -23,7 +23,7 @@ Runner::~Runner()
 
 }
 
-void Runner::runChain(vector<Command>& commands, IOHandler& ioHandler, DirHandler& dirHandler, JobsHandler& jobsHandler, bool background)
+void Runner::runChain(string line, vector<Command>& commands, IOHandler& ioHandler, DirHandler& dirHandler, JobsHandler& jobsHandler, bool background)
 {
 	Command first = commands[0];
 	if (first.getCmd() == "exit")
@@ -46,46 +46,56 @@ void Runner::runChain(vector<Command>& commands, IOHandler& ioHandler, DirHandle
 	{
 		jobsHandler.showJobs(ioHandler);
 	}
-	else if (first.getCmd() == "kill")
+	else if (first.getCmd() == "fg")
 	{
-		unsigned int process = 0;
+		unsigned int job = 0;
 		if (first.getParams().size() >= 1)
 		{
 			stringstream ss;
 			ss << first.getParams()[0];
-			ss >> process;
+			ss >> job;
 
-			jobsHandler.removeJob(process); 
+			jobsHandler.setJobState(job, JOB_FOREGROUND);
+		}
+	}
+	else if (first.getCmd() == "bg")
+	{
+		unsigned int job = 0;
+		if (first.getParams().size() >= 1)
+		{
+			stringstream ss;
+			ss << first.getParams()[0];
+			ss >> job;
+
+			jobsHandler.setJobState(job, JOB_BACKGROUND);
+		}
+	}
+	else if (first.getCmd() == "kill")
+	{
+		unsigned int job = 0;
+		if (first.getParams().size() >= 1)
+		{
+			stringstream ss;
+			ss << first.getParams()[0];
+			ss >> job;
+
+			jobsHandler.removeJob(job); 
 		}
 	}
 	else
-	{
+	{		
 		int pid = fork();
 		if (pid != 0)
-		{
-			string chainString;
-			for (unsigned int i = 0; i < commands.size(); ++i)
-				chainString += commands[0].getCmd();
-			
-			if (background)
-			{
-				jobsHandler.addJob(chainString, pid, JOB_BACKGROUND);
-				return;
-			}
-			else
-			{
-				jobsHandler.addJob(chainString, pid, JOB_FOREGROUND);
-				int status;
-				waitpid(pid, &status, WUNTRACED);
-				if (!WIFSIGNALED(status) || WTERMSIG(status) == SIGKILL)
-					jobsHandler.removeJobAsPid(pid); 
-			}
+		{	
+			jobsHandler.addJob(line, pid, background ? JOB_BACKGROUND : JOB_FOREGROUND);
 		}
 		else
 		{
 			for (int i = 0; i < (int) commands.size(); ++i)
-				run(commands[i], ioHandler, dirHandler, jobsHandler, i == 0, i == (int) commands.size()-1);
+				run(commands[i], ioHandler, dirHandler, jobsHandler, i == 0, i == (int) commands.size()-1);			
 		
+			jobsHandler.setMainForeground();
+			
 			exit(0);
 		}
 	}
@@ -121,7 +131,7 @@ int Runner::run(Command& cmd, IOHandler& ioHandler, DirHandler& dirHandler, Jobs
 		outfd = open(two, O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR | S_IRGRP);
 		dup2(outfd, STDOUT);
 	}
-
+	
 	int pid = fork();
 	if (pid == 0)
 	{
@@ -129,7 +139,15 @@ int Runner::run(Command& cmd, IOHandler& ioHandler, DirHandler& dirHandler, Jobs
 		cmd.destroyArgs();
 		exit(-1);
 	}
-	wait(NULL);
+	
+	jobsHandler.setupJob();
+	
+	do
+	{
+		wait(NULL);
+	}
+	/// do while the process of execvp exists.
+	while (getpgid(pid) != -1);
 
 	if (infd != STDIN)
 		close(infd);

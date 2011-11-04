@@ -1,4 +1,4 @@
-FLAGS=-g -Wall 
+FLAGS=-g -Wall
 CC=g++
 
 all: chew

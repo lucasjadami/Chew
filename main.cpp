@@ -4,9 +4,6 @@
 #include "dirhandler.h"
 #include "jobshandler.h"
 
-#include <signal.h>
-#include <cstdlib>
-#include <unistd.h>
 #include <string>
 
 #define KEY_RETURN 10
@@ -17,46 +14,21 @@ IOHandler ioHandler;
 Parser parser;
 Runner runner;
 DirHandler dirHandler;
-JobsHandler jobsHandler;
-
-void sigHandler(int sigNum, siginfo_t* sigInfo, void* context)
-{
-	if (sigNum == SIGINT)
-	{
-		if (!jobsHandler.handleInterrupt())
-		{
-			ioHandler.end();
-			exit(0);
-		}
-	}
-	else if (sigNum == SIGCHLD)
-	{
-		// TODO ?
-	}
-	else if (sigNum == SIGTSTP)
-	{
-		if (!jobsHandler.handleStop())
-		{
-			// TODO stop it
-		}
-	}
-}
 
 int main()
 {		
 	// starts io
 	ioHandler.start();
 	
-	if (!jobsHandler.init(sigHandler))
-	{
-		ioHandler.print("Could not start Chew, error on jobs initialization.\n");
-		return -1;
-	}
+	jobsHandler.init();
 	
 	int key;
 
 	while (1)
 	{
+		while (!jobsHandler.isMainForeground())
+			usleep(5);
+		
 		// starts the command iteration, reseting everything
 		string path;
 		if (!dirHandler.getWorkingPath(path))
@@ -82,10 +54,11 @@ int main()
 			
 		// parses the line typed commands
 		vector<Command> commands;
+		string line = itHistory[ioHandler.getHistoryIndex()];
 		bool background = parser.parseLine(itHistory[ioHandler.getHistoryIndex()], commands);
 		
 		if (commands.size() > 0)
-			runner.runChain(commands, ioHandler, dirHandler, jobsHandler, background);
+			runner.runChain(line, commands, ioHandler, dirHandler, jobsHandler, background);
 		
 #ifdef DEBUG_PRINT
 		for (int i = 0; i < (int) commands.size(); ++i)

@@ -6,6 +6,10 @@
 #include "dirhandler.h"
 #include "jobshandler.h"
 
+#include <string>
+
+using namespace std;
+
 // the Runner class executes a command
 class Runner
 {
@@ -15,7 +19,7 @@ public:
 	Runner();
 	~Runner();
 	
-	void runChain(vector<Command>&, IOHandler&, DirHandler&, JobsHandler&, bool);
+	void runChain(string, vector<Command>&, IOHandler&, DirHandler&, JobsHandler&, bool);
 	
 private:
 
