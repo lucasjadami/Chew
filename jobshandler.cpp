@@ -19,8 +19,6 @@ void handleSignal(int sigNum, siginfo_t* sigInfo, void* context)
 	if (sigNum == SIGTSTP || sigNum == SIGINT)
 	{
 		jobsHandler.setMainForeground();
-		if (sigNum == SIGSTOP)
-			kill(getpid(), SIGSTOP);
 	}
 	else if (sigNum == SIGCHLD)
 	{
