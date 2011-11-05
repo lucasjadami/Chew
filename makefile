@@ -1,6 +1,6 @@
 FLAGS=-g -Wall
 CC=g++
-
+	
 all: chew
 
 chew: main.o parser.o command.o iohandler.o runner.o dirhandler.o jobshandler.o
@@ -29,3 +29,6 @@ jobshandler.o: jobshandler.cpp
 	
 clean:
 	rm -rf *o chew
+	
+test: test.cpp
+	$(CC) $(FLAGS) -o test test.cpp

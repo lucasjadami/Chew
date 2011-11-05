@@ -70,17 +70,13 @@ void Runner::runChain(string line, vector<Command>& commands, IOHandler& ioHandl
 			jobsHandler.setJobState(job, JOB_BACKGROUND);
 		}
 	}
-	else if (first.getCmd() == "kill")
+	else if (first.getCmd() == "kill" && first.getParams().size() >= 1 && first.getParams()[0].find("%") == 0)
 	{
 		unsigned int job = 0;
-		if (first.getParams().size() >= 1)
-		{
-			stringstream ss;
-			ss << first.getParams()[0];
-			ss >> job;
-
-			jobsHandler.removeJob(job); 
-		}
+		stringstream ss;
+		ss << first.getParams()[0].substr(1);
+		ss >> job;
+		jobsHandler.removeJob(job);
 	}
 	else
 	{		

@@ -85,6 +85,9 @@ int IOHandler::readKey(bool& specialChar)
 
 void IOHandler::handleKey(vector<string>& itHistory, int key, bool specialChar)
 {
+	if (key == -1)
+		return;
+		
 	// move towards the end of the command, putting blanks
 	for (int i = cursorPos; i < 0; ++i)
 	{
