@@ -12,6 +12,8 @@
 
 using namespace std;
 
+Runner runner;
+
 Runner::Runner()
 {
 	one = ".test1";
@@ -34,7 +36,10 @@ void Runner::runChain(string line, vector<Command>& commands, IOHandler& ioHandl
 	{
 		string dir;
 		if (dirHandler.getCurrentPath(dir))
+		{
+			dir += "\n";
 			ioHandler.print(dir.c_str());
+		}
 		else
 			ioHandler.print("ERROR");
 	}

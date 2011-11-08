@@ -9,14 +9,13 @@
 
 using namespace std;
 
-// the Parser class transforms raw strings into Command objects
+/**
+ * The Parser class transforms raw strings into Command objects.
+ */
 class Parser
 {
 
 public:
-
-	Parser();
-	~Parser();
 	
 	bool parseLine(string&, vector<Command>&);
 
@@ -27,6 +26,8 @@ private:
 	void trim(string&);
 
 };
+
+extern Parser parser;
 
 #endif
 

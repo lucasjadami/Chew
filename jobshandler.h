@@ -13,6 +13,9 @@
 
 using namespace std;
 
+/**
+ * The job class represents a chain running.
+ */
 class Job
 {
 
@@ -32,12 +35,18 @@ public:
 
 private:
 
+	/** The line beeing executed. */
 	string line;
+	/** The pid (it is also the gpid). */
 	int pid;
+	/** State of the job. */
 	int state;
 
 };
 
+/**
+ * Handles the job part.
+ */
 class JobsHandler
 {
 
@@ -58,10 +67,12 @@ public:
 
 private:
 
+	/** Jobs created. */
 	vector<Job> jobs;
+	/* Main pid. */
 	int mainPid;
+	/** The terminal file descriptor. */
 	int terminalFd;
-	int jobState;
 };
 
 extern JobsHandler jobsHandler;

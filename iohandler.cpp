@@ -10,13 +10,24 @@
 #define KEY_LEFT 68
 #define KEY_TAB 9
 
+/** The I/O handler. */
+IOHandler ioHandler;
+
 #ifdef DEBUG_PRINT
+/**
+ * @param s The string to print.
+ */
 void IOHandler::debugPrint(const char* s)
 {
 	printf("\n%s\n", s);
 }
 #endif
 
+/**
+ * Sets the iteration up.
+ * @param path The current path.
+ * @return The history on the beggining of the iteration.
+ */
 vector<string> IOHandler::startIteration(string path)
 {
 	printf("[CHEW] %s ", path.c_str());
@@ -25,18 +36,22 @@ vector<string> IOHandler::startIteration(string path)
 	return createIterationHistory();
 }
 
+/**
+ * Finishes the iteration, updating the history.
+ * @param itHistory The history of the iteration. Used to update the commands history.
+ */
 void IOHandler::endIteration(vector<string>& itHistory)
 {
 	printf("%c", '\n');
 		
-	// adds the current itHistory command to the beginning, because it is the most recent command
+	/// Adds the current itHistory command to the beginning, because it is the most recent command.
 	commandsHistory.insert(commandsHistory.begin(), itHistory[historyIndex]);
 	
 	int i = historyIndex == -1 ? 0 : 1;
-	// merges the itHistory on the commandsHistory
+	/// Merges the itHistory on the commandsHistory.
 	while (i != (int) itHistory.size())
 	{
-		// do not merges the command on the position of the most recent command (LINUX behavior)
+		/// Do not merges the command on the position of the most recent command (LINUX behavior).
 		if (i != historyIndex)
 		{
 			commandsHistory[i] = itHistory[i];
@@ -45,16 +60,23 @@ void IOHandler::endIteration(vector<string>& itHistory)
 		++i;
 	}
 	
-	// checks if the command is an empty one, to remove it
+	/// Checks if the command is an empty one, to remove it.
 	if (commandsHistory[0].size() == 0)
 		commandsHistory.erase(commandsHistory.begin());
 }
 
+/**
+ * @return The history index.
+ */
 int IOHandler::getHistoryIndex()
 {
 	return historyIndex;
 }
 
+/**
+ * @param specialChar Set to true if the key read is an extended key.
+ * @return The key id.
+ */
 int IOHandler::readKey(bool& specialChar)
 {
 	struct termios newT;
@@ -64,7 +86,7 @@ int IOHandler::readKey(bool& specialChar)
 	newT.c_lflag &= ~(ICANON | ECHO);
 	tcsetattr(STDIN_FILENO, TCSANOW, &newT);
 	ch = getchar();
-	// if the key is the 27, a special char will be read (arrow keys)
+	/// If the key is the 27, a special char will be read (arrow keys).
 	specialChar = ch == 27;
 	if (ch == 27)
 	{
@@ -74,7 +96,7 @@ int IOHandler::readKey(bool& specialChar)
 	}
 	else if (ch == 195)
 	{
-		// note: does not support accents
+		/// Note: does not support accents.
 		ch = getchar();
 	}
 	
@@ -83,12 +105,18 @@ int IOHandler::readKey(bool& specialChar)
 	return ch;
 }
 
+/**
+ * With the key given, updates the screen/history.
+ * @param itHistory The iteration history.
+ * @param key The key to handle.
+ * @param specialChar True if it is an extended key.
+ */
 void IOHandler::handleKey(vector<string>& itHistory, int key, bool specialChar)
 {
 	if (key == -1)
 		return;
 		
-	// move towards the end of the command, putting blanks
+	/// Move towards the end of the command, putting blanks.
 	for (int i = cursorPos; i < 0; ++i)
 	{
 		printf(" ");
@@ -96,7 +124,7 @@ void IOHandler::handleKey(vector<string>& itHistory, int key, bool specialChar)
 	
 	int size = itHistory[historyIndex].size();
 	
-	// going backwards trough the beginning of the command, putting blanks
+	/// Going backwards trough the beginning of the command, putting blanks.
 	for (int i = 0; i < size; ++i)
 	{
 		printf("\b \b");
@@ -111,7 +139,7 @@ void IOHandler::handleKey(vector<string>& itHistory, int key, bool specialChar)
 	}
 	else if (key == KEY_TAB)
 	{
-		// TODO: auto-complete
+		/// TODO: auto-complete.
 	}
 	else if (key == KEY_LEFT && specialChar)
 	{
@@ -142,28 +170,40 @@ void IOHandler::handleKey(vector<string>& itHistory, int key, bool specialChar)
 	
 	printf("%s", itHistory[historyIndex].c_str());
 	
-	// moves the cursor to the right pos
+	/// Moves the cursor to the right pos.
 	for (int i = cursorPos; i < 0; ++i)
 	{
 		printf("\b");
 	}
 }
 
+/**
+ * Performs start operations on the I/O.
+ */
 void IOHandler::start()
 {
 	
 }
 
+/**
+ * Finishes the I/O.
+ */
 void IOHandler::end()
 {
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldT);
 }
 
+/**
+ * @param s The string to print.
+ */
 void IOHandler::print(const char* s)
 {
 	printf("%s", s);
 }
 
+/**
+ * @return The iteration history.
+ */
 vector<string> IOHandler::createIterationHistory()
 {
 	vector<string> itHistory = commandsHistory;

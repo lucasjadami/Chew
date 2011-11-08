@@ -2,15 +2,7 @@
 
 #include <sstream>
 
-Parser::Parser()
-{
-
-}
-
-Parser::~Parser()
-{
-
-}
+Parser parser;
 
 bool Parser::parseLine(string& line, vector<Command>& commands)
 {

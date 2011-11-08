@@ -8,6 +8,9 @@
 
 using namespace std;
 
+/**
+ * Constructor.
+ */
 Command::Command(string& cmd, vector<string>& params, string& in, string& out, bool append)
 {
 	this->cmd = cmd;
@@ -17,31 +20,49 @@ Command::Command(string& cmd, vector<string>& params, string& in, string& out, b
 	this->append = append;
 }
 
+/**
+ * Destructor.
+ */
 Command::~Command()
 {
 
 }
 
+/**
+ * @return The in attribute.
+ */
 string Command::getIn()
 {
 	return in;
 }
 
+/**
+ * @return The out attribute.
+ */
 string Command::getOut()
 {
 	return out;
 }
 
+/**
+ * @return The c,d attribute.
+ */
 string Command::getCmd()
 {
 	return cmd;
 }
 
+/**
+ * @return The params attribute.
+ */
 vector<string> Command::getParams()
 {
 	return params;
 }
 
+/**
+ * @return The first param of the command.
+ */
 string Command::getFirstParam()
 {
 	string param = "";
@@ -50,6 +71,9 @@ string Command::getFirstParam()
 	return param;
 }
 
+/**
+ * @return The args attribute.
+ */
 const char** Command::buildArgs()
 {
 	args = new const char*[params.size()+2];
@@ -76,12 +100,18 @@ const char** Command::buildArgs()
 	return args;
 }
 
+/**
+ * Frees the args param.
+ */
 void Command::destroyArgs()
 {
 	delete[] args;
 }
 
 #ifdef DEBUG_PRINT
+/**
+ * Prints the command info.
+ */
 void Command::print()
 {
 	string s;

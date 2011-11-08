@@ -9,9 +9,10 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <sys/wait.h>
-#include <cstdio> /// TODO remove
-#include <errno.h> /// TODO remove
+#include <cstdio> /// TODO: remove.
+#include <errno.h> /// TODO: remove.
 
+/** The jobs handler. */
 JobsHandler jobsHandler;
 
 void handleSignal(int sigNum, siginfo_t* sigInfo, void* context)
@@ -24,6 +25,8 @@ void handleSignal(int sigNum, siginfo_t* sigInfo, void* context)
 	{
 		if (getpid() != jobsHandler.getMainPid())
 		{
+			/// Checks if the child has stopped and sends a stop signal to itself so the main process can catch it.
+			/// Note that the kill/end signals does not need to be sent (they are already sent).
 			if (sigInfo->si_code == CLD_STOPPED)
 				kill(getpid(), SIGSTOP);
 		}
@@ -37,11 +40,18 @@ void handleSignal(int sigNum, siginfo_t* sigInfo, void* context)
 	}
 }
 
+/**
+ * @return The main pid.
+ */
 int JobsHandler::getMainPid()
 {
 	return mainPid;
 }
 
+/**
+ * @param job The job index.
+ * @return The job pid.
+ */
 int JobsHandler::getJobPid(unsigned int job)
 {
 	if (job >= jobs.size())
@@ -49,11 +59,18 @@ int JobsHandler::getJobPid(unsigned int job)
 	return jobs[job].getPid();
 }
 
+/**
+ * @return True if the main process owns the foreground.
+ */
 bool JobsHandler::isMainForeground()
 {
 	return tcgetpgrp(terminalFd) == mainPid;
 }
 
+/**
+ * When a process calls this, it setups the signals as it is a job.
+ * @return True on success.
+ */
 bool JobsHandler::setupJob()
 {
 	struct sigaction action;
@@ -67,6 +84,10 @@ bool JobsHandler::setupJob()
 	return true;
 }
 
+/**
+ * @param job The job index to remove.
+ * @return True on success.
+ */
 bool JobsHandler::removeJob(unsigned int job)
 {
 	if (job >= jobs.size())
@@ -76,6 +97,10 @@ bool JobsHandler::removeJob(unsigned int job)
 	return true;
 }
 
+/**
+ * @param pid The job pid to remove.
+ * @return True on success.
+ */
 bool JobsHandler::removeJobByPid(int pid)
 {
 	for (unsigned int i = 0; i < jobs.size(); ++i)
@@ -90,6 +115,12 @@ bool JobsHandler::removeJobByPid(int pid)
 	return false;
 }
 
+/**
+ * @param line The job line.
+ * @param pid The job pid.
+ * @param state The job state.
+ * @return True on success.
+ */
 bool JobsHandler::addJob(string line, int pid, int state)
 {
 	jobs.push_back(Job(line, pid, state));
@@ -104,6 +135,11 @@ bool JobsHandler::addJob(string line, int pid, int state)
 	return true;
 }
 
+/**
+ * @param job The job index.
+ * @parma state The job state.
+ * @return True on success.
+ */
 bool JobsHandler::setJobState(unsigned int job, int state)
 {
 	if (job >= jobs.size())
@@ -127,6 +163,12 @@ bool JobsHandler::setJobState(unsigned int job, int state)
 	return true;
 }
 
+/**
+ * This method does not take further actions to set the environment for the job!
+ * @param pid The job pid.
+ * @param state The job state.
+ * @return True on success.
+ */
 bool JobsHandler::setJobStateByPid(int pid, int state)
 {
 	for (unsigned int i = 0; i < jobs.size(); ++i)
@@ -141,14 +183,22 @@ bool JobsHandler::setJobStateByPid(int pid, int state)
 	return false;
 }
 
+/**
+ * Sets the main process as the controller of the foreground.
+ * @return True on success.
+ */
 bool JobsHandler::setMainForeground()
 {
-	/// allways check if the current process owns the terminal, or it will get a SIGTTOU signal
+	/// Allways check if the calling process owns the terminal, or it will get a SIGTTOU signal.
 	if (tcgetpgrp(terminalFd) == getpid())
 		return tcsetpgrp(terminalFd, mainPid) == 0;
 	return false;
 }
 
+/**
+ * Inits the handler.
+ * @return True on success.
+ */
 bool JobsHandler::init()
 {
 	if ((terminalFd = open(ctermid(NULL), O_RDONLY)) == -1)
@@ -167,6 +217,10 @@ bool JobsHandler::init()
 	return true;
 }
 
+/**
+ * Lists all the jobs.
+ * @param ioHandler The I/O handler.
+ */
 void JobsHandler::showJobs(IOHandler& ioHandler)
 {
 	for (unsigned int i = 0; i < jobs.size(); ++i)

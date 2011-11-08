@@ -30,4 +30,6 @@ private:
 
 };
 
+extern Runner runner;
+
 #endif

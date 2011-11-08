@@ -4,9 +4,16 @@
 #include <sys/types.h>
 #include <pwd.h>
 
+/** Max size for the directory. */
 #define MAX_SIZE 1024
 
-// returns true on success, the string var must be passed as param
+/** The dir handler. */
+DirHandler dirHandler;
+
+/**
+ * @param path The string to be set as the path.
+ * @return True on success.
+ */
 bool DirHandler::getWorkingPath(string& path)
 {
 	string user;
@@ -19,7 +26,10 @@ bool DirHandler::getWorkingPath(string& path)
 	return true;	
 }
 
-// returns false on error
+/**
+ * @param path The path to set.
+ * @return True on success.
+ */
 bool DirHandler::setDir(string path)
 {
 	string home;
@@ -37,7 +47,10 @@ bool DirHandler::setDir(string path)
 	return result != -1;
 }
 
-// returns false on error
+/**
+ * @param path The string to be set as the path.
+ * @return True on success.
+ */
 bool DirHandler::getCurrentPath(string& path)
 {
 	path = "";
@@ -49,7 +62,10 @@ bool DirHandler::getCurrentPath(string& path)
 	return path.size() > 0;
 }
 
-// returns false on error
+/**
+ * @param user The string to be set as the user.
+ * @return True on success.
+ */
 bool DirHandler::getUserString(string& user)
 {
 	char s[MAX_SIZE];
@@ -72,7 +88,10 @@ bool DirHandler::getUserString(string& user)
 	return true;
 }
 
-// returns false on error
+/**
+ * @param home The string to be set as the home.
+ * @return True on success.
+ */
 bool DirHandler::getHomeDir(string& home)
 {
 	struct passwd* pw = getpwuid(getuid());

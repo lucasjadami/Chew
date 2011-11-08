@@ -10,16 +10,12 @@
 
 using namespace std;
 
-IOHandler ioHandler;
-Parser parser;
-Runner runner;
-DirHandler dirHandler;
-
+/**
+ * This is the main Chew program.
+ */
 int main()
 {		
-	// starts io
 	ioHandler.start();
-	
 	jobsHandler.init();
 	
 	int key;
@@ -29,14 +25,14 @@ int main()
 		while (!jobsHandler.isMainForeground())
 			usleep(5);
 		
-		// starts the command iteration, reseting everything
+		/// Starts the command iteration, reseting everything.
 		string path;
 		if (!dirHandler.getWorkingPath(path))
 			path = "ERROR$";
 		vector<string> itHistory = ioHandler.startIteration(path);
 		key = 0;
 		
-		// gets keys until the RETURN is typed
+		/// Gets keys until the RETURN is typed.
 		while (key != KEY_RETURN)
 		{
 			bool specialChar;
@@ -45,14 +41,14 @@ int main()
 			if (key == KEY_RETURN)
 				continue;
 			
-			// handles the keys properly
+			/// Handles the keys properly.
 			ioHandler.handleKey(itHistory, key, specialChar);
 		}
 		
-		// ends the iteration, saving everything done.
+		/// Ends the iteration, saving everything done.
 		ioHandler.endIteration(itHistory);
 			
-		// parses the line typed commands
+		/// Parses the line typed commands.
 		vector<Command> commands;
 		string line = itHistory[ioHandler.getHistoryIndex()];
 		bool background = parser.parseLine(itHistory[ioHandler.getHistoryIndex()], commands);
@@ -66,7 +62,6 @@ int main()
 #endif
 	}
 	
-	// ends io
 	ioHandler.end();
 	
 	return 0;

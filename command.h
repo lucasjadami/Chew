@@ -6,7 +6,9 @@
 
 using namespace std;
 
-// the Command class contains all necessary data of a shell command
+/**
+ * The Command class contains all necessary data of a shell command.
+ */
 class Command
 {
 
@@ -29,11 +31,17 @@ public:
 
 private:
 	
+	/** The command as string. */
 	string cmd;
+	/** The params. */
 	vector<string> params;
+	/** The in string (<). */
 	string in;
+	/** The out string (>). */
 	string out;
+	/** Append flag. */
 	bool append;
+	/** Array of strings used for the exec system call. */
 	const char** args;
 
 };

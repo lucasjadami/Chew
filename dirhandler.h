@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/**
+ * This class is responsible for handling the directory related system calls.
+ */
 class DirHandler
 {
 
@@ -20,5 +23,7 @@ private:
 	bool getHomeDir(string&);
 
 };
+
+extern DirHandler dirHandler;
 
 #endif

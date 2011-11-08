@@ -7,8 +7,10 @@
 #include <unistd.h>
 
 using namespace std;
-
-// the IOHandler class has the commands (history) handling and the input and output handling
+ 
+/**
+ * The IOHandler class has the commands (history) handling and the input and output handling.
+ */
 class IOHandler
 {
 
@@ -31,11 +33,17 @@ private:
 
 	vector<string> createIterationHistory();
 	
+	/** The old terminal state. It is kept to restore the terminal state on exit. */
 	struct termios oldT;
+	/** The carret position on the input. From 0 to -INF. */
 	int cursorPos;
+	/** The current history index. */
 	int historyIndex;
+	/** Vector containing the commands history. */
 	vector<string> commandsHistory;
 
 };
+
+extern IOHandler ioHandler;
 
 #endif
