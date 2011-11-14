@@ -17,6 +17,9 @@ partes da shell (que foram separadas em classes bem definidas, cada uma com sua 
 - runner.cpp: Executa os comandos.
 - test.cpp: Programa utilizado para testes no desenvolvimento (parte de jobs).
 
+Observação: nossa shell não trata os sinais no processo principal. Isto é, se o processo principal estiver em foreground e o usuário digitar CTRL+C por 
+exemplo, ela sai (deixamos assim, para facilitar nossos testes). 
+
 ///////////////////////////////////////
 ///////////////////////////////////////
 Requisitos cumpridos:
@@ -35,20 +38,29 @@ Requisitos cumpridos:
 
 1.6 - Interpretação da linha de comando: feito no parser.cpp e testado de várias formas.
 
-1.7 - Comandos integrados no shell: jobs, fg, bg, pwd e kill. Os jobs estão completamente implementados e funcionando como a shell do Linux. Porém,
-nosso sitema tem um problema. Quando se usa o CTRL+Z, o processo que está em foreground deve passar o controle para a Chew
-(JobsHandler::setMainForeground). Mas, raramente, a função tcsetpgrp falha e não é possível colocar o processo principal como foreground, travando o
-programa. Se um programa que não está em foreground chama essa função, todo seu grupo recebe o sinal SIGTTOU e a função falha. Esse é um erro que não
-conseguimos resolver. Tente travar nossa Chew, executando o programa de teste (para compilá-lo, use "make test") e apertando CTRL+Z rapidamente. Nossa shell não ignora os sinais no processo principal. Isto é, se o processo principal estiver em foreground e o usuário digitar CTRL+C por exemplo, ela sai (deixamos assim, para facilitar nossos testes). Para usar o kill para matar um job, utilize '%' (exemplo: kill %1).
+1.7 - Comandos integrados no shell: jobs, fg, bg, pwd e kill. Os jobs estão completamente implementados e funcionando como a shell do Linux. 
+Para usar o kill para matar um job, utilize '%' (exemplo: kill %1).
 
 1.8 - Makefile e bibliotecas: o makefile se encontra no arquivo MAKEFILE (é só executar o make para compilar). Não utilizamos nenhuma biblioteca
 extra. Porém, separamos o projeto em classes.
 
-1.9 - Profiling
+1.9 - Profiling: os arquivos de profile são o gprof.out, output.png e gprof2dot.py (usado para gerar a imagem).
 
-1.10 - Extras: nossa shell usa histórico (implementado em iohandler.cpp). Fizemos o histórico o mais parecido possível com o do Linux. Além disso, é possível controlar o cursor, indo para a esquerda e direita.
+1.10 - Extras: nossa shell usa histórico (implementado em iohandler.cpp). Fizemos o histórico o mais parecido possível com o do Linux. Além disso, é 
+possível controlar o cursor, indo para a esquerda e direita.
 
 1.11 - Documentação: utilizamos o doxygen para documentar o código. Ele está todo em inglês pois é open source e está no Github (assim, qualquer pessoa
 pode ver nosso projeto).
 
 1.12 - Testes: não criamos testes automáticos ou coisas do tipo. A parte de jobs e de execução de comandos foi amplamente testada.
+
+1.13 - Bugs:
+
+- defuncts: nossa shell está criando processos defunct. Para visualizar esse problema, execute alguns comandos e depois execute o comando "ps".
+Na função handleSignal em jobshandler.cpp, um sinal para matar todos os processos do grupo que finalizou é enviado mas não surte efeito.
+
+- jobs: quando se usa o CTRL+Z (sinal de stop), o processo que está em foreground deve passar o controle para a Chew (JobsHandler::setMainForeground). 
+Mas, algumas vezes, a função tcsetpgrp falha (pois o processo chamando não detém o foreground) e não é possível colocar o processo principal como 
+foreground, travando o programa. Se um processo que não está em foreground chama essa função, todo seu grupo recebe o sinal SIGTTOU e a função falha. 
+Tente travar a Chew, executando o programa de teste (para compilá-lo, use "make test") e apertando CTRL+Z repetidas vezes.
+

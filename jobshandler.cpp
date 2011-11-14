@@ -33,7 +33,12 @@ void handleSignal(int sigNum, siginfo_t* sigInfo, void* context)
 			if (sigInfo->si_code == CLD_STOPPED)
 				jobsHandler.setJobStateByPid(sigInfo->si_pid, JOB_STOPPED);
 			else if (sigInfo->si_code == CLD_EXITED || sigInfo->si_code == CLD_KILLED || sigInfo->si_code == CLD_DUMPED)
-				jobsHandler.removeJobByPid(sigInfo->si_pid);	
+			{
+				jobsHandler.removeJobByPid(sigInfo->si_pid);
+				/// This should send a signal to kill all processes from the group, destroying defuncts.
+				/// TODO: fix this.
+				killpg(sigInfo->si_pid, SIGKILL);
+			}	
 		}
 	}
 }
@@ -188,6 +193,8 @@ bool JobsHandler::setJobStateByPid(int pid, int state)
 bool JobsHandler::setMainForeground()
 {
 	/// Allways check if the calling process owns the terminal, or it will get a SIGTTOU signal.
+	/// Sometimes, it fails and the program enters on a "deadlock".
+	/// TODO: fix this.
 	if (tcgetpgrp(terminalFd) == getpid())
 		return tcsetpgrp(terminalFd, mainPid) == 0;
 	return false;
