@@ -1,0 +1,1138 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+ no time accumulated
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00    14399     0.00     0.00  JobsHandler::isMainForeground()
+  0.00      0.00     0.00       95     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::size() const
+  0.00      0.00     0.00       87     0.00     0.00  __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::base() const
+  0.00      0.00     0.00       76     0.00     0.00  __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::base() const
+  0.00      0.00     0.00       66     0.00     0.00  __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string* const&)
+  0.00      0.00     0.00       48     0.00     0.00  __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string const* const&)
+  0.00      0.00     0.00       47     0.00     0.00  __gnu_cxx::new_allocator<std::string>::max_size() const
+  0.00      0.00     0.00       44     0.00     0.00  std::_Vector_base<std::string, std::allocator<std::string> >::_M_get_Tp_allocator() const
+  0.00      0.00     0.00       44     0.00     0.00  bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  0.00      0.00     0.00       42     0.00     0.00  operator new(unsigned int, void*)
+  0.00      0.00     0.00       35     0.00     0.00  bool __gnu_cxx::operator!=<std::string const*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > const&)
+  0.00      0.00     0.00       35     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::begin()
+  0.00      0.00     0.00       33     0.00     0.00  std::_Vector_base<std::string, std::allocator<std::string> >::_M_allocate(unsigned int)
+  0.00      0.00     0.00       24     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::end() const
+  0.00      0.00     0.00       24     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::begin() const
+  0.00      0.00     0.00       24     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::max_size() const
+  0.00      0.00     0.00       24     0.00     0.00  std::string* std::__uninitialized_copy<false>::uninitialized_copy<std::string*, std::string*>(std::string*, std::string*, std::string*)
+  0.00      0.00     0.00       24     0.00     0.00  std::string* std::uninitialized_copy<std::string*, std::string*>(std::string*, std::string*, std::string*)
+  0.00      0.00     0.00       24     0.00     0.00  std::string* std::__uninitialized_copy_a<std::string*, std::string*, std::string>(std::string*, std::string*, std::string*, std::allocator<std::string>&)
+  0.00      0.00     0.00       24     0.00     0.00  std::string* std::__uninitialized_move_a<std::string*, std::string*, std::allocator<std::string> >(std::string*, std::string*, std::string*, std::allocator<std::string>&)
+  0.00      0.00     0.00       23     0.00     0.00  __gnu_cxx::new_allocator<std::string>::allocate(unsigned int, void const*)
+  0.00      0.00     0.00       21     0.00     0.00  std::string* std::__uninitialized_copy<false>::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*)
+  0.00      0.00     0.00       21     0.00     0.00  std::string* std::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*)
+  0.00      0.00     0.00       21     0.00     0.00  std::string* std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::string>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::allocator<std::string>&)
+  0.00      0.00     0.00       20     0.00     0.00  __gnu_cxx::new_allocator<std::string>::new_allocator(__gnu_cxx::new_allocator<std::string> const&)
+  0.00      0.00     0.00       20     0.00     0.00  __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::difference_type __gnu_cxx::operator-<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&)
+  0.00      0.00     0.00       20     0.00     0.00  std::allocator<std::string>::allocator(std::allocator<std::string> const&)
+  0.00      0.00     0.00       20     0.00     0.00  std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_impl::_Vector_impl(std::allocator<std::string> const&)
+  0.00      0.00     0.00       20     0.00     0.00  std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_base(unsigned int, std::allocator<std::string> const&)
+  0.00      0.00     0.00       20     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::vector(std::vector<std::string, std::allocator<std::string> > const&)
+  0.00      0.00     0.00       18     0.00     0.00  Command::getCmd()
+  0.00      0.00     0.00       17     0.00     0.00  unsigned int const& std::max<unsigned int>(unsigned int const&, unsigned int const&)
+  0.00      0.00     0.00       16     0.00     0.00  __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::base() const
+  0.00      0.00     0.00       14     0.00     0.00  __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::operator++()
+  0.00      0.00     0.00       14     0.00     0.00  __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::operator*() const
+  0.00      0.00     0.00       14     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::end()
+  0.00      0.00     0.00       13     0.00     0.00  __gnu_cxx::new_allocator<std::string>::construct(std::string*, std::string const&)
+  0.00      0.00     0.00       13     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&)
+  0.00      0.00     0.00       12     0.00     0.00  __gnu_cxx::new_allocator<Command>::max_size() const
+  0.00      0.00     0.00       12     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::_M_check_len(unsigned int, char const*) const
+  0.00      0.00     0.00       10     0.00     0.00  Command::~Command()
+  0.00      0.00     0.00       10     0.00     0.00  std::vector<Command, std::allocator<Command> >::operator[](unsigned int)
+  0.00      0.00     0.00        9     0.00     0.00  Parser::getWord(std::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >&, std::string&)
+  0.00      0.00     0.00        9     0.00     0.00  __gnu_cxx::new_allocator<std::string>::new_allocator()
+  0.00      0.00     0.00        9     0.00     0.00  std::vector<Job, std::allocator<Job> >::size() const
+  0.00      0.00     0.00        9     0.00     0.00  std::allocator<std::string>::allocator()
+  0.00      0.00     0.00        9     0.00     0.00  std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_impl::_Vector_impl()
+  0.00      0.00     0.00        9     0.00     0.00  std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_base()
+  0.00      0.00     0.00        9     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::vector()
+  0.00      0.00     0.00        8     0.00     0.00  Command::getParams()
+  0.00      0.00     0.00        8     0.00     0.00  Command::Command(Command const&)
+  0.00      0.00     0.00        8     0.00     0.00  __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::__normal_iterator(Command* const&)
+  0.00      0.00     0.00        8     0.00     0.00  std::_Vector_base<Command, std::allocator<Command> >::_M_get_Tp_allocator() const
+  0.00      0.00     0.00        8     0.00     0.00  std::vector<Command, std::allocator<Command> >::max_size() const
+  0.00      0.00     0.00        8     0.00     0.00  Command* std::__uninitialized_copy<false>::uninitialized_copy<Command*, Command*>(Command*, Command*, Command*)
+  0.00      0.00     0.00        8     0.00     0.00  Command* std::uninitialized_copy<Command*, Command*>(Command*, Command*, Command*)
+  0.00      0.00     0.00        8     0.00     0.00  Command* std::__uninitialized_copy_a<Command*, Command*, Command>(Command*, Command*, Command*, std::allocator<Command>&)
+  0.00      0.00     0.00        8     0.00     0.00  Command* std::__uninitialized_move_a<Command*, Command*, std::allocator<Command> >(Command*, Command*, Command*, std::allocator<Command>&)
+  0.00      0.00     0.00        7     0.00     0.00  bool __gnu_cxx::operator!=<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&)
+  0.00      0.00     0.00        7     0.00     0.00  std::vector<Job, std::allocator<Job> >::operator[](unsigned int)
+  0.00      0.00     0.00        6     0.00     0.00  __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::__normal_iterator(Job* const&)
+  0.00      0.00     0.00        6     0.00     0.00  __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::base() const
+  0.00      0.00     0.00        6     0.00     0.00  std::__miter_base<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, false>::__b(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >)
+  0.00      0.00     0.00        6     0.00     0.00  std::__niter_base<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, true>::__b(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >)
+  0.00      0.00     0.00        6     0.00     0.00  std::__niter_base<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, true>::__b(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  0.00      0.00     0.00        5     0.00     0.00  Parser::trim(std::string&)
+  0.00      0.00     0.00        5     0.00     0.00  __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::operator+(int const&) const
+  0.00      0.00     0.00        5     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::push_back(std::string const&)
+  0.00      0.00     0.00        4     0.00     0.00  Parser::addCommand(std::vector<Command, std::allocator<Command> >&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool&)
+  0.00      0.00     0.00        4     0.00     0.00  Parser::parseLine(std::string&, std::vector<Command, std::allocator<Command> >&)
+  0.00      0.00     0.00        4     0.00     0.00  Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool)
+  0.00      0.00     0.00        4     0.00     0.00  Command::Command(std::string&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool)
+  0.00      0.00     0.00        4     0.00     0.00  __gnu_cxx::new_allocator<Command>::allocate(unsigned int, void const*)
+  0.00      0.00     0.00        4     0.00     0.00  __gnu_cxx::new_allocator<Command>::construct(Command*, Command const&)
+  0.00      0.00     0.00        4     0.00     0.00  __gnu_cxx::new_allocator<std::string>::destroy(std::string*)
+  0.00      0.00     0.00        4     0.00     0.00  __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::difference_type __gnu_cxx::operator-<Command*, std::vector<Command, std::allocator<Command> > >(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > > const&, __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > > const&)
+  0.00      0.00     0.00        4     0.00     0.00  std::vector<Command, std::allocator<Command> >::_M_check_len(unsigned int, char const*) const
+  0.00      0.00     0.00        4     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::capacity() const
+  0.00      0.00     0.00        4     0.00     0.00  std::_Vector_base<Job, std::allocator<Job> >::_M_get_Tp_allocator()
+  0.00      0.00     0.00        4     0.00     0.00  std::_Vector_base<Command, std::allocator<Command> >::_M_allocate(unsigned int)
+  0.00      0.00     0.00        4     0.00     0.00  std::vector<Command, std::allocator<Command> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >, Command const&)
+  0.00      0.00     0.00        4     0.00     0.00  std::vector<Command, std::allocator<Command> >::end()
+  0.00      0.00     0.00        4     0.00     0.00  std::vector<Command, std::allocator<Command> >::begin()
+  0.00      0.00     0.00        4     0.00     0.00  std::vector<Command, std::allocator<Command> >::push_back(Command const&)
+  0.00      0.00     0.00        4     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::_M_erase_at_end(std::string*)
+  0.00      0.00     0.00        4     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::clear()
+  0.00      0.00     0.00        4     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::erase(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  0.00      0.00     0.00        4     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&)
+  0.00      0.00     0.00        3     0.00     0.00  JobsHandler::getMainPid()
+  0.00      0.00     0.00        3     0.00     0.00  Job::getPid()
+  0.00      0.00     0.00        3     0.00     0.00  __gnu_cxx::new_allocator<Job>::max_size() const
+  0.00      0.00     0.00        3     0.00     0.00  std::string* std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::string const*, std::string*>(std::string const*, std::string const*, std::string*)
+  0.00      0.00     0.00        3     0.00     0.00  void std::_Destroy_aux<false>::__destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  0.00      0.00     0.00        3     0.00     0.00  std::__niter_base<std::string*, false>::__b(std::string*)
+  0.00      0.00     0.00        3     0.00     0.00  std::string* std::__copy_move_a<false, std::string const*, std::string*>(std::string const*, std::string const*, std::string*)
+  0.00      0.00     0.00        3     0.00     0.00  __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  0.00      0.00     0.00        3     0.00     0.00  __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  0.00      0.00     0.00        3     0.00     0.00  void std::_Destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  0.00      0.00     0.00        3     0.00     0.00  void std::_Destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string>(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::allocator<std::string>&)
+  0.00      0.00     0.00        2     0.00     0.00  Job::setState(int)
+  0.00      0.00     0.00        2     0.00     0.00  Job::~Job()
+  0.00      0.00     0.00        2     0.00     0.00  __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::operator+(int const&) const
+  0.00      0.00     0.00        2     0.00     0.00  std::_Vector_base<Job, std::allocator<Job> >::_M_get_Tp_allocator() const
+  0.00      0.00     0.00        2     0.00     0.00  std::vector<Job, std::allocator<Job> >::max_size() const
+  0.00      0.00     0.00        2     0.00     0.00  void std::_Destroy_aux<false>::__destroy<Job*>(Job*, Job*)
+  0.00      0.00     0.00        2     0.00     0.00  std::_Vector_base<Job, std::allocator<Job> >::_M_deallocate(Job*, unsigned int)
+  0.00      0.00     0.00        2     0.00     0.00  std::__miter_base<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, false>::__b(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  0.00      0.00     0.00        2     0.00     0.00  std::__miter_base<std::string*, false>::__b(std::string*)
+  0.00      0.00     0.00        2     0.00     0.00  Job* std::__uninitialized_copy<false>::uninitialized_copy<Job*, Job*>(Job*, Job*, Job*)
+  0.00      0.00     0.00        2     0.00     0.00  std::vector<Job, std::allocator<Job> >::end()
+  0.00      0.00     0.00        2     0.00     0.00  std::vector<Job, std::allocator<Job> >::begin()
+  0.00      0.00     0.00        2     0.00     0.00  Job* std::uninitialized_copy<Job*, Job*>(Job*, Job*, Job*)
+  0.00      0.00     0.00        2     0.00     0.00  Job* std::__uninitialized_copy_a<Job*, Job*, Job>(Job*, Job*, Job*, std::allocator<Job>&)
+  0.00      0.00     0.00        2     0.00     0.00  Job* std::__uninitialized_move_a<Job*, Job*, std::allocator<Job> >(Job*, Job*, Job*, std::allocator<Job>&)
+  0.00      0.00     0.00        2     0.00     0.00  void std::_Destroy<Job*>(Job*, Job*)
+  0.00      0.00     0.00        2     0.00     0.00  void std::_Destroy<Job*, Job>(Job*, Job*, std::allocator<Job>&)
+  0.00      0.00     0.00        2     0.00     0.00  std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to jobsHandler
+  0.00      0.00     0.00        1     0.00     0.00  global constructors keyed to runner
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  JobsHandler::setJobState(unsigned int, int)
+  0.00      0.00     0.00        1     0.00     0.00  JobsHandler::removeJobByPid(int)
+  0.00      0.00     0.00        1     0.00     0.00  JobsHandler::setJobStateByPid(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  JobsHandler::init()
+  0.00      0.00     0.00        1     0.00     0.00  JobsHandler::addJob(std::string, int, int)
+  0.00      0.00     0.00        1     0.00     0.00  JobsHandler::showJobs(IOHandler&)
+  0.00      0.00     0.00        1     0.00     0.00  JobsHandler::JobsHandler()
+  0.00      0.00     0.00        1     0.00     0.00  Job::getLine()
+  0.00      0.00     0.00        1     0.00     0.00  Job::getState()
+  0.00      0.00     0.00        1     0.00     0.00  Job::Job(Job const&)
+  0.00      0.00     0.00        1     0.00     0.00  Job::Job(std::string, int, int)
+  0.00      0.00     0.00        1     0.00     0.00  Runner::Runner()
+  0.00      0.00     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<Job>::deallocate(Job*, unsigned int)
+  0.00      0.00     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<Job>::destroy(Job*)
+  0.00      0.00     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<Job>::allocate(unsigned int, void const*)
+  0.00      0.00     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<Job>::construct(Job*, Job const&)
+  0.00      0.00     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<Job>::new_allocator()
+  0.00      0.00     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<Job>::~new_allocator()
+  0.00      0.00     0.00        1     0.00     0.00  __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::difference_type __gnu_cxx::operator-<Job*, std::vector<Job, std::allocator<Job> > >(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&, __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&)
+  0.00      0.00     0.00        1     0.00     0.00  bool __gnu_cxx::operator!=<Job*, std::vector<Job, std::allocator<Job> > >(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&, __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&)
+  0.00      0.00     0.00        1     0.00     0.00  __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::operator*() const
+  0.00      0.00     0.00        1     0.00     0.00  std::vector<Job, std::allocator<Job> >::_M_check_len(unsigned int, char const*) const
+  0.00      0.00     0.00        1     0.00     0.00  std::allocator<Job>::allocator()
+  0.00      0.00     0.00        1     0.00     0.00  std::allocator<Job>::~allocator()
+  0.00      0.00     0.00        1     0.00     0.00  std::string* std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::string*, std::string*>(std::string*, std::string*, std::string*)
+  0.00      0.00     0.00        1     0.00     0.00  std::_Vector_base<Job, std::allocator<Job> >::_M_allocate(unsigned int)
+  0.00      0.00     0.00        1     0.00     0.00  std::_Vector_base<Job, std::allocator<Job> >::_Vector_impl::_Vector_impl()
+  0.00      0.00     0.00        1     0.00     0.00  std::_Vector_base<Job, std::allocator<Job> >::_Vector_impl::~_Vector_impl()
+  0.00      0.00     0.00        1     0.00     0.00  std::_Vector_base<Job, std::allocator<Job> >::_Vector_base()
+  0.00      0.00     0.00        1     0.00     0.00  std::_Vector_base<Job, std::allocator<Job> >::~_Vector_base()
+  0.00      0.00     0.00        1     0.00     0.00  std::string* std::__copy_move_backward<false, false, std::random_access_iterator_tag>::__copy_move_b<std::string*, std::string*>(std::string*, std::string*, std::string*)
+  0.00      0.00     0.00        1     0.00     0.00  std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&)
+  0.00      0.00     0.00        1     0.00     0.00  std::vector<Job, std::allocator<Job> >::erase(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >)
+  0.00      0.00     0.00        1     0.00     0.00  std::vector<Job, std::allocator<Job> >::push_back(Job const&)
+  0.00      0.00     0.00        1     0.00     0.00  std::vector<Job, std::allocator<Job> >::vector()
+  0.00      0.00     0.00        1     0.00     0.00  std::vector<Job, std::allocator<Job> >::~vector()
+  0.00      0.00     0.00        1     0.00     0.00  std::string* std::vector<std::string, std::allocator<std::string> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > >(unsigned int, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >)
+  0.00      0.00     0.00        1     0.00     0.00  std::string* std::__copy_move_a<false, std::string*, std::string*>(std::string*, std::string*, std::string*)
+  0.00      0.00     0.00        1     0.00     0.00  std::string* std::copy_backward<std::string*, std::string*>(std::string*, std::string*, std::string*)
+  0.00      0.00     0.00        1     0.00     0.00  __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  0.00      0.00     0.00        1     0.00     0.00  std::string* std::__copy_move_backward_a<false, std::string*, std::string*>(std::string*, std::string*, std::string*)
+  0.00      0.00     0.00        1     0.00     0.00  std::string* std::__copy_move_backward_a2<false, std::string*, std::string*>(std::string*, std::string*, std::string*)
+  0.00      0.00     0.00        1     0.00     0.00  __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00   14399/14399       main [4]
+[5]      0.0    0.00    0.00   14399         JobsHandler::isMainForeground() [5]
+-----------------------------------------------
+                0.00    0.00       1/95          Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+                0.00    0.00       4/95          Parser::addCommand(std::vector<Command, std::allocator<Command> >&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool&) [73]
+                0.00    0.00       5/95          Parser::parseLine(std::string&, std::vector<Command, std::allocator<Command> >&) [74]
+                0.00    0.00       7/95          std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&) [92]
+                0.00    0.00      10/95          IOHandler::endIteration(std::vector<std::string, std::allocator<std::string> >&) [197]
+                0.00    0.00      20/95          std::vector<std::string, std::allocator<std::string> >::vector(std::vector<std::string, std::allocator<std::string> > const&) [34]
+                0.00    0.00      48/95          std::vector<std::string, std::allocator<std::string> >::_M_check_len(unsigned int, char const*) const [44]
+[6]      0.0    0.00    0.00      95         std::vector<std::string, std::allocator<std::string> >::size() const [6]
+-----------------------------------------------
+                0.00    0.00       2/87          bool __gnu_cxx::operator==<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&) [217]
+                0.00    0.00       6/87          std::__niter_base<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, true>::__b(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [69]
+                0.00    0.00      14/87          bool __gnu_cxx::operator!=<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&) [63]
+                0.00    0.00      25/87          std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [42]
+                0.00    0.00      40/87          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::difference_type __gnu_cxx::operator-<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&) [30]
+[7]      0.0    0.00    0.00      87         __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::base() const [7]
+-----------------------------------------------
+                0.00    0.00       6/76          std::__niter_base<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, true>::__b(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >) [68]
+                0.00    0.00      70/76          bool __gnu_cxx::operator!=<std::string const*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > const&) [15]
+[8]      0.0    0.00    0.00      76         __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::base() const [8]
+-----------------------------------------------
+                0.00    0.00       1/66          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [165]
+                0.00    0.00       3/66          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [100]
+                0.00    0.00       5/66          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::operator+(int const&) const [71]
+                0.00    0.00       8/66          std::vector<std::string, std::allocator<std::string> >::insert(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [253]
+                0.00    0.00      14/66          std::vector<std::string, std::allocator<std::string> >::end() [40]
+                0.00    0.00      35/66          std::vector<std::string, std::allocator<std::string> >::begin() [16]
+[9]      0.0    0.00    0.00      66         __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string* const&) [9]
+-----------------------------------------------
+                0.00    0.00      24/48          std::vector<std::string, std::allocator<std::string> >::begin() const [19]
+                0.00    0.00      24/48          std::vector<std::string, std::allocator<std::string> >::end() const [18]
+[10]     0.0    0.00    0.00      48         __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string const* const&) [10]
+-----------------------------------------------
+                0.00    0.00      23/47          __gnu_cxx::new_allocator<std::string>::allocate(unsigned int, void const*) [25]
+                0.00    0.00      24/47          std::vector<std::string, std::allocator<std::string> >::max_size() const [20]
+[11]     0.0    0.00    0.00      47         __gnu_cxx::new_allocator<std::string>::max_size() const [11]
+-----------------------------------------------
+                0.00    0.00      20/44          std::vector<std::string, std::allocator<std::string> >::vector(std::vector<std::string, std::allocator<std::string> > const&) [34]
+                0.00    0.00      24/44          std::vector<std::string, std::allocator<std::string> >::max_size() const [20]
+[12]     0.0    0.00    0.00      44         std::_Vector_base<std::string, std::allocator<std::string> >::_M_get_Tp_allocator() const [12]
+-----------------------------------------------
+                0.00    0.00       5/44          Parser::getWord(std::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >&, std::string&) [47]
+                0.00    0.00      18/44          Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+                0.00    0.00      21/44          Parser::parseLine(std::string&, std::vector<Command, std::allocator<Command> >&) [74]
+[13]     0.0    0.00    0.00      44         bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [13]
+-----------------------------------------------
+                0.00    0.00       1/42          __gnu_cxx::new_allocator<Job>::construct(Job*, Job const&) [141]
+                0.00    0.00       4/42          __gnu_cxx::new_allocator<Command>::construct(Command*, Command const&) [78]
+                0.00    0.00      10/42          std::string* std::__uninitialized_copy<false>::uninitialized_copy<std::string*, std::string*>(std::string*, std::string*, std::string*) [21]
+                0.00    0.00      13/42          __gnu_cxx::new_allocator<std::string>::construct(std::string*, std::string const&) [41]
+                0.00    0.00      14/42          std::string* std::__uninitialized_copy<false>::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*) [26]
+[14]     0.0    0.00    0.00      42         operator new(unsigned int, void*) [14]
+-----------------------------------------------
+                0.00    0.00      35/35          std::string* std::__uninitialized_copy<false>::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*) [26]
+[15]     0.0    0.00    0.00      35         bool __gnu_cxx::operator!=<std::string const*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > const&) [15]
+                0.00    0.00      70/76          __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::base() const [8]
+-----------------------------------------------
+                0.00    0.00       3/35          std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&) [92]
+                0.00    0.00       4/35          Parser::addCommand(std::vector<Command, std::allocator<Command> >&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool&) [73]
+                0.00    0.00       4/35          IOHandler::endIteration(std::vector<std::string, std::allocator<std::string> >&) [197]
+                0.00    0.00       4/35          IOHandler::createIterationHistory() [200]
+                0.00    0.00       8/35          std::vector<std::string, std::allocator<std::string> >::insert(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [253]
+                0.00    0.00      12/35          std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [42]
+[16]     0.0    0.00    0.00      35         std::vector<std::string, std::allocator<std::string> >::begin() [16]
+                0.00    0.00      35/66          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string* const&) [9]
+-----------------------------------------------
+                0.00    0.00       1/33          std::string* std::vector<std::string, std::allocator<std::string> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > >(unsigned int, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >) [162]
+                0.00    0.00      12/33          std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [42]
+                0.00    0.00      20/33          std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_base(unsigned int, std::allocator<std::string> const&) [33]
+[17]     0.0    0.00    0.00      33         std::_Vector_base<std::string, std::allocator<std::string> >::_M_allocate(unsigned int) [17]
+                0.00    0.00      23/23          __gnu_cxx::new_allocator<std::string>::allocate(unsigned int, void const*) [25]
+-----------------------------------------------
+                0.00    0.00       4/24          std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&) [92]
+                0.00    0.00      20/24          std::vector<std::string, std::allocator<std::string> >::vector(std::vector<std::string, std::allocator<std::string> > const&) [34]
+[18]     0.0    0.00    0.00      24         std::vector<std::string, std::allocator<std::string> >::end() const [18]
+                0.00    0.00      24/48          __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string const* const&) [10]
+-----------------------------------------------
+                0.00    0.00       4/24          std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&) [92]
+                0.00    0.00      20/24          std::vector<std::string, std::allocator<std::string> >::vector(std::vector<std::string, std::allocator<std::string> > const&) [34]
+[19]     0.0    0.00    0.00      24         std::vector<std::string, std::allocator<std::string> >::begin() const [19]
+                0.00    0.00      24/48          __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string const* const&) [10]
+-----------------------------------------------
+                0.00    0.00      24/24          std::vector<std::string, std::allocator<std::string> >::_M_check_len(unsigned int, char const*) const [44]
+[20]     0.0    0.00    0.00      24         std::vector<std::string, std::allocator<std::string> >::max_size() const [20]
+                0.00    0.00      24/44          std::_Vector_base<std::string, std::allocator<std::string> >::_M_get_Tp_allocator() const [12]
+                0.00    0.00      24/47          __gnu_cxx::new_allocator<std::string>::max_size() const [11]
+-----------------------------------------------
+                0.00    0.00      24/24          std::string* std::uninitialized_copy<std::string*, std::string*>(std::string*, std::string*, std::string*) [22]
+[21]     0.0    0.00    0.00      24         std::string* std::__uninitialized_copy<false>::uninitialized_copy<std::string*, std::string*>(std::string*, std::string*, std::string*) [21]
+                0.00    0.00      10/42          operator new(unsigned int, void*) [14]
+-----------------------------------------------
+                0.00    0.00      24/24          std::string* std::__uninitialized_copy_a<std::string*, std::string*, std::string>(std::string*, std::string*, std::string*, std::allocator<std::string>&) [23]
+[22]     0.0    0.00    0.00      24         std::string* std::uninitialized_copy<std::string*, std::string*>(std::string*, std::string*, std::string*) [22]
+                0.00    0.00      24/24          std::string* std::__uninitialized_copy<false>::uninitialized_copy<std::string*, std::string*>(std::string*, std::string*, std::string*) [21]
+-----------------------------------------------
+                0.00    0.00      24/24          std::string* std::__uninitialized_move_a<std::string*, std::string*, std::allocator<std::string> >(std::string*, std::string*, std::string*, std::allocator<std::string>&) [24]
+[23]     0.0    0.00    0.00      24         std::string* std::__uninitialized_copy_a<std::string*, std::string*, std::string>(std::string*, std::string*, std::string*, std::allocator<std::string>&) [23]
+                0.00    0.00      24/24          std::string* std::uninitialized_copy<std::string*, std::string*>(std::string*, std::string*, std::string*) [22]
+-----------------------------------------------
+                0.00    0.00      24/24          std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [42]
+[24]     0.0    0.00    0.00      24         std::string* std::__uninitialized_move_a<std::string*, std::string*, std::allocator<std::string> >(std::string*, std::string*, std::string*, std::allocator<std::string>&) [24]
+                0.00    0.00      24/24          std::string* std::__uninitialized_copy_a<std::string*, std::string*, std::string>(std::string*, std::string*, std::string*, std::allocator<std::string>&) [23]
+-----------------------------------------------
+                0.00    0.00      23/23          std::_Vector_base<std::string, std::allocator<std::string> >::_M_allocate(unsigned int) [17]
+[25]     0.0    0.00    0.00      23         __gnu_cxx::new_allocator<std::string>::allocate(unsigned int, void const*) [25]
+                0.00    0.00      23/47          __gnu_cxx::new_allocator<std::string>::max_size() const [11]
+-----------------------------------------------
+                0.00    0.00      21/21          std::string* std::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*) [27]
+[26]     0.0    0.00    0.00      21         std::string* std::__uninitialized_copy<false>::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*) [26]
+                0.00    0.00      35/35          bool __gnu_cxx::operator!=<std::string const*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > const&) [15]
+                0.00    0.00      14/14          __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::operator*() const [39]
+                0.00    0.00      14/42          operator new(unsigned int, void*) [14]
+                0.00    0.00      14/14          __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::operator++() [38]
+-----------------------------------------------
+                0.00    0.00      21/21          std::string* std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::string>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::allocator<std::string>&) [28]
+[27]     0.0    0.00    0.00      21         std::string* std::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*) [27]
+                0.00    0.00      21/21          std::string* std::__uninitialized_copy<false>::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*) [26]
+-----------------------------------------------
+                0.00    0.00       1/21          std::string* std::vector<std::string, std::allocator<std::string> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > >(unsigned int, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >) [162]
+                0.00    0.00      20/21          std::vector<std::string, std::allocator<std::string> >::vector(std::vector<std::string, std::allocator<std::string> > const&) [34]
+[28]     0.0    0.00    0.00      21         std::string* std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::string>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::allocator<std::string>&) [28]
+                0.00    0.00      21/21          std::string* std::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*) [27]
+-----------------------------------------------
+                0.00    0.00      20/20          std::allocator<std::string>::allocator(std::allocator<std::string> const&) [31]
+[29]     0.0    0.00    0.00      20         __gnu_cxx::new_allocator<std::string>::new_allocator(__gnu_cxx::new_allocator<std::string> const&) [29]
+-----------------------------------------------
+                0.00    0.00       8/20          std::vector<std::string, std::allocator<std::string> >::insert(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [253]
+                0.00    0.00      12/20          std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [42]
+[30]     0.0    0.00    0.00      20         __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::difference_type __gnu_cxx::operator-<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&) [30]
+                0.00    0.00      40/87          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::base() const [7]
+-----------------------------------------------
+                0.00    0.00      20/20          std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_impl::_Vector_impl(std::allocator<std::string> const&) [32]
+[31]     0.0    0.00    0.00      20         std::allocator<std::string>::allocator(std::allocator<std::string> const&) [31]
+                0.00    0.00      20/20          __gnu_cxx::new_allocator<std::string>::new_allocator(__gnu_cxx::new_allocator<std::string> const&) [29]
+-----------------------------------------------
+                0.00    0.00      20/20          std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_base(unsigned int, std::allocator<std::string> const&) [33]
+[32]     0.0    0.00    0.00      20         std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_impl::_Vector_impl(std::allocator<std::string> const&) [32]
+                0.00    0.00      20/20          std::allocator<std::string>::allocator(std::allocator<std::string> const&) [31]
+-----------------------------------------------
+                0.00    0.00      20/20          std::vector<std::string, std::allocator<std::string> >::vector(std::vector<std::string, std::allocator<std::string> > const&) [34]
+[33]     0.0    0.00    0.00      20         std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_base(unsigned int, std::allocator<std::string> const&) [33]
+                0.00    0.00      20/20          std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_impl::_Vector_impl(std::allocator<std::string> const&) [32]
+                0.00    0.00      20/33          std::_Vector_base<std::string, std::allocator<std::string> >::_M_allocate(unsigned int) [17]
+-----------------------------------------------
+                0.00    0.00       4/20          IOHandler::createIterationHistory() [200]
+                0.00    0.00       8/20          Command::Command(Command const&) [55]
+                0.00    0.00       8/20          Command::getParams() [54]
+[34]     0.0    0.00    0.00      20         std::vector<std::string, std::allocator<std::string> >::vector(std::vector<std::string, std::allocator<std::string> > const&) [34]
+                0.00    0.00      20/44          std::_Vector_base<std::string, std::allocator<std::string> >::_M_get_Tp_allocator() const [12]
+                0.00    0.00      20/95          std::vector<std::string, std::allocator<std::string> >::size() const [6]
+                0.00    0.00      20/20          std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_base(unsigned int, std::allocator<std::string> const&) [33]
+                0.00    0.00      20/24          std::vector<std::string, std::allocator<std::string> >::end() const [18]
+                0.00    0.00      20/24          std::vector<std::string, std::allocator<std::string> >::begin() const [19]
+                0.00    0.00      20/21          std::string* std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::string>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::allocator<std::string>&) [28]
+-----------------------------------------------
+                0.00    0.00      18/18          Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+[35]     0.0    0.00    0.00      18         Command::getCmd() [35]
+-----------------------------------------------
+                0.00    0.00       1/17          std::vector<Job, std::allocator<Job> >::_M_check_len(unsigned int, char const*) const [147]
+                0.00    0.00       4/17          std::vector<Command, std::allocator<Command> >::_M_check_len(unsigned int, char const*) const [81]
+                0.00    0.00      12/17          std::vector<std::string, std::allocator<std::string> >::_M_check_len(unsigned int, char const*) const [44]
+[36]     0.0    0.00    0.00      17         unsigned int const& std::max<unsigned int>(unsigned int const&, unsigned int const&) [36]
+-----------------------------------------------
+                0.00    0.00       8/16          std::vector<Command, std::allocator<Command> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >, Command const&) [85]
+                0.00    0.00       8/16          __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::difference_type __gnu_cxx::operator-<Command*, std::vector<Command, std::allocator<Command> > >(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > > const&, __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > > const&) [80]
+[37]     0.0    0.00    0.00      16         __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::base() const [37]
+-----------------------------------------------
+                0.00    0.00      14/14          std::string* std::__uninitialized_copy<false>::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*) [26]
+[38]     0.0    0.00    0.00      14         __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::operator++() [38]
+-----------------------------------------------
+                0.00    0.00      14/14          std::string* std::__uninitialized_copy<false>::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*) [26]
+[39]     0.0    0.00    0.00      14         __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::operator*() const [39]
+-----------------------------------------------
+                0.00    0.00       1/14          std::vector<std::string, std::allocator<std::string> >::insert(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [253]
+                0.00    0.00       3/14          std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&) [92]
+                0.00    0.00       5/14          std::vector<std::string, std::allocator<std::string> >::push_back(std::string const&) [72]
+                0.00    0.00       5/14          std::vector<std::string, std::allocator<std::string> >::erase(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [91]
+[40]     0.0    0.00    0.00      14         std::vector<std::string, std::allocator<std::string> >::end() [40]
+                0.00    0.00      14/66          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string* const&) [9]
+-----------------------------------------------
+                0.00    0.00      13/13          std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [42]
+[41]     0.0    0.00    0.00      13         __gnu_cxx::new_allocator<std::string>::construct(std::string*, std::string const&) [41]
+                0.00    0.00      13/42          operator new(unsigned int, void*) [14]
+-----------------------------------------------
+                0.00    0.00       5/13          std::vector<std::string, std::allocator<std::string> >::push_back(std::string const&) [72]
+                0.00    0.00       8/13          std::vector<std::string, std::allocator<std::string> >::insert(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [253]
+[42]     0.0    0.00    0.00      13         std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [42]
+                0.00    0.00      25/87          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::base() const [7]
+                0.00    0.00      24/24          std::string* std::__uninitialized_move_a<std::string*, std::string*, std::allocator<std::string> >(std::string*, std::string*, std::string*, std::allocator<std::string>&) [24]
+                0.00    0.00      13/13          __gnu_cxx::new_allocator<std::string>::construct(std::string*, std::string const&) [41]
+                0.00    0.00      12/12          std::vector<std::string, std::allocator<std::string> >::_M_check_len(unsigned int, char const*) const [44]
+                0.00    0.00      12/35          std::vector<std::string, std::allocator<std::string> >::begin() [16]
+                0.00    0.00      12/20          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::difference_type __gnu_cxx::operator-<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&) [30]
+                0.00    0.00      12/33          std::_Vector_base<std::string, std::allocator<std::string> >::_M_allocate(unsigned int) [17]
+                0.00    0.00       1/1           std::string* std::copy_backward<std::string*, std::string*>(std::string*, std::string*, std::string*) [164]
+                0.00    0.00       1/1           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::operator*() const [146]
+-----------------------------------------------
+                0.00    0.00       4/12          __gnu_cxx::new_allocator<Command>::allocate(unsigned int, void const*) [77]
+                0.00    0.00       8/12          std::vector<Command, std::allocator<Command> >::max_size() const [58]
+[43]     0.0    0.00    0.00      12         __gnu_cxx::new_allocator<Command>::max_size() const [43]
+-----------------------------------------------
+                0.00    0.00      12/12          std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [42]
+[44]     0.0    0.00    0.00      12         std::vector<std::string, std::allocator<std::string> >::_M_check_len(unsigned int, char const*) const [44]
+                0.00    0.00      48/95          std::vector<std::string, std::allocator<std::string> >::size() const [6]
+                0.00    0.00      24/24          std::vector<std::string, std::allocator<std::string> >::max_size() const [20]
+                0.00    0.00      12/17          unsigned int const& std::max<unsigned int>(unsigned int const&, unsigned int const&) [36]
+-----------------------------------------------
+                0.00    0.00       3/10          void std::_Destroy<Command>(Command*) [271]
+                0.00    0.00       3/10          Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+                0.00    0.00       4/10          Parser::addCommand(std::vector<Command, std::allocator<Command> >&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool&) [73]
+[45]     0.0    0.00    0.00      10         Command::~Command() [45]
+-----------------------------------------------
+                0.00    0.00       4/10          Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+                0.00    0.00       6/10          Parser::parseLine(std::string&, std::vector<Command, std::allocator<Command> >&) [74]
+[46]     0.0    0.00    0.00      10         std::vector<Command, std::allocator<Command> >::operator[](unsigned int) [46]
+-----------------------------------------------
+                0.00    0.00       9/9           Parser::parseLine(std::string&, std::vector<Command, std::allocator<Command> >&) [74]
+[47]     0.0    0.00    0.00       9         Parser::getWord(std::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >&, std::string&) [47]
+                0.00    0.00       5/44          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [13]
+                0.00    0.00       5/5           Parser::trim(std::string&) [70]
+-----------------------------------------------
+                0.00    0.00       9/9           std::allocator<std::string>::allocator() [50]
+[48]     0.0    0.00    0.00       9         __gnu_cxx::new_allocator<std::string>::new_allocator() [48]
+-----------------------------------------------
+                0.00    0.00       1/9           JobsHandler::removeJobByPid(int) [127]
+                0.00    0.00       1/9           JobsHandler::setJobState(unsigned int, int) [126]
+                0.00    0.00       1/9           JobsHandler::setJobStateByPid(int, int) [128]
+                0.00    0.00       2/9           JobsHandler::showJobs(IOHandler&) [131]
+                0.00    0.00       4/9           std::vector<Job, std::allocator<Job> >::_M_check_len(unsigned int, char const*) const [147]
+[49]     0.0    0.00    0.00       9         std::vector<Job, std::allocator<Job> >::size() const [49]
+-----------------------------------------------
+                0.00    0.00       9/9           std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_impl::_Vector_impl() [51]
+[50]     0.0    0.00    0.00       9         std::allocator<std::string>::allocator() [50]
+                0.00    0.00       9/9           __gnu_cxx::new_allocator<std::string>::new_allocator() [48]
+-----------------------------------------------
+                0.00    0.00       9/9           std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_base() [52]
+[51]     0.0    0.00    0.00       9         std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_impl::_Vector_impl() [51]
+                0.00    0.00       9/9           std::allocator<std::string>::allocator() [50]
+-----------------------------------------------
+                0.00    0.00       9/9           std::vector<std::string, std::allocator<std::string> >::vector() [53]
+[52]     0.0    0.00    0.00       9         std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_base() [52]
+                0.00    0.00       9/9           std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_impl::_Vector_impl() [51]
+-----------------------------------------------
+                0.00    0.00       1/9           IOHandler::IOHandler() [206]
+                0.00    0.00       4/9           Parser::parseLine(std::string&, std::vector<Command, std::allocator<Command> >&) [74]
+                0.00    0.00       4/9           Command::Command(std::string&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool) [76]
+[53]     0.0    0.00    0.00       9         std::vector<std::string, std::allocator<std::string> >::vector() [53]
+                0.00    0.00       9/9           std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_base() [52]
+-----------------------------------------------
+                0.00    0.00       2/8           Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+                0.00    0.00       6/8           Parser::parseLine(std::string&, std::vector<Command, std::allocator<Command> >&) [74]
+[54]     0.0    0.00    0.00       8         Command::getParams() [54]
+                0.00    0.00       8/20          std::vector<std::string, std::allocator<std::string> >::vector(std::vector<std::string, std::allocator<std::string> > const&) [34]
+-----------------------------------------------
+                0.00    0.00       4/8           __gnu_cxx::new_allocator<Command>::construct(Command*, Command const&) [78]
+                0.00    0.00       4/8           Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+[55]     0.0    0.00    0.00       8         Command::Command(Command const&) [55]
+                0.00    0.00       8/20          std::vector<std::string, std::allocator<std::string> >::vector(std::vector<std::string, std::allocator<std::string> > const&) [34]
+-----------------------------------------------
+                0.00    0.00       4/8           std::vector<Command, std::allocator<Command> >::end() [86]
+                0.00    0.00       4/8           std::vector<Command, std::allocator<Command> >::begin() [87]
+[56]     0.0    0.00    0.00       8         __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::__normal_iterator(Command* const&) [56]
+-----------------------------------------------
+                0.00    0.00       8/8           std::vector<Command, std::allocator<Command> >::max_size() const [58]
+[57]     0.0    0.00    0.00       8         std::_Vector_base<Command, std::allocator<Command> >::_M_get_Tp_allocator() const [57]
+-----------------------------------------------
+                0.00    0.00       8/8           std::vector<Command, std::allocator<Command> >::_M_check_len(unsigned int, char const*) const [81]
+[58]     0.0    0.00    0.00       8         std::vector<Command, std::allocator<Command> >::max_size() const [58]
+                0.00    0.00       8/8           std::_Vector_base<Command, std::allocator<Command> >::_M_get_Tp_allocator() const [57]
+                0.00    0.00       8/12          __gnu_cxx::new_allocator<Command>::max_size() const [43]
+-----------------------------------------------
+                0.00    0.00       8/8           Command* std::uninitialized_copy<Command*, Command*>(Command*, Command*, Command*) [60]
+[59]     0.0    0.00    0.00       8         Command* std::__uninitialized_copy<false>::uninitialized_copy<Command*, Command*>(Command*, Command*, Command*) [59]
+-----------------------------------------------
+                0.00    0.00       8/8           Command* std::__uninitialized_copy_a<Command*, Command*, Command>(Command*, Command*, Command*, std::allocator<Command>&) [61]
+[60]     0.0    0.00    0.00       8         Command* std::uninitialized_copy<Command*, Command*>(Command*, Command*, Command*) [60]
+                0.00    0.00       8/8           Command* std::__uninitialized_copy<false>::uninitialized_copy<Command*, Command*>(Command*, Command*, Command*) [59]
+-----------------------------------------------
+                0.00    0.00       8/8           Command* std::__uninitialized_move_a<Command*, Command*, std::allocator<Command> >(Command*, Command*, Command*, std::allocator<Command>&) [62]
+[61]     0.0    0.00    0.00       8         Command* std::__uninitialized_copy_a<Command*, Command*, Command>(Command*, Command*, Command*, std::allocator<Command>&) [61]
+                0.00    0.00       8/8           Command* std::uninitialized_copy<Command*, Command*>(Command*, Command*, Command*) [60]
+-----------------------------------------------
+                0.00    0.00       8/8           std::vector<Command, std::allocator<Command> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >, Command const&) [85]
+[62]     0.0    0.00    0.00       8         Command* std::__uninitialized_move_a<Command*, Command*, std::allocator<Command> >(Command*, Command*, Command*, std::allocator<Command>&) [62]
+                0.00    0.00       8/8           Command* std::__uninitialized_copy_a<Command*, Command*, Command>(Command*, Command*, Command*, std::allocator<Command>&) [61]
+-----------------------------------------------
+                0.00    0.00       3/7           void std::_Destroy_aux<false>::__destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [97]
+                0.00    0.00       4/7           std::vector<std::string, std::allocator<std::string> >::erase(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [91]
+[63]     0.0    0.00    0.00       7         bool __gnu_cxx::operator!=<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&) [63]
+                0.00    0.00      14/87          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::base() const [7]
+-----------------------------------------------
+                0.00    0.00       1/7           JobsHandler::removeJobByPid(int) [127]
+                0.00    0.00       2/7           JobsHandler::setJobState(unsigned int, int) [126]
+                0.00    0.00       2/7           JobsHandler::setJobStateByPid(int, int) [128]
+                0.00    0.00       2/7           JobsHandler::showJobs(IOHandler&) [131]
+[64]     0.0    0.00    0.00       7         std::vector<Job, std::allocator<Job> >::operator[](unsigned int) [64]
+-----------------------------------------------
+                0.00    0.00       2/6           std::vector<Job, std::allocator<Job> >::begin() [115]
+                0.00    0.00       2/6           __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::operator+(int const&) const [106]
+                0.00    0.00       2/6           std::vector<Job, std::allocator<Job> >::end() [114]
+[65]     0.0    0.00    0.00       6         __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::__normal_iterator(Job* const&) [65]
+-----------------------------------------------
+                0.00    0.00       2/6           bool __gnu_cxx::operator!=<Job*, std::vector<Job, std::allocator<Job> > >(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&, __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&) [145]
+                0.00    0.00       2/6           std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+                0.00    0.00       2/6           __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::difference_type __gnu_cxx::operator-<Job*, std::vector<Job, std::allocator<Job> > >(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&, __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&) [144]
+[66]     0.0    0.00    0.00       6         __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::base() const [66]
+-----------------------------------------------
+                0.00    0.00       6/6           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [101]
+[67]     0.0    0.00    0.00       6         std::__miter_base<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, false>::__b(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >) [67]
+-----------------------------------------------
+                0.00    0.00       6/6           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [100]
+[68]     0.0    0.00    0.00       6         std::__niter_base<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, true>::__b(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >) [68]
+                0.00    0.00       6/76          __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::base() const [8]
+-----------------------------------------------
+                0.00    0.00       3/6           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [165]
+                0.00    0.00       3/6           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [100]
+[69]     0.0    0.00    0.00       6         std::__niter_base<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, true>::__b(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [69]
+                0.00    0.00       6/87          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::base() const [7]
+-----------------------------------------------
+                0.00    0.00       5/5           Parser::getWord(std::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >&, std::string&) [47]
+[70]     0.0    0.00    0.00       5         Parser::trim(std::string&) [70]
+-----------------------------------------------
+                0.00    0.00       5/5           std::vector<std::string, std::allocator<std::string> >::erase(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [91]
+[71]     0.0    0.00    0.00       5         __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::operator+(int const&) const [71]
+                0.00    0.00       5/66          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string* const&) [9]
+-----------------------------------------------
+                0.00    0.00       5/5           Parser::parseLine(std::string&, std::vector<Command, std::allocator<Command> >&) [74]
+[72]     0.0    0.00    0.00       5         std::vector<std::string, std::allocator<std::string> >::push_back(std::string const&) [72]
+                0.00    0.00       5/14          std::vector<std::string, std::allocator<std::string> >::end() [40]
+                0.00    0.00       5/13          std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [42]
+-----------------------------------------------
+                0.00    0.00       4/4           Parser::parseLine(std::string&, std::vector<Command, std::allocator<Command> >&) [74]
+[73]     0.0    0.00    0.00       4         Parser::addCommand(std::vector<Command, std::allocator<Command> >&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool&) [73]
+                0.00    0.00       4/95          std::vector<std::string, std::allocator<std::string> >::size() const [6]
+                0.00    0.00       4/35          std::vector<std::string, std::allocator<std::string> >::begin() [16]
+                0.00    0.00       4/4           std::vector<std::string, std::allocator<std::string> >::erase(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [91]
+                0.00    0.00       4/4           Command::Command(std::string&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool) [76]
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::push_back(Command const&) [88]
+                0.00    0.00       4/10          Command::~Command() [45]
+                0.00    0.00       4/4           std::vector<std::string, std::allocator<std::string> >::clear() [90]
+-----------------------------------------------
+                0.00    0.00       4/4           main [4]
+[74]     0.0    0.00    0.00       4         Parser::parseLine(std::string&, std::vector<Command, std::allocator<Command> >&) [74]
+                0.00    0.00      21/44          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [13]
+                0.00    0.00       9/9           Parser::getWord(std::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >&, std::string&) [47]
+                0.00    0.00       6/10          std::vector<Command, std::allocator<Command> >::operator[](unsigned int) [46]
+                0.00    0.00       6/8           Command::getParams() [54]
+                0.00    0.00       5/5           std::vector<std::string, std::allocator<std::string> >::push_back(std::string const&) [72]
+                0.00    0.00       5/95          std::vector<std::string, std::allocator<std::string> >::size() const [6]
+                0.00    0.00       4/9           std::vector<std::string, std::allocator<std::string> >::vector() [53]
+                0.00    0.00       4/4           Parser::addCommand(std::vector<Command, std::allocator<Command> >&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool&) [73]
+-----------------------------------------------
+                0.00    0.00       4/4           main [4]
+[75]     0.0    0.00    0.00       4         Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+                0.00    0.00      18/18          Command::getCmd() [35]
+                0.00    0.00      18/44          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [13]
+                0.00    0.00       4/10          std::vector<Command, std::allocator<Command> >::operator[](unsigned int) [46]
+                0.00    0.00       4/8           Command::Command(Command const&) [55]
+                0.00    0.00       3/10          Command::~Command() [45]
+                0.00    0.00       2/8           Command::getParams() [54]
+                0.00    0.00       1/1           JobsHandler::showJobs(IOHandler&) [131]
+                0.00    0.00       1/95          std::vector<std::string, std::allocator<std::string> >::size() const [6]
+                0.00    0.00       1/2           std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [121]
+                0.00    0.00       1/1           JobsHandler::setJobState(unsigned int, int) [126]
+                0.00    0.00       1/1           JobsHandler::addJob(std::string, int, int) [130]
+-----------------------------------------------
+                0.00    0.00       4/4           Parser::addCommand(std::vector<Command, std::allocator<Command> >&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool&) [73]
+[76]     0.0    0.00    0.00       4         Command::Command(std::string&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool) [76]
+                0.00    0.00       4/9           std::vector<std::string, std::allocator<std::string> >::vector() [53]
+                0.00    0.00       4/4           std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&) [92]
+-----------------------------------------------
+                0.00    0.00       4/4           std::_Vector_base<Command, std::allocator<Command> >::_M_allocate(unsigned int) [84]
+[77]     0.0    0.00    0.00       4         __gnu_cxx::new_allocator<Command>::allocate(unsigned int, void const*) [77]
+                0.00    0.00       4/12          __gnu_cxx::new_allocator<Command>::max_size() const [43]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >, Command const&) [85]
+[78]     0.0    0.00    0.00       4         __gnu_cxx::new_allocator<Command>::construct(Command*, Command const&) [78]
+                0.00    0.00       4/42          operator new(unsigned int, void*) [14]
+                0.00    0.00       4/8           Command::Command(Command const&) [55]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<std::string, std::allocator<std::string> >::erase(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [91]
+[79]     0.0    0.00    0.00       4         __gnu_cxx::new_allocator<std::string>::destroy(std::string*) [79]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >, Command const&) [85]
+[80]     0.0    0.00    0.00       4         __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::difference_type __gnu_cxx::operator-<Command*, std::vector<Command, std::allocator<Command> > >(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > > const&, __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > > const&) [80]
+                0.00    0.00       8/16          __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::base() const [37]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >, Command const&) [85]
+[81]     0.0    0.00    0.00       4         std::vector<Command, std::allocator<Command> >::_M_check_len(unsigned int, char const*) const [81]
+                0.00    0.00       8/8           std::vector<Command, std::allocator<Command> >::max_size() const [58]
+                0.00    0.00       4/17          unsigned int const& std::max<unsigned int>(unsigned int const&, unsigned int const&) [36]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&) [92]
+[82]     0.0    0.00    0.00       4         std::vector<std::string, std::allocator<std::string> >::capacity() const [82]
+-----------------------------------------------
+                0.00    0.00       1/4           std::vector<Job, std::allocator<Job> >::~vector() [161]
+                0.00    0.00       3/4           std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+[83]     0.0    0.00    0.00       4         std::_Vector_base<Job, std::allocator<Job> >::_M_get_Tp_allocator() [83]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >, Command const&) [85]
+[84]     0.0    0.00    0.00       4         std::_Vector_base<Command, std::allocator<Command> >::_M_allocate(unsigned int) [84]
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<Command>::allocate(unsigned int, void const*) [77]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::push_back(Command const&) [88]
+[85]     0.0    0.00    0.00       4         std::vector<Command, std::allocator<Command> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >, Command const&) [85]
+                0.00    0.00       8/16          __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::base() const [37]
+                0.00    0.00       8/8           Command* std::__uninitialized_move_a<Command*, Command*, std::allocator<Command> >(Command*, Command*, Command*, std::allocator<Command>&) [62]
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::_M_check_len(unsigned int, char const*) const [81]
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::begin() [87]
+                0.00    0.00       4/4           __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::difference_type __gnu_cxx::operator-<Command*, std::vector<Command, std::allocator<Command> > >(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > > const&, __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > > const&) [80]
+                0.00    0.00       4/4           std::_Vector_base<Command, std::allocator<Command> >::_M_allocate(unsigned int) [84]
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<Command>::construct(Command*, Command const&) [78]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::push_back(Command const&) [88]
+[86]     0.0    0.00    0.00       4         std::vector<Command, std::allocator<Command> >::end() [86]
+                0.00    0.00       4/8           __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::__normal_iterator(Command* const&) [56]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >, Command const&) [85]
+[87]     0.0    0.00    0.00       4         std::vector<Command, std::allocator<Command> >::begin() [87]
+                0.00    0.00       4/8           __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::__normal_iterator(Command* const&) [56]
+-----------------------------------------------
+                0.00    0.00       4/4           Parser::addCommand(std::vector<Command, std::allocator<Command> >&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool&) [73]
+[88]     0.0    0.00    0.00       4         std::vector<Command, std::allocator<Command> >::push_back(Command const&) [88]
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::end() [86]
+                0.00    0.00       4/4           std::vector<Command, std::allocator<Command> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >, Command const&) [85]
+-----------------------------------------------
+                0.00    0.00       4/4           std::vector<std::string, std::allocator<std::string> >::clear() [90]
+[89]     0.0    0.00    0.00       4         std::vector<std::string, std::allocator<std::string> >::_M_erase_at_end(std::string*) [89]
+-----------------------------------------------
+                0.00    0.00       4/4           Parser::addCommand(std::vector<Command, std::allocator<Command> >&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool&) [73]
+[90]     0.0    0.00    0.00       4         std::vector<std::string, std::allocator<std::string> >::clear() [90]
+                0.00    0.00       4/4           std::vector<std::string, std::allocator<std::string> >::_M_erase_at_end(std::string*) [89]
+-----------------------------------------------
+                0.00    0.00       4/4           Parser::addCommand(std::vector<Command, std::allocator<Command> >&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool&) [73]
+[91]     0.0    0.00    0.00       4         std::vector<std::string, std::allocator<std::string> >::erase(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [91]
+                0.00    0.00       5/14          std::vector<std::string, std::allocator<std::string> >::end() [40]
+                0.00    0.00       5/5           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::operator+(int const&) const [71]
+                0.00    0.00       4/7           bool __gnu_cxx::operator!=<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&) [63]
+                0.00    0.00       4/4           __gnu_cxx::new_allocator<std::string>::destroy(std::string*) [79]
+                0.00    0.00       1/1           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [168]
+-----------------------------------------------
+                0.00    0.00       4/4           Command::Command(std::string&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool) [76]
+[92]     0.0    0.00    0.00       4         std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&) [92]
+                0.00    0.00       7/95          std::vector<std::string, std::allocator<std::string> >::size() const [6]
+                0.00    0.00       4/4           std::vector<std::string, std::allocator<std::string> >::capacity() const [82]
+                0.00    0.00       4/24          std::vector<std::string, std::allocator<std::string> >::end() const [18]
+                0.00    0.00       4/24          std::vector<std::string, std::allocator<std::string> >::begin() const [19]
+                0.00    0.00       3/14          std::vector<std::string, std::allocator<std::string> >::end() [40]
+                0.00    0.00       3/35          std::vector<std::string, std::allocator<std::string> >::begin() [16]
+                0.00    0.00       3/3           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [101]
+                0.00    0.00       3/3           void std::_Destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string>(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::allocator<std::string>&) [103]
+                0.00    0.00       1/1           std::string* std::vector<std::string, std::allocator<std::string> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > >(unsigned int, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >) [162]
+-----------------------------------------------
+                0.00    0.00       3/3           handleSignal(int, siginfo*, void*) [170]
+[93]     0.0    0.00    0.00       3         JobsHandler::getMainPid() [93]
+-----------------------------------------------
+                0.00    0.00       1/3           JobsHandler::removeJobByPid(int) [127]
+                0.00    0.00       1/3           JobsHandler::setJobState(unsigned int, int) [126]
+                0.00    0.00       1/3           JobsHandler::setJobStateByPid(int, int) [128]
+[94]     0.0    0.00    0.00       3         Job::getPid() [94]
+-----------------------------------------------
+                0.00    0.00       1/3           __gnu_cxx::new_allocator<Job>::allocate(unsigned int, void const*) [140]
+                0.00    0.00       2/3           std::vector<Job, std::allocator<Job> >::max_size() const [108]
+[95]     0.0    0.00    0.00       3         __gnu_cxx::new_allocator<Job>::max_size() const [95]
+-----------------------------------------------
+                0.00    0.00       3/3           std::string* std::__copy_move_a<false, std::string const*, std::string*>(std::string const*, std::string const*, std::string*) [99]
+[96]     0.0    0.00    0.00       3         std::string* std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::string const*, std::string*>(std::string const*, std::string const*, std::string*) [96]
+-----------------------------------------------
+                0.00    0.00       3/3           void std::_Destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [102]
+[97]     0.0    0.00    0.00       3         void std::_Destroy_aux<false>::__destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [97]
+                0.00    0.00       3/7           bool __gnu_cxx::operator!=<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&) [63]
+-----------------------------------------------
+                0.00    0.00       3/3           std::string* std::__copy_move_backward_a2<false, std::string*, std::string*>(std::string*, std::string*, std::string*) [167]
+[98]     0.0    0.00    0.00       3         std::__niter_base<std::string*, false>::__b(std::string*) [98]
+-----------------------------------------------
+                0.00    0.00       3/3           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [100]
+[99]     0.0    0.00    0.00       3         std::string* std::__copy_move_a<false, std::string const*, std::string*>(std::string const*, std::string const*, std::string*) [99]
+                0.00    0.00       3/3           std::string* std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::string const*, std::string*>(std::string const*, std::string const*, std::string*) [96]
+-----------------------------------------------
+                0.00    0.00       3/3           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [101]
+[100]    0.0    0.00    0.00       3         __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [100]
+                0.00    0.00       6/6           std::__niter_base<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, true>::__b(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >) [68]
+                0.00    0.00       3/6           std::__niter_base<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, true>::__b(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [69]
+                0.00    0.00       3/3           std::string* std::__copy_move_a<false, std::string const*, std::string*>(std::string const*, std::string const*, std::string*) [99]
+                0.00    0.00       3/66          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string* const&) [9]
+-----------------------------------------------
+                0.00    0.00       3/3           std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&) [92]
+[101]    0.0    0.00    0.00       3         __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [101]
+                0.00    0.00       6/6           std::__miter_base<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, false>::__b(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >) [67]
+                0.00    0.00       3/3           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [100]
+-----------------------------------------------
+                0.00    0.00       3/3           void std::_Destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string>(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::allocator<std::string>&) [103]
+[102]    0.0    0.00    0.00       3         void std::_Destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [102]
+                0.00    0.00       3/3           void std::_Destroy_aux<false>::__destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [97]
+-----------------------------------------------
+                0.00    0.00       3/3           std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&) [92]
+[103]    0.0    0.00    0.00       3         void std::_Destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string>(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::allocator<std::string>&) [103]
+                0.00    0.00       3/3           void std::_Destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [102]
+-----------------------------------------------
+                0.00    0.00       1/2           JobsHandler::setJobState(unsigned int, int) [126]
+                0.00    0.00       1/2           JobsHandler::setJobStateByPid(int, int) [128]
+[104]    0.0    0.00    0.00       2         Job::setState(int) [104]
+-----------------------------------------------
+                0.00    0.00       1/2           JobsHandler::addJob(std::string, int, int) [130]
+                0.00    0.00       1/2           __gnu_cxx::new_allocator<Job>::destroy(Job*) [139]
+[105]    0.0    0.00    0.00       2         Job::~Job() [105]
+-----------------------------------------------
+                0.00    0.00       1/2           JobsHandler::removeJobByPid(int) [127]
+                0.00    0.00       1/2           std::vector<Job, std::allocator<Job> >::erase(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >) [158]
+[106]    0.0    0.00    0.00       2         __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::operator+(int const&) const [106]
+                0.00    0.00       2/6           __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::__normal_iterator(Job* const&) [65]
+-----------------------------------------------
+                0.00    0.00       2/2           std::vector<Job, std::allocator<Job> >::max_size() const [108]
+[107]    0.0    0.00    0.00       2         std::_Vector_base<Job, std::allocator<Job> >::_M_get_Tp_allocator() const [107]
+-----------------------------------------------
+                0.00    0.00       2/2           std::vector<Job, std::allocator<Job> >::_M_check_len(unsigned int, char const*) const [147]
+[108]    0.0    0.00    0.00       2         std::vector<Job, std::allocator<Job> >::max_size() const [108]
+                0.00    0.00       2/2           std::_Vector_base<Job, std::allocator<Job> >::_M_get_Tp_allocator() const [107]
+                0.00    0.00       2/3           __gnu_cxx::new_allocator<Job>::max_size() const [95]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::_Destroy<Job*>(Job*, Job*) [119]
+[109]    0.0    0.00    0.00       2         void std::_Destroy_aux<false>::__destroy<Job*>(Job*, Job*) [109]
+-----------------------------------------------
+                0.00    0.00       1/2           std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+                0.00    0.00       1/2           std::_Vector_base<Job, std::allocator<Job> >::~_Vector_base() [155]
+[110]    0.0    0.00    0.00       2         std::_Vector_base<Job, std::allocator<Job> >::_M_deallocate(Job*, unsigned int) [110]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<Job>::deallocate(Job*, unsigned int) [138]
+-----------------------------------------------
+                0.00    0.00       2/2           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [168]
+[111]    0.0    0.00    0.00       2         std::__miter_base<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, false>::__b(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [111]
+-----------------------------------------------
+                0.00    0.00       2/2           std::string* std::copy_backward<std::string*, std::string*>(std::string*, std::string*, std::string*) [164]
+[112]    0.0    0.00    0.00       2         std::__miter_base<std::string*, false>::__b(std::string*) [112]
+-----------------------------------------------
+                0.00    0.00       2/2           Job* std::uninitialized_copy<Job*, Job*>(Job*, Job*, Job*) [116]
+[113]    0.0    0.00    0.00       2         Job* std::__uninitialized_copy<false>::uninitialized_copy<Job*, Job*>(Job*, Job*, Job*) [113]
+-----------------------------------------------
+                0.00    0.00       1/2           std::vector<Job, std::allocator<Job> >::erase(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >) [158]
+                0.00    0.00       1/2           std::vector<Job, std::allocator<Job> >::push_back(Job const&) [159]
+[114]    0.0    0.00    0.00       2         std::vector<Job, std::allocator<Job> >::end() [114]
+                0.00    0.00       2/6           __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::__normal_iterator(Job* const&) [65]
+-----------------------------------------------
+                0.00    0.00       1/2           JobsHandler::removeJobByPid(int) [127]
+                0.00    0.00       1/2           std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+[115]    0.0    0.00    0.00       2         std::vector<Job, std::allocator<Job> >::begin() [115]
+                0.00    0.00       2/6           __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::__normal_iterator(Job* const&) [65]
+-----------------------------------------------
+                0.00    0.00       2/2           Job* std::__uninitialized_copy_a<Job*, Job*, Job>(Job*, Job*, Job*, std::allocator<Job>&) [117]
+[116]    0.0    0.00    0.00       2         Job* std::uninitialized_copy<Job*, Job*>(Job*, Job*, Job*) [116]
+                0.00    0.00       2/2           Job* std::__uninitialized_copy<false>::uninitialized_copy<Job*, Job*>(Job*, Job*, Job*) [113]
+-----------------------------------------------
+                0.00    0.00       2/2           Job* std::__uninitialized_move_a<Job*, Job*, std::allocator<Job> >(Job*, Job*, Job*, std::allocator<Job>&) [118]
+[117]    0.0    0.00    0.00       2         Job* std::__uninitialized_copy_a<Job*, Job*, Job>(Job*, Job*, Job*, std::allocator<Job>&) [117]
+                0.00    0.00       2/2           Job* std::uninitialized_copy<Job*, Job*>(Job*, Job*, Job*) [116]
+-----------------------------------------------
+                0.00    0.00       2/2           std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+[118]    0.0    0.00    0.00       2         Job* std::__uninitialized_move_a<Job*, Job*, std::allocator<Job> >(Job*, Job*, Job*, std::allocator<Job>&) [118]
+                0.00    0.00       2/2           Job* std::__uninitialized_copy_a<Job*, Job*, Job>(Job*, Job*, Job*, std::allocator<Job>&) [117]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::_Destroy<Job*, Job>(Job*, Job*, std::allocator<Job>&) [120]
+[119]    0.0    0.00    0.00       2         void std::_Destroy<Job*>(Job*, Job*) [119]
+                0.00    0.00       2/2           void std::_Destroy_aux<false>::__destroy<Job*>(Job*, Job*) [109]
+-----------------------------------------------
+                0.00    0.00       1/2           std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+                0.00    0.00       1/2           std::vector<Job, std::allocator<Job> >::~vector() [161]
+[120]    0.0    0.00    0.00       2         void std::_Destroy<Job*, Job>(Job*, Job*, std::allocator<Job>&) [120]
+                0.00    0.00       2/2           void std::_Destroy<Job*>(Job*, Job*) [119]
+-----------------------------------------------
+                0.00    0.00       1/2           Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+                0.00    0.00       1/2           JobsHandler::showJobs(IOHandler&) [131]
+[121]    0.0    0.00    0.00       2         std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [121]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [279]
+[122]    0.0    0.00    0.00       1         global constructors keyed to jobsHandler [122]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [125]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [279]
+[123]    0.0    0.00    0.00       1         global constructors keyed to runner [123]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [124]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to runner [123]
+[124]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [124]
+                0.00    0.00       1/1           Runner::Runner() [137]
+-----------------------------------------------
+                0.00    0.00       1/1           global constructors keyed to jobsHandler [122]
+[125]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [125]
+                0.00    0.00       1/1           JobsHandler::JobsHandler() [132]
+-----------------------------------------------
+                0.00    0.00       1/1           Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+[126]    0.0    0.00    0.00       1         JobsHandler::setJobState(unsigned int, int) [126]
+                0.00    0.00       2/7           std::vector<Job, std::allocator<Job> >::operator[](unsigned int) [64]
+                0.00    0.00       1/9           std::vector<Job, std::allocator<Job> >::size() const [49]
+                0.00    0.00       1/3           Job::getPid() [94]
+                0.00    0.00       1/2           Job::setState(int) [104]
+-----------------------------------------------
+                0.00    0.00       1/1           handleSignal(int, siginfo*, void*) [170]
+[127]    0.0    0.00    0.00       1         JobsHandler::removeJobByPid(int) [127]
+                0.00    0.00       1/7           std::vector<Job, std::allocator<Job> >::operator[](unsigned int) [64]
+                0.00    0.00       1/3           Job::getPid() [94]
+                0.00    0.00       1/2           std::vector<Job, std::allocator<Job> >::begin() [115]
+                0.00    0.00       1/2           __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::operator+(int const&) const [106]
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::erase(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >) [158]
+                0.00    0.00       1/9           std::vector<Job, std::allocator<Job> >::size() const [49]
+-----------------------------------------------
+                0.00    0.00       1/1           handleSignal(int, siginfo*, void*) [170]
+[128]    0.0    0.00    0.00       1         JobsHandler::setJobStateByPid(int, int) [128]
+                0.00    0.00       2/7           std::vector<Job, std::allocator<Job> >::operator[](unsigned int) [64]
+                0.00    0.00       1/3           Job::getPid() [94]
+                0.00    0.00       1/2           Job::setState(int) [104]
+                0.00    0.00       1/9           std::vector<Job, std::allocator<Job> >::size() const [49]
+-----------------------------------------------
+                0.00    0.00       1/1           main [4]
+[129]    0.0    0.00    0.00       1         JobsHandler::init() [129]
+-----------------------------------------------
+                0.00    0.00       1/1           Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+[130]    0.0    0.00    0.00       1         JobsHandler::addJob(std::string, int, int) [130]
+                0.00    0.00       1/1           Job::Job(std::string, int, int) [136]
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::push_back(Job const&) [159]
+                0.00    0.00       1/2           Job::~Job() [105]
+-----------------------------------------------
+                0.00    0.00       1/1           Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [75]
+[131]    0.0    0.00    0.00       1         JobsHandler::showJobs(IOHandler&) [131]
+                0.00    0.00       2/7           std::vector<Job, std::allocator<Job> >::operator[](unsigned int) [64]
+                0.00    0.00       2/9           std::vector<Job, std::allocator<Job> >::size() const [49]
+                0.00    0.00       1/2           std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [121]
+                0.00    0.00       1/1           Job::getState() [134]
+                0.00    0.00       1/1           Job::getLine() [133]
+-----------------------------------------------
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [125]
+[132]    0.0    0.00    0.00       1         JobsHandler::JobsHandler() [132]
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::vector() [160]
+-----------------------------------------------
+                0.00    0.00       1/1           JobsHandler::showJobs(IOHandler&) [131]
+[133]    0.0    0.00    0.00       1         Job::getLine() [133]
+-----------------------------------------------
+                0.00    0.00       1/1           JobsHandler::showJobs(IOHandler&) [131]
+[134]    0.0    0.00    0.00       1         Job::getState() [134]
+-----------------------------------------------
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<Job>::construct(Job*, Job const&) [141]
+[135]    0.0    0.00    0.00       1         Job::Job(Job const&) [135]
+-----------------------------------------------
+                0.00    0.00       1/1           JobsHandler::addJob(std::string, int, int) [130]
+[136]    0.0    0.00    0.00       1         Job::Job(std::string, int, int) [136]
+-----------------------------------------------
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [124]
+[137]    0.0    0.00    0.00       1         Runner::Runner() [137]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<Job, std::allocator<Job> >::_M_deallocate(Job*, unsigned int) [110]
+[138]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<Job>::deallocate(Job*, unsigned int) [138]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::erase(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >) [158]
+[139]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<Job>::destroy(Job*) [139]
+                0.00    0.00       1/2           Job::~Job() [105]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<Job, std::allocator<Job> >::_M_allocate(unsigned int) [151]
+[140]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<Job>::allocate(unsigned int, void const*) [140]
+                0.00    0.00       1/3           __gnu_cxx::new_allocator<Job>::max_size() const [95]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+[141]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<Job>::construct(Job*, Job const&) [141]
+                0.00    0.00       1/42          operator new(unsigned int, void*) [14]
+                0.00    0.00       1/1           Job::Job(Job const&) [135]
+-----------------------------------------------
+                0.00    0.00       1/1           std::allocator<Job>::allocator() [148]
+[142]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<Job>::new_allocator() [142]
+-----------------------------------------------
+                0.00    0.00       1/1           std::allocator<Job>::~allocator() [149]
+[143]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<Job>::~new_allocator() [143]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+[144]    0.0    0.00    0.00       1         __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::difference_type __gnu_cxx::operator-<Job*, std::vector<Job, std::allocator<Job> > >(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&, __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&) [144]
+                0.00    0.00       2/6           __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::base() const [66]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::erase(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >) [158]
+[145]    0.0    0.00    0.00       1         bool __gnu_cxx::operator!=<Job*, std::vector<Job, std::allocator<Job> > >(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&, __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&) [145]
+                0.00    0.00       2/6           __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::base() const [66]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [42]
+[146]    0.0    0.00    0.00       1         __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::operator*() const [146]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+[147]    0.0    0.00    0.00       1         std::vector<Job, std::allocator<Job> >::_M_check_len(unsigned int, char const*) const [147]
+                0.00    0.00       4/9           std::vector<Job, std::allocator<Job> >::size() const [49]
+                0.00    0.00       2/2           std::vector<Job, std::allocator<Job> >::max_size() const [108]
+                0.00    0.00       1/17          unsigned int const& std::max<unsigned int>(unsigned int const&, unsigned int const&) [36]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<Job, std::allocator<Job> >::_Vector_impl::_Vector_impl() [152]
+[148]    0.0    0.00    0.00       1         std::allocator<Job>::allocator() [148]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<Job>::new_allocator() [142]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<Job, std::allocator<Job> >::_Vector_impl::~_Vector_impl() [153]
+[149]    0.0    0.00    0.00       1         std::allocator<Job>::~allocator() [149]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<Job>::~new_allocator() [143]
+-----------------------------------------------
+                0.00    0.00       1/1           std::string* std::__copy_move_a<false, std::string*, std::string*>(std::string*, std::string*, std::string*) [163]
+[150]    0.0    0.00    0.00       1         std::string* std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::string*, std::string*>(std::string*, std::string*, std::string*) [150]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+[151]    0.0    0.00    0.00       1         std::_Vector_base<Job, std::allocator<Job> >::_M_allocate(unsigned int) [151]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<Job>::allocate(unsigned int, void const*) [140]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<Job, std::allocator<Job> >::_Vector_base() [154]
+[152]    0.0    0.00    0.00       1         std::_Vector_base<Job, std::allocator<Job> >::_Vector_impl::_Vector_impl() [152]
+                0.00    0.00       1/1           std::allocator<Job>::allocator() [148]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<Job, std::allocator<Job> >::~_Vector_base() [155]
+[153]    0.0    0.00    0.00       1         std::_Vector_base<Job, std::allocator<Job> >::_Vector_impl::~_Vector_impl() [153]
+                0.00    0.00       1/1           std::allocator<Job>::~allocator() [149]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::vector() [160]
+[154]    0.0    0.00    0.00       1         std::_Vector_base<Job, std::allocator<Job> >::_Vector_base() [154]
+                0.00    0.00       1/1           std::_Vector_base<Job, std::allocator<Job> >::_Vector_impl::_Vector_impl() [152]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::~vector() [161]
+[155]    0.0    0.00    0.00       1         std::_Vector_base<Job, std::allocator<Job> >::~_Vector_base() [155]
+                0.00    0.00       1/2           std::_Vector_base<Job, std::allocator<Job> >::_M_deallocate(Job*, unsigned int) [110]
+                0.00    0.00       1/1           std::_Vector_base<Job, std::allocator<Job> >::_Vector_impl::~_Vector_impl() [153]
+-----------------------------------------------
+                0.00    0.00       1/1           std::string* std::__copy_move_backward_a<false, std::string*, std::string*>(std::string*, std::string*, std::string*) [166]
+[156]    0.0    0.00    0.00       1         std::string* std::__copy_move_backward<false, false, std::random_access_iterator_tag>::__copy_move_b<std::string*, std::string*>(std::string*, std::string*, std::string*) [156]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::push_back(Job const&) [159]
+[157]    0.0    0.00    0.00       1         std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+                0.00    0.00       3/4           std::_Vector_base<Job, std::allocator<Job> >::_M_get_Tp_allocator() [83]
+                0.00    0.00       2/6           __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::base() const [66]
+                0.00    0.00       2/2           Job* std::__uninitialized_move_a<Job*, Job*, std::allocator<Job> >(Job*, Job*, Job*, std::allocator<Job>&) [118]
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::_M_check_len(unsigned int, char const*) const [147]
+                0.00    0.00       1/2           std::vector<Job, std::allocator<Job> >::begin() [115]
+                0.00    0.00       1/1           __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::difference_type __gnu_cxx::operator-<Job*, std::vector<Job, std::allocator<Job> > >(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&, __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&) [144]
+                0.00    0.00       1/1           std::_Vector_base<Job, std::allocator<Job> >::_M_allocate(unsigned int) [151]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<Job>::construct(Job*, Job const&) [141]
+                0.00    0.00       1/2           void std::_Destroy<Job*, Job>(Job*, Job*, std::allocator<Job>&) [120]
+                0.00    0.00       1/2           std::_Vector_base<Job, std::allocator<Job> >::_M_deallocate(Job*, unsigned int) [110]
+-----------------------------------------------
+                0.00    0.00       1/1           JobsHandler::removeJobByPid(int) [127]
+[158]    0.0    0.00    0.00       1         std::vector<Job, std::allocator<Job> >::erase(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >) [158]
+                0.00    0.00       1/2           std::vector<Job, std::allocator<Job> >::end() [114]
+                0.00    0.00       1/2           __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::operator+(int const&) const [106]
+                0.00    0.00       1/1           bool __gnu_cxx::operator!=<Job*, std::vector<Job, std::allocator<Job> > >(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&, __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&) [145]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<Job>::destroy(Job*) [139]
+-----------------------------------------------
+                0.00    0.00       1/1           JobsHandler::addJob(std::string, int, int) [130]
+[159]    0.0    0.00    0.00       1         std::vector<Job, std::allocator<Job> >::push_back(Job const&) [159]
+                0.00    0.00       1/2           std::vector<Job, std::allocator<Job> >::end() [114]
+                0.00    0.00       1/1           std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&) [157]
+-----------------------------------------------
+                0.00    0.00       1/1           JobsHandler::JobsHandler() [132]
+[160]    0.0    0.00    0.00       1         std::vector<Job, std::allocator<Job> >::vector() [160]
+                0.00    0.00       1/1           std::_Vector_base<Job, std::allocator<Job> >::_Vector_base() [154]
+-----------------------------------------------
+                0.00    0.00       1/1           JobsHandler::~JobsHandler() [181]
+[161]    0.0    0.00    0.00       1         std::vector<Job, std::allocator<Job> >::~vector() [161]
+                0.00    0.00       1/4           std::_Vector_base<Job, std::allocator<Job> >::_M_get_Tp_allocator() [83]
+                0.00    0.00       1/2           void std::_Destroy<Job*, Job>(Job*, Job*, std::allocator<Job>&) [120]
+                0.00    0.00       1/1           std::_Vector_base<Job, std::allocator<Job> >::~_Vector_base() [155]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&) [92]
+[162]    0.0    0.00    0.00       1         std::string* std::vector<std::string, std::allocator<std::string> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > >(unsigned int, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >) [162]
+                0.00    0.00       1/33          std::_Vector_base<std::string, std::allocator<std::string> >::_M_allocate(unsigned int) [17]
+                0.00    0.00       1/21          std::string* std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::string>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::allocator<std::string>&) [28]
+-----------------------------------------------
+                0.00    0.00       1/1           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [165]
+[163]    0.0    0.00    0.00       1         std::string* std::__copy_move_a<false, std::string*, std::string*>(std::string*, std::string*, std::string*) [163]
+                0.00    0.00       1/1           std::string* std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::string*, std::string*>(std::string*, std::string*, std::string*) [150]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [42]
+[164]    0.0    0.00    0.00       1         std::string* std::copy_backward<std::string*, std::string*>(std::string*, std::string*, std::string*) [164]
+                0.00    0.00       2/2           std::__miter_base<std::string*, false>::__b(std::string*) [112]
+                0.00    0.00       1/1           std::string* std::__copy_move_backward_a2<false, std::string*, std::string*>(std::string*, std::string*, std::string*) [167]
+-----------------------------------------------
+                0.00    0.00       1/1           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [168]
+[165]    0.0    0.00    0.00       1         __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [165]
+                0.00    0.00       3/6           std::__niter_base<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, true>::__b(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [69]
+                0.00    0.00       1/1           std::string* std::__copy_move_a<false, std::string*, std::string*>(std::string*, std::string*, std::string*) [163]
+                0.00    0.00       1/66          __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string* const&) [9]
+-----------------------------------------------
+                0.00    0.00       1/1           std::string* std::__copy_move_backward_a2<false, std::string*, std::string*>(std::string*, std::string*, std::string*) [167]
+[166]    0.0    0.00    0.00       1         std::string* std::__copy_move_backward_a<false, std::string*, std::string*>(std::string*, std::string*, std::string*) [166]
+                0.00    0.00       1/1           std::string* std::__copy_move_backward<false, false, std::random_access_iterator_tag>::__copy_move_b<std::string*, std::string*>(std::string*, std::string*, std::string*) [156]
+-----------------------------------------------
+                0.00    0.00       1/1           std::string* std::copy_backward<std::string*, std::string*>(std::string*, std::string*, std::string*) [164]
+[167]    0.0    0.00    0.00       1         std::string* std::__copy_move_backward_a2<false, std::string*, std::string*>(std::string*, std::string*, std::string*) [167]
+                0.00    0.00       3/3           std::__niter_base<std::string*, false>::__b(std::string*) [98]
+                0.00    0.00       1/1           std::string* std::__copy_move_backward_a<false, std::string*, std::string*>(std::string*, std::string*, std::string*) [166]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<std::string, std::allocator<std::string> >::erase(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [91]
+[168]    0.0    0.00    0.00       1         __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [168]
+                0.00    0.00       2/2           std::__miter_base<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, false>::__b(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [111]
+                0.00    0.00       1/1           __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [165]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+ [122] global constructors keyed to jobsHandler (jobshandler.cpp) [95] __gnu_cxx::new_allocator<Job>::max_size() const [59] Command* std::__uninitialized_copy<false>::uninitialized_copy<Command*, Command*>(Command*, Command*, Command*)
+ [123] global constructors keyed to runner (runner.cpp) [43] __gnu_cxx::new_allocator<Command>::max_size() const [21] std::string* std::__uninitialized_copy<false>::uninitialized_copy<std::string*, std::string*>(std::string*, std::string*, std::string*)
+ [124] __static_initialization_and_destruction_0(int, int) (runner.cpp) [11] __gnu_cxx::new_allocator<std::string>::max_size() const [157] std::vector<Job, std::allocator<Job> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >, Job const&)
+ [125] __static_initialization_and_destruction_0(int, int) (jobshandler.cpp) [66] __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::base() const [114] std::vector<Job, std::allocator<Job> >::end()
+  [93] JobsHandler::getMainPid() [106] __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::operator+(int const&) const [115] std::vector<Job, std::allocator<Job> >::begin()
+ [126] JobsHandler::setJobState(unsigned int, int) [37] __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::base() const [158] std::vector<Job, std::allocator<Job> >::erase(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >)
+ [127] JobsHandler::removeJobByPid(int) [8] __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::base() const [159] std::vector<Job, std::allocator<Job> >::push_back(Job const&)
+   [5] JobsHandler::isMainForeground() [39] __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::operator*() const [160] std::vector<Job, std::allocator<Job> >::vector()
+ [128] JobsHandler::setJobStateByPid(int, int) [7] __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::base() const [161] std::vector<Job, std::allocator<Job> >::~vector()
+ [129] JobsHandler::init()   [146] __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::operator*() const [64] std::vector<Job, std::allocator<Job> >::operator[](unsigned int)
+ [130] JobsHandler::addJob(std::string, int, int) [71] __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::operator+(int const&) const [85] std::vector<Command, std::allocator<Command> >::_M_insert_aux(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >, Command const&)
+ [131] JobsHandler::showJobs(IOHandler&) [107] std::_Vector_base<Job, std::allocator<Job> >::_M_get_Tp_allocator() const [86] std::vector<Command, std::allocator<Command> >::end()
+ [132] JobsHandler::JobsHandler() [57] std::_Vector_base<Command, std::allocator<Command> >::_M_get_Tp_allocator() const [87] std::vector<Command, std::allocator<Command> >::begin()
+  [94] Job::getPid()          [12] std::_Vector_base<std::string, std::allocator<std::string> >::_M_get_Tp_allocator() const [88] std::vector<Command, std::allocator<Command> >::push_back(Command const&)
+ [133] Job::getLine()        [147] std::vector<Job, std::allocator<Job> >::_M_check_len(unsigned int, char const*) const [46] std::vector<Command, std::allocator<Command> >::operator[](unsigned int)
+ [134] Job::getState()        [49] std::vector<Job, std::allocator<Job> >::size() const [42] std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&)
+ [104] Job::setState(int)    [108] std::vector<Job, std::allocator<Job> >::max_size() const [89] std::vector<std::string, std::allocator<std::string> >::_M_erase_at_end(std::string*)
+ [135] Job::Job(Job const&)   [81] std::vector<Command, std::allocator<Command> >::_M_check_len(unsigned int, char const*) const [162] std::string* std::vector<std::string, std::allocator<std::string> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > >(unsigned int, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >)
+ [136] Job::Job(std::string, int, int) [58] std::vector<Command, std::allocator<Command> >::max_size() const [40] std::vector<std::string, std::allocator<std::string> >::end()
+ [105] Job::~Job()            [44] std::vector<std::string, std::allocator<std::string> >::_M_check_len(unsigned int, char const*) const [16] std::vector<std::string, std::allocator<std::string> >::begin()
+  [73] Parser::addCommand(std::vector<Command, std::allocator<Command> >&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool&) [18] std::vector<std::string, std::allocator<std::string> >::end() const [90] std::vector<std::string, std::allocator<std::string> >::clear()
+  [70] Parser::trim(std::string&) [6] std::vector<std::string, std::allocator<std::string> >::size() const [91] std::vector<std::string, std::allocator<std::string> >::erase(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  [47] Parser::getWord(std::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >&, std::string&) [19] std::vector<std::string, std::allocator<std::string> >::begin() const [72] std::vector<std::string, std::allocator<std::string> >::push_back(std::string const&)
+  [74] Parser::parseLine(std::string&, std::vector<Command, std::allocator<Command> >&) [82] std::vector<std::string, std::allocator<std::string> >::capacity() const [34] std::vector<std::string, std::allocator<std::string> >::vector(std::vector<std::string, std::allocator<std::string> > const&)
+  [75] Runner::runChain(std::string, std::vector<Command, std::allocator<Command> >&, IOHandler&, DirHandler&, JobsHandler&, bool) [20] std::vector<std::string, std::allocator<std::string> >::max_size() const [53] std::vector<std::string, std::allocator<std::string> >::vector()
+ [137] Runner::Runner()      [148] std::allocator<Job>::allocator() [92] std::vector<std::string, std::allocator<std::string> >::operator=(std::vector<std::string, std::allocator<std::string> > const&)
+  [35] Command::getCmd()     [149] std::allocator<Job>::~allocator() [99] std::string* std::__copy_move_a<false, std::string const*, std::string*>(std::string const*, std::string const*, std::string*)
+  [54] Command::getParams()   [31] std::allocator<std::string>::allocator(std::allocator<std::string> const&) [163] std::string* std::__copy_move_a<false, std::string*, std::string*>(std::string*, std::string*, std::string*)
+  [55] Command::Command(Command const&) [50] std::allocator<std::string>::allocator() [164] std::string* std::copy_backward<std::string*, std::string*>(std::string*, std::string*, std::string*)
+  [76] Command::Command(std::string&, std::vector<std::string, std::allocator<std::string> >&, std::string&, std::string&, bool) [96] std::string* std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::string const*, std::string*>(std::string const*, std::string const*, std::string*) [100] __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  [45] Command::~Command()   [150] std::string* std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<std::string*, std::string*>(std::string*, std::string*, std::string*) [165] __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+ [138] __gnu_cxx::new_allocator<Job>::deallocate(Job*, unsigned int) [97] void std::_Destroy_aux<false>::__destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [27] std::string* std::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*)
+ [139] __gnu_cxx::new_allocator<Job>::destroy(Job*) [109] void std::_Destroy_aux<false>::__destroy<Job*>(Job*, Job*) [116] Job* std::uninitialized_copy<Job*, Job*>(Job*, Job*, Job*)
+ [140] __gnu_cxx::new_allocator<Job>::allocate(unsigned int, void const*) [151] std::_Vector_base<Job, std::allocator<Job> >::_M_allocate(unsigned int) [60] Command* std::uninitialized_copy<Command*, Command*>(Command*, Command*, Command*)
+ [141] __gnu_cxx::new_allocator<Job>::construct(Job*, Job const&) [152] std::_Vector_base<Job, std::allocator<Job> >::_Vector_impl::_Vector_impl() [22] std::string* std::uninitialized_copy<std::string*, std::string*>(std::string*, std::string*, std::string*)
+ [142] __gnu_cxx::new_allocator<Job>::new_allocator() [153] std::_Vector_base<Job, std::allocator<Job> >::_Vector_impl::~_Vector_impl() [166] std::string* std::__copy_move_backward_a<false, std::string*, std::string*>(std::string*, std::string*, std::string*)
+ [143] __gnu_cxx::new_allocator<Job>::~new_allocator() [110] std::_Vector_base<Job, std::allocator<Job> >::_M_deallocate(Job*, unsigned int) [28] std::string* std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::string>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*, std::allocator<std::string>&)
+  [77] __gnu_cxx::new_allocator<Command>::allocate(unsigned int, void const*) [83] std::_Vector_base<Job, std::allocator<Job> >::_M_get_Tp_allocator() [117] Job* std::__uninitialized_copy_a<Job*, Job*, Job>(Job*, Job*, Job*, std::allocator<Job>&)
+  [78] __gnu_cxx::new_allocator<Command>::construct(Command*, Command const&) [154] std::_Vector_base<Job, std::allocator<Job> >::_Vector_base() [61] Command* std::__uninitialized_copy_a<Command*, Command*, Command>(Command*, Command*, Command*, std::allocator<Command>&)
+  [79] __gnu_cxx::new_allocator<std::string>::destroy(std::string*) [155] std::_Vector_base<Job, std::allocator<Job> >::~_Vector_base() [23] std::string* std::__uninitialized_copy_a<std::string*, std::string*, std::string>(std::string*, std::string*, std::string*, std::allocator<std::string>&)
+  [25] __gnu_cxx::new_allocator<std::string>::allocate(unsigned int, void const*) [84] std::_Vector_base<Command, std::allocator<Command> >::_M_allocate(unsigned int) [118] Job* std::__uninitialized_move_a<Job*, Job*, std::allocator<Job> >(Job*, Job*, Job*, std::allocator<Job>&)
+  [41] __gnu_cxx::new_allocator<std::string>::construct(std::string*, std::string const&) [17] std::_Vector_base<std::string, std::allocator<std::string> >::_M_allocate(unsigned int) [62] Command* std::__uninitialized_move_a<Command*, Command*, std::allocator<Command> >(Command*, Command*, Command*, std::allocator<Command>&)
+  [29] __gnu_cxx::new_allocator<std::string>::new_allocator(__gnu_cxx::new_allocator<std::string> const&) [32] std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_impl::_Vector_impl(std::allocator<std::string> const&) [24] std::string* std::__uninitialized_move_a<std::string*, std::string*, std::allocator<std::string> >(std::string*, std::string*, std::string*, std::allocator<std::string>&)
+  [48] __gnu_cxx::new_allocator<std::string>::new_allocator() [51] std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_impl::_Vector_impl() [167] std::string* std::__copy_move_backward_a2<false, std::string*, std::string*>(std::string*, std::string*, std::string*)
+  [65] __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::__normal_iterator(Job* const&) [33] std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_base(unsigned int, std::allocator<std::string> const&) [36] unsigned int const& std::max<unsigned int>(unsigned int const&, unsigned int const&)
+  [56] __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::__normal_iterator(Command* const&) [52] std::_Vector_base<std::string, std::allocator<std::string> >::_Vector_base() [101] __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  [10] __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string const* const&) [67] std::__miter_base<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, false>::__b(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >) [168] __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > std::copy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+  [38] __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >::operator++() [111] std::__miter_base<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, false>::__b(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [102] void std::_Destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >)
+   [9] __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::__normal_iterator(std::string* const&) [112] std::__miter_base<std::string*, false>::__b(std::string*) [103] void std::_Destroy<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string>(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::allocator<std::string>&)
+ [144] __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > >::difference_type __gnu_cxx::operator-<Job*, std::vector<Job, std::allocator<Job> > >(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&, __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&) [68] std::__niter_base<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, true>::__b(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >) [119] void std::_Destroy<Job*>(Job*, Job*)
+  [80] __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > >::difference_type __gnu_cxx::operator-<Command*, std::vector<Command, std::allocator<Command> > >(__gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > > const&, __gnu_cxx::__normal_iterator<Command*, std::vector<Command, std::allocator<Command> > > const&) [69] std::__niter_base<__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, true>::__b(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >) [120] void std::_Destroy<Job*, Job>(Job*, Job*, std::allocator<Job>&)
+  [30] __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >::difference_type __gnu_cxx::operator-<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&) [98] std::__niter_base<std::string*, false>::__b(std::string*) [13] bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+ [145] bool __gnu_cxx::operator!=<Job*, std::vector<Job, std::allocator<Job> > >(__gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&, __gnu_cxx::__normal_iterator<Job*, std::vector<Job, std::allocator<Job> > > const&) [156] std::string* std::__copy_move_backward<false, false, std::random_access_iterator_tag>::__copy_move_b<std::string*, std::string*>(std::string*, std::string*, std::string*) [121] std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+  [15] bool __gnu_cxx::operator!=<std::string const*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > > const&) [26] std::string* std::__uninitialized_copy<false>::uninitialized_copy<__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*>(__gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, __gnu_cxx::__normal_iterator<std::string const*, std::vector<std::string, std::allocator<std::string> > >, std::string*) [14] operator new(unsigned int, void*)
+  [63] bool __gnu_cxx::operator!=<std::string*, std::vector<std::string, std::allocator<std::string> > >(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&, __gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > > const&) [113] Job* std::__uninitialized_copy<false>::uninitialized_copy<Job*, Job*>(Job*, Job*, Job*)
