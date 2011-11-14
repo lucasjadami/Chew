@@ -1,7 +1,22 @@
-FLAGS=-g -Wall
+# Makefile. 
+#
+# Use 'make' for general debug version.
+# Use 'make dprint' for debug print version.
+# Use 'make release' for release version.
+# See below the flags for each target:
+
+FLAGS=-Wall
 CC=g++
 	
-all: chew
+all: debug
+
+debug: FLAGS += -g -p
+release: FLAGS += -s -O2
+dprint: FLAGS += -D DEBUG_PRINT
+dprint: debug
+
+debug: chew
+release: chew
 
 chew: main.o parser.o command.o iohandler.o runner.o dirhandler.o jobshandler.o
 	$(CC) $(FLAGS) main.o parser.o command.o iohandler.o runner.o dirhandler.o jobshandler.o -o chew

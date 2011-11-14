@@ -5,7 +5,6 @@
 #include <sys/wait.h>
 #include <stdlib.h>
 #include <sstream>
-#include <cstdio> /// TODO remove
 
 #define STDIN 0
 #define STDOUT 1
@@ -14,17 +13,32 @@ using namespace std;
 
 Runner runner;
 
+/**
+ * Constructor.
+ */
 Runner::Runner()
 {
-	one = ".test1";
+	one = ".test1"; /// pipes
 	two = ".test2";
 }
 
+/**
+ * Destructor.
+ */
 Runner::~Runner()
 {
 
 }
 
+/**
+ * Runs a chain of commands, that the user typed on the input.
+ * @param line The line typed.
+ * @param commands The vector of commands from the parser object.
+ * @param ioHandler The iohandler object for printing purposes.
+ * @param dirHandler The dirhandler object for dir purposes.
+ * @param jobsHandler The jobshandler object for jobs purposes.
+ * @param background If the chain must be executed in background.
+ */
 void Runner::runChain(string line, vector<Command>& commands, IOHandler& ioHandler, DirHandler& dirHandler, JobsHandler& jobsHandler, bool background)
 {
 	Command first = commands[0];
@@ -102,7 +116,16 @@ void Runner::runChain(string line, vector<Command>& commands, IOHandler& ioHandl
 	}
 }
 
-// TODO: handle errors
+/**
+ * Runs a chain of commands, that the user typed on the input.
+ * @param cmd The command object to be executed.
+ * @param ioHandler The iohandler object for printing purposes.
+ * @param dirHandler The dirhandler object for dir purposes.
+ * @param jobsHandler The jobshandler object for jobs purposes.
+ * @param first If its the first command in the chain, for pipe control.
+ * @param last If its the last command in the chain, for pipe control.
+ * @return An integer, 0 on success.
+ */
 int Runner::run(Command& cmd, IOHandler& ioHandler, DirHandler& dirHandler, JobsHandler& jobsHandler, bool first, bool last)
 {
 	int infd = STDIN;
@@ -117,11 +140,14 @@ int Runner::run(Command& cmd, IOHandler& ioHandler, DirHandler& dirHandler, Jobs
 	}
 	if (cmd.getOut().size() > 0)
 	{
-		outfd = open(cmd.getOut().c_str(), O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR | S_IRGRP);
+		int flags = O_CREAT | O_WRONLY;
+		if (cmd.isAppend()) 
+			flags |= O_APPEND;
+		outfd = open(cmd.getOut().c_str(), flags, S_IRUSR | S_IWUSR | S_IRGRP);
 		dup2(outfd, STDOUT);
 	}
 	
-	swap(one, two);
+	swap(one, two); /// pipes
 	if (infd == STDIN && !first)
 	{
 		infd = open(one, O_RDONLY);

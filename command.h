@@ -24,6 +24,8 @@ public:
 	string getFirstParam();
 	const char** buildArgs();
 	void destroyArgs();
+	void removeAnd();
+	bool isAppend();
 	
 #ifdef DEBUG_PRINT
 	void print();

@@ -108,6 +108,22 @@ void Command::destroyArgs()
 	delete[] args;
 }
 
+/**
+ * Removes the '&' from the command params.
+ */
+void Command::removeAnd()
+{
+	params.pop_back();
+}
+
+/**
+ * @return If text to the output file will be appended.
+ */
+bool Command::isAppend()
+{
+	return append;
+}
+
 #ifdef DEBUG_PRINT
 /**
  * Prints the command info.

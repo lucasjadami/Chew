@@ -31,7 +31,7 @@ Requisitos cumpridos:
 
 1.4 - Redirecionamento de entrada e saída: o shell implementa essa funcionalidade.
 
-1.5 - Pipes: os pipes estão funcionando.
+1.5 - Pipes: os pipes estão funcionando. Não utilizamos a funções do sistema para tratar pipes. Ao invés disso, criamos arquivos temporários.
 
 1.6 - Interpretação da linha de comando: feito no parser.cpp e testado de várias formas.
 
