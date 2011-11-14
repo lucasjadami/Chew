@@ -9,8 +9,6 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <sys/wait.h>
-#include <cstdio> /// TODO: remove.
-#include <errno.h> /// TODO: remove.
 
 /** The jobs handler. */
 JobsHandler jobsHandler;

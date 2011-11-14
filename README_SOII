@@ -1,0 +1,54 @@
+This file is in Portuguese.
+
+///////////////////////////////////////
+///////////////////////////////////////
+Estrutura básica do shell desenvolvido:
+///////////////////////////////////////
+///////////////////////////////////////
+
+O projeto foi implementado em C++ devido as facilidades da linguagem como a STL e a criação de classes. Há um main (main.cpp) que utiliza
+partes da shell (que foram separadas em classes bem definidas, cada uma com sua funcionalidade). São elas:
+
+- command.cpp: Representa um comando da shell.
+- dirhandler.cpp: Controla as funcionalidades relacionadas aos diretórios.
+- iohandler.cpp: Controla as funções de entrada e saída e o histórico.
+- jobshandler.cpp: Controla toda a parte de jobs.
+- parser.cpp: Interpreta o que o usuário digitou transformando-os em objetos da classe Command.
+- runner.cpp: Executa os comandos.
+- test.cpp: Programa utilizado para testes no desenvolvimento (parte de jobs).
+
+///////////////////////////////////////
+///////////////////////////////////////
+Requisitos cumpridos:
+///////////////////////////////////////
+///////////////////////////////////////
+
+1.1 - Git: foi utilizado o controlador de versões Git (no Github) para desenvolver  o shell.
+
+1.2 - Execução simples de comandos: o programa executa comandos simples como "ls".
+
+1.3 - Execução de comandos em segundo plano: ao adicionar o caractere '&' no final do comando, ele será executado em segundo plano.
+
+1.4 - Redirecionamento de entrada e saída: o shell implementa essa funcionalidade.
+
+1.5 - Pipes: os pipes estão funcionando.
+
+1.6 - Interpretação da linha de comando: feito no parser.cpp e testado de várias formas.
+
+1.7 - Comandos integrados no shell: jobs, fg, bg, pwd e kill. Os jobs estão completamente implementados e funcionando como a shell do Linux. Porém,
+nosso sitema tem um problema. Quando se usa o CTRL+Z, o processo que está em foreground deve passar o controle para a Chew
+(JobsHandler::setMainForeground). Mas, raramente, a função tcsetpgrp falha e não é possível colocar o processo principal como foreground, travando o
+programa. Se um programa que não está em foreground chama essa função, todo seu grupo recebe o sinal SIGTTOU e a função falha. Esse é um erro que não
+conseguimos resolver. Tente travar nossa Chew, executando o programa de teste (para compilá-lo, use "make test") e apertando CTRL+Z rapidamente. Nossa shell não ignora os sinais no processo principal. Isto é, se o processo principal estiver em foreground e o usuário digitar CTRL+C por exemplo, ela sai (deixamos assim, para facilitar nossos testes). Para usar o kill para matar um job, utilize '%' (exemplo: kill %1).
+
+1.8 - Makefile e bibliotecas: o makefile se encontra no arquivo MAKEFILE (é só executar o make para compilar). Não utilizamos nenhuma biblioteca
+extra. Porém, separamos o projeto em classes.
+
+1.9 - Profiling
+
+1.10 - Extras: nossa shell usa histórico (implementado em iohandler.cpp). Fizemos o histórico o mais parecido possível com o do Linux. Além disso, é possível controlar o cursor, indo para a esquerda e direita.
+
+1.11 - Documentação: utilizamos o doxygen para documentar o código. Ele está todo em inglês pois é open source e está no Github (assim, qualquer pessoa
+pode ver nosso projeto).
+
+1.12 - Testes: não criamos testes automáticos ou coisas do tipo. A parte de jobs e de execução de comandos foi amplamente testada.
